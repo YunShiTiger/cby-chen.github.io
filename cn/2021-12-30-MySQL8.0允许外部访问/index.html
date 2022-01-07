@@ -492,12 +492,9 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>MySQL8.0允许外部访问</h1>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6ea2bc3ed27549908286720b6a9f1215~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<h3 id="一、前置条件：">一、前置条件：</h3>
-<p>按照https://blog.csdn.net/h996666/article/details/80917268安装完MySQL之后。</p>
-<h3 id="二、开始修改配置：">二、开始修改配置：</h3>
-<p>1，登进MySQL之后，</p>
+        <h1 id="MySQL8-0允许外部访问"><a href="#MySQL8-0允许外部访问" class="headerlink" title="MySQL8.0允许外部访问"></a>MySQL8.0允许外部访问</h1><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6ea2bc3ed27549908286720b6a9f1215~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<h3 id="一、前置条件："><a href="#一、前置条件：" class="headerlink" title="一、前置条件："></a>一、前置条件：</h3><p>按照<a target="_blank" rel="noopener" href="https://blog.csdn.net/h996666/article/details/80917268安装完MySQL之后。">https://blog.csdn.net/h996666/article/details/80917268安装完MySQL之后。</a></p>
+<h3 id="二、开始修改配置："><a href="#二、开始修改配置：" class="headerlink" title="二、开始修改配置："></a>二、开始修改配置：</h3><p>1，登进MySQL之后，</p>
 <p>2，输入以下语句，进入mysql库：</p>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">use</span> mysql</span><br></pre></td></tr></table></figure>
 <p>3，更新域属性，’%’表示允许外部访问：</p>
@@ -513,8 +510,7 @@
 <p>MySQL用户数据和权限有修改后，希望在”不重启MySQL服务”的情况下直接生效，那么就需要执行这个命令。</p>
 <p>通常是在修改ROOT帐号的设置后，怕重启后无法再登录进来，那么直接flush之后就可以看权限设置是否生效。</p>
 <p>而不必冒太大风险。</p>
-<h3 id="三、可能存在的其它问题：">三、可能存在的其它问题：</h3>
-<p>执行完之后，再用Navicat连接mysql，报错如下：</p>
+<h3 id="三、可能存在的其它问题："><a href="#三、可能存在的其它问题：" class="headerlink" title="三、可能存在的其它问题："></a>三、可能存在的其它问题：</h3><p>执行完之后，再用Navicat连接mysql，报错如下：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Client <span class="keyword">does</span> <span class="keyword">not</span> support authentication protocol requested <span class="keyword">by</span> server；</span><br></pre></td></tr></table></figure>
 <p>报错原因：</p>
 <p>mysql8.0 引入了新特性 caching_sha2_password；这种密码加密方式Navicat 12以下客户端不支持；</p>
@@ -524,17 +520,13 @@
 <figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> host,<span class="keyword">user</span>,plugin <span class="keyword">from</span> <span class="keyword">user</span>;</span><br></pre></td></tr></table></figure>
 <p>查询结果</p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="code">+-----------+</span>------------------<span class="code">+-----------------------+</span></span><br><span class="line">| host      | user             | plugin                |</span><br><span class="line"><span class="code">+-----------+</span>------------------<span class="code">+-----------------------+</span></span><br><span class="line">| %         | root             | caching\_sha2\_password |</span><br><span class="line">| localhost | mysql.infoschema | mysql\_native\_password |</span><br><span class="line">| localhost | mysql.session    | mysql\_native\_password |</span><br><span class="line">| localhost | mysql.sys        | mysql\_native\_password |</span><br><span class="line"><span class="code">+-----------+</span>------------------<span class="code">+-----------------------+</span></span><br></pre></td></tr></table></figure>
-<p>看第一行，root加密方式为caching_sha2_password。</p>
+<p>看第一行，root加密方式为caching_sha2_password。  </p>
 <p>2，使用命令将他修改成mysql_native_password加密模式：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update<span class="built_in"> user </span><span class="builtin-name">set</span> <span class="attribute">plugin</span>=<span class="string">&#x27;mysql_native_password&#x27;</span> where <span class="attribute">user</span>=<span class="string">&#x27;root&#x27;</span>;</span><br></pre></td></tr></table></figure>
 <p>再次连接的时候，就成功了。</p>
-<h3 id="四、如果还连接不上">四、如果还连接不上</h3>
-<p>通过以上操作后，依然无法连接上，问题可能出在了防火墙上。</p>
-<p><strong>1，MySQL部署在实体服务器上解决方案如下：</strong><br>
-a.开放MySQL的端口号，默认端口号是3306。<br>
-b.直接关闭防火墙（慎重操作，不建议。当然测试玩的话就随意了。。。。）</p>
-<p><strong>2，MySQL部署在云计算机上的方案如下：</strong><br>
-a.以阿里云为例，找到实例，设置安全组，开放端口号即可。</p>
+<h3 id="四、如果还连接不上"><a href="#四、如果还连接不上" class="headerlink" title="四、如果还连接不上"></a>四、如果还连接不上</h3><p>通过以上操作后，依然无法连接上，问题可能出在了防火墙上。</p>
+<p><strong>1，MySQL部署在实体服务器上解决方案如下：</strong><br>a.开放MySQL的端口号，默认端口号是3306。<br>b.直接关闭防火墙（慎重操作，不建议。当然测试玩的话就随意了。。。。）</p>
+<p><strong>2，MySQL部署在云计算机上的方案如下：</strong><br>a.以阿里云为例，找到实例，设置安全组，开放端口号即可。</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a99b8c6d78e64b13b6f8626c8c2b1fad~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 
 
@@ -543,12 +535,12 @@ a.以阿里云为例，找到实例，设置安全组，开放端口号即可。
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-MySQL8.0允许外部访问/" data-toggle="tooltip" data-placement="top" title="MySQL8.0允许外部访问">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-Nginx主要功能/" data-toggle="tooltip" data-placement="top" title="Nginx主要功能">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-搭建一个自己专属的个人网盘/" data-toggle="tooltip" data-placement="top" title="搭建一个自己专属的个人网盘">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-MySQL8.0允许外部访问/" data-toggle="tooltip" data-placement="top" title="MySQL8.0允许外部访问">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -791,7 +783,7 @@ a.以阿里云为例，找到实例，设置安全组，开放端口号即可。
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -802,7 +794,7 @@ a.以阿里云为例，找到实例，设置安全组，开放端口号即可。
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -813,7 +805,7 @@ a.以阿里云为例，找到实例，设置安全组，开放端口号即可。
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -830,7 +822,7 @@ a.以阿里云为例，找到实例，设置安全组，开放端口号即可。
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

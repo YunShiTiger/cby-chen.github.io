@@ -497,20 +497,20 @@
 <p><strong>补充说明</strong></p>
 <p><strong>Supplementary note</strong></p>
 <p>yum命令 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
-<p>The yum command is a rpm-based package manager in Fedora, RedHat and SUSE. It enables system administrators to interactively and automatically update and manage RPM packages. It can automatically download and install RPM packages from a specified server, and can be processed automatically Dependency relationship, and install all dependent software packages at one time, no need to download and install tediously again and again. Yum provides commands to find, install, delete a certain, a group or even all packages, and the commands are concise and easy to remember.</p>
-<p><strong>问题：</strong></p>
-<p>在使用yum安装时，卡死并且无法Ctrl+c终止，需要将其杀死才能停止。</p>
-<p>如下图：</p>
-<p>When using yum to install, it is stuck and cannot be terminated by Ctrl+c. You need to kill it to stop.</p>
-<p>As shown below:</p>
+<pre><code>The yum command is a rpm-based package manager in Fedora, RedHat and SUSE. It enables system administrators to interactively and automatically update and manage RPM packages. It can automatically download and install RPM packages from a specified server, and can be processed automatically Dependency relationship, and install all dependent software packages at one time, no need to download and install tediously again and again. Yum provides commands to find, install, delete a certain, a group or even all packages, and the commands are concise and easy to remember.
+</code></pre><p><strong>问题：</strong></p>
+<pre><code>在使用yum安装时，卡死并且无法Ctrl+c终止，需要将其杀死才能停止。
+</code></pre><p>如下图：</p>
+<pre><code>When using yum to install, it is stuck and cannot be terminated by Ctrl+c. You need to kill it to stop.
+</code></pre><p>As shown below:</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/118881abd6294aad84628b1a8577beed~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p>解决方案一：</p>
 <p>Solution 1:</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1d6b1ae48f6b4261b44e1bbf1929ac85~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<p>删除rpm数据文件后再重建rpm数据文件：</p>
-<p>Rebuild the rpm data file after deleting the rpm data file:</p>
-<p>删除rpm数据文件</p>
-<p>Delete rpm data file</p>
+<pre><code>删除rpm数据文件后再重建rpm数据文件：
+</code></pre><p> Rebuild the rpm data file after deleting the rpm data file:</p>
+<pre><code>删除rpm数据文件
+</code></pre><p> Delete rpm data file  </p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -f <span class="regexp">/var/</span>lib<span class="regexp">/rpm/</span>__db.<span class="number">00</span>*</span><br></pre></td></tr></table></figure>
 <p>重建rpm数据文件</p>
 <p>Rebuild rpm data file</p>
@@ -519,7 +519,7 @@
 <p>清空缓存后再重新缓存</p>
 <p>Re-cache after clearing the cache</p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum clean <span class="keyword">all</span> </span><br><span class="line">yum makecache</span><br></pre></td></tr></table></figure>
-<p>执行完一般情况就可以正常使用了，若依旧无法使用请参考以下方式二</p>
+<p>执行完一般情况就可以正常使用了，若依旧无法使用请参考以下方式二  </p>
 <p>After executing the general situation, it can be used normally, if it still cannot be used, please refer to the following method two</p>
 <p>解决方案二：</p>
 <p>Solution two:</p>
@@ -535,12 +535,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/2021-12-30-搭建一个自己专属的个人网盘/" data-toggle="tooltip" data-placement="top" title="搭建一个自己专属的个人网盘">&larr; Previous Post</a>
+            <a href="/cn/2021-12-30-CentOS_的_YUM安装时卡死解决方案/" data-toggle="tooltip" data-placement="top" title="CentOS 的 YUM安装时卡死解决方案">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/2021-12-30-CentOS_的_YUM安装时卡死解决方案/" data-toggle="tooltip" data-placement="top" title="CentOS 的 YUM安装时卡死解决方案">Next Post &rarr;</a>
+            <a href="/cn/2021-12-30-Python安装-在Linux系统中使用编译进行安装/" data-toggle="tooltip" data-placement="top" title="Python安装-在Linux系统中使用编译进行安装">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -783,7 +783,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -794,7 +794,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -805,7 +805,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -822,7 +822,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

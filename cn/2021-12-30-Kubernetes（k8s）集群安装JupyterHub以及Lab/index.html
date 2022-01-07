@@ -508,7 +508,7 @@
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">root</span>@hello:~# kubectl get svc  -A</span><br><span class="line"><span class="attribute">NAMESPACE</span>     NAME                        TYPE           CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE</span><br><span class="line"><span class="attribute">default</span>       kubernetes                  ClusterIP      <span class="number">10.68.0.1</span>       &lt;none&gt;        <span class="number">443</span>/TCP                  <span class="number">16</span>h</span><br><span class="line"><span class="attribute">ju</span>            hub                         ClusterIP      <span class="number">10.68.60.16</span>     &lt;none&gt;        <span class="number">8081</span>/TCP                 <span class="number">114</span>s</span><br><span class="line"><span class="attribute">ju</span>            proxy-api                   ClusterIP      <span class="number">10.68.239.54</span>    &lt;none&gt;        <span class="number">8001</span>/TCP                 <span class="number">114</span>s</span><br><span class="line"><span class="attribute">ju</span>            proxy-public                LoadBalancer   <span class="number">10.68.62.47</span>     &lt;pending&gt;     <span class="number">80</span>:<span class="number">32070</span>/TCP             <span class="number">114</span>s</span><br><span class="line"><span class="attribute">kube</span>-system   dashboard-metrics-scraper   ClusterIP      <span class="number">10.68.244.241</span>   &lt;none&gt;        <span class="number">8000</span>/TCP                 <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kube-dns                    ClusterIP      <span class="number">10.68.0.2</span>       &lt;none&gt;        <span class="number">53</span>/UDP,<span class="number">53</span>/TCP,<span class="number">9153</span>/TCP   <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kube-dns-upstream           ClusterIP      <span class="number">10.68.221.104</span>   &lt;none&gt;        <span class="number">53</span>/UDP,<span class="number">53</span>/TCP            <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kubernetes-dashboard        NodePort       <span class="number">10.68.206.196</span>   &lt;none&gt;        <span class="number">443</span>:<span class="number">32143</span>/TCP            <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   metrics-server              ClusterIP      <span class="number">10.68.1.149</span>     &lt;none&gt;        <span class="number">443</span>/TCP                  <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   node-local-dns              ClusterIP      None            &lt;none&gt;        <span class="number">9253</span>/TCP                 <span class="number">16</span>h</span><br><span class="line"><span class="attribute">root</span>@hello:~# kubectl edit svc proxy-public -n ju</span><br><span class="line"><span class="attribute">service</span>/proxy-public edited</span><br><span class="line"><span class="attribute">root</span>@hello:~# </span><br><span class="line"><span class="attribute">root</span>@hello:~# </span><br><span class="line"><span class="attribute">root</span>@hello:~# kubectl get svc  -A</span><br><span class="line"><span class="attribute">NAMESPACE</span>     NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE</span><br><span class="line"><span class="attribute">default</span>       kubernetes                  ClusterIP   <span class="number">10.68.0.1</span>       &lt;none&gt;        <span class="number">443</span>/TCP                  <span class="number">16</span>h</span><br><span class="line"><span class="attribute">ju</span>            hub                         ClusterIP   <span class="number">10.68.60.16</span>     &lt;none&gt;        <span class="number">8081</span>/TCP                 <span class="number">2</span>m<span class="number">19</span>s</span><br><span class="line"><span class="attribute">ju</span>            proxy-api                   ClusterIP   <span class="number">10.68.239.54</span>    &lt;none&gt;        <span class="number">8001</span>/TCP                 <span class="number">2</span>m<span class="number">19</span>s</span><br><span class="line"><span class="attribute">ju</span>            proxy-public                NodePort    <span class="number">10.68.62.47</span>     &lt;none&gt;        <span class="number">80</span>:<span class="number">32070</span>/TCP             <span class="number">2</span>m<span class="number">19</span>s</span><br><span class="line"><span class="attribute">kube</span>-system   dashboard-metrics-scraper   ClusterIP   <span class="number">10.68.244.241</span>   &lt;none&gt;        <span class="number">8000</span>/TCP                 <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kube-dns                    ClusterIP   <span class="number">10.68.0.2</span>       &lt;none&gt;        <span class="number">53</span>/UDP,<span class="number">53</span>/TCP,<span class="number">9153</span>/TCP   <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kube-dns-upstream           ClusterIP   <span class="number">10.68.221.104</span>   &lt;none&gt;        <span class="number">53</span>/UDP,<span class="number">53</span>/TCP            <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   kubernetes-dashboard        NodePort    <span class="number">10.68.206.196</span>   &lt;none&gt;        <span class="number">443</span>:<span class="number">32143</span>/TCP            <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   metrics-server              ClusterIP   <span class="number">10.68.1.149</span>     &lt;none&gt;        <span class="number">443</span>/TCP                  <span class="number">16</span>h</span><br><span class="line"><span class="attribute">kube</span>-system   node-local-dns              ClusterIP   None            &lt;none&gt;        <span class="number">9253</span>/TCP                 <span class="number">16</span>h</span><br><span class="line"><span class="attribute">root</span>@hello:~#</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/KYOkQ49zfMf4BicLuGydibIKb2tftJtCBW5lzdULRlqlmrzDgOkbMIByevhzh2dRtLabALJicjqtmtm2GYzQkpwXw/640?wx_fmt=png" alt=""></p>
 <p><img src="https://mmbiz.qpic.cn/mmbiz_png/KYOkQ49zfMf4BicLuGydibIKb2tftJtCBWcphA0lCzZVZJL2X5piaXcMJpMNoh0yPba7Ric8qE1btuQK7Jlam7TNkA/640?wx_fmt=png" alt=""></p>
-<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KYOkQ49zfMdA6AqIqjlTKC2oKfCKRNFLaTibVZXQ5hq0VLsrfDAn1pLLCNneOVrpCIF2JXy5U9HlU6H5tRgbB4g/640?wx_fmt=jpeg" alt=""></p>
+<p><img src="https://mmbiz.qpic.cn/mmbiz_jpg/KYOkQ49zfMdA6AqIqjlTKC2oKfCKRNFLaTibVZXQ5hq0VLsrfDAn1pLLCNneOVrpCIF2JXy5U9HlU6H5tRgbB4g/640?wx_fmt=jpeg" alt="">  </p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750">https://blog.csdn.net/qq_33921750</a></p>
 <p><a target="_blank" rel="noopener" href="https://my.oschina.net/u/3981543">https://my.oschina.net/u/3981543</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/chen-bu-yun-2">https://www.zhihu.com/people/chen-bu-yun-2</a></p>
@@ -527,12 +527,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-Kubernetes（k8s）集群安装JupyterHub以及Lab/" data-toggle="tooltip" data-placement="top" title="Kubernetes（k8s）集群安装JupyterHub以及Lab">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-在_k8s（kubernetes）中使用_Loki_进行日志监控/" data-toggle="tooltip" data-placement="top" title="在 k8s（kubernetes）中使用 Loki 进行日志监控">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-在Kubernetes（k8s）中使用GPU/" data-toggle="tooltip" data-placement="top" title="在Kubernetes（k8s）中使用GPU">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-Kubernetes（k8s）集群安装JupyterHub以及Lab/" data-toggle="tooltip" data-placement="top" title="Kubernetes（k8s）集群安装JupyterHub以及Lab">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -775,7 +775,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -786,7 +786,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -797,7 +797,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -814,7 +814,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

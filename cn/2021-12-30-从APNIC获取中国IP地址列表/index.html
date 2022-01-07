@@ -493,25 +493,25 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/687a7e51eed640e386cc22bd3091e60a~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
-<p><strong>关于APNIC</strong></p>
-<p>全球IP地址块被IANA(Internet Assigned Numbers Authority)分配给全球三大地区性IP地址分配机构，它们分别是：</p>
-<p><strong>ARIN (American Registry for Internet Numbers)</strong></p>
-<p>负责北美、南美、加勒比以及非洲撒哈啦部分的IP地址分配。同时还要给全球NSP(Network Service Providers)分配地址。</p>
-<p><strong>RIPE (Reseaux IP Europeens)</strong></p>
-<p>负责欧洲、中东、北非、西亚部分地区(前苏联)</p>
-<p><strong>APNIC (Asia Pacific Network Information Center)</strong></p>
-<p>负责亚洲、太平洋地区</p>
-<p><strong>APNIC IP地址分配信息总表的获取：</strong></p>
+<p><strong>关于APNIC</strong>  </p>
+<pre><code>全球IP地址块被IANA(Internet Assigned Numbers Authority)分配给全球三大地区性IP地址分配机构，它们分别是：
+</code></pre><p><strong>ARIN (American Registry for Internet Numbers)</strong></p>
+<pre><code>负责北美、南美、加勒比以及非洲撒哈啦部分的IP地址分配。同时还要给全球NSP(Network Service Providers)分配地址。
+</code></pre><p><strong>RIPE (Reseaux IP Europeens)</strong></p>
+<pre><code>负责欧洲、中东、北非、西亚部分地区(前苏联)
+</code></pre><p><strong>APNIC (Asia Pacific Network Information Center)</strong></p>
+<pre><code>负责亚洲、太平洋地区
+</code></pre><p><strong>APNIC IP地址分配信息总表的获取：</strong></p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">APNIC提供了每日更新的亚太地区IPv4，IPv6，AS号分配的信息表：http:<span class="regexp">//</span>ftp.apnic.net<span class="regexp">/apnic/</span>stats<span class="regexp">/apnic/</span>delegated-apnic-latest</span><br></pre></td></tr></table></figure>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">该文件的格式与具体内容参见：ftp:<span class="regexp">//</span>ftp.apnic.net<span class="regexp">/pub/</span>apnic<span class="regexp">/stats/</span>apnic/README.TXT</span><br></pre></td></tr></table></figure>
 <p>通过该文件我们能够得到APNIC辖下IPv4地址空间的分配情况。</p>
 <p><strong>脚本获取IP地址</strong></p>
 <figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">wget -c http:<span class="comment">//ftp.apnic.net/stats/apnic/delegated-apnic-latest</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">cat</span> delegated-apnic-latest | awk -F &#x27;|&#x27; &#x27;/CN/&amp;&amp;/ipv4/ &#123;<span class="keyword">print</span> <span class="variable">$4</span> <span class="string">&quot;/&quot;</span> 32-<span class="built_in">log</span>(<span class="variable">$5</span>)/<span class="built_in">log</span>(2)&#125;&#x27; | <span class="keyword">cat</span> &gt; ipv4.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">cat</span> delegated-apnic-latest | awk -F &#x27;|&#x27; &#x27;/CN/&amp;&amp;/ipv6/ &#123;<span class="keyword">print</span> <span class="variable">$4</span> <span class="string">&quot;/&quot;</span> 32-<span class="built_in">log</span>(<span class="variable">$5</span>)/<span class="built_in">log</span>(2)&#125;&#x27; | <span class="keyword">cat</span> &gt; ipv6.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">cat</span> delegated-apnic-latest | awk -F &#x27;|&#x27; &#x27;/HK/&amp;&amp;/ipv4/ &#123;<span class="keyword">print</span> <span class="variable">$4</span> <span class="string">&quot;/&quot;</span> 32-<span class="built_in">log</span>(<span class="variable">$5</span>)/<span class="built_in">log</span>(2)&#125;&#x27; | <span class="keyword">cat</span> &gt; ipv4-hk.txt</span><br><span class="line"></span><br><span class="line"><span class="keyword">cat</span> delegated-apnic-latest | awk -F &#x27;|&#x27; &#x27;/HK/&amp;&amp;/ipv6/ &#123;<span class="keyword">print</span> <span class="variable">$4</span> <span class="string">&quot;/&quot;</span> 32-<span class="built_in">log</span>(<span class="variable">$5</span>)/<span class="built_in">log</span>(2)&#125;&#x27; | <span class="keyword">cat</span> &gt; ipv6-hk.txt</span><br></pre></td></tr></table></figure>
-<p><strong>执行脚本：</strong></p>
+<p><strong>执行脚本：</strong>  </p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[root@cby cby]</span># ./<span class="selector-tag">ip</span><span class="selector-class">.sh</span> </span><br><span class="line"><span class="selector-tag">--2021-04-29</span> <span class="selector-tag">12</span>:<span class="selector-tag">17</span>:<span class="selector-tag">13--</span>  <span class="selector-tag">http</span>:<span class="comment">//ftp.apnic.net/stats/apnic/delegated-apnic-latest</span></span><br><span class="line"><span class="selector-tag">Resolving</span> <span class="selector-tag">ftp</span><span class="selector-class">.apnic</span><span class="selector-class">.net</span> (ftp.apnic.net)... <span class="selector-tag">203</span><span class="selector-class">.119</span><span class="selector-class">.102</span><span class="selector-class">.40</span>, <span class="selector-tag">2001</span>:<span class="selector-tag">dd8</span>:<span class="selector-tag">8</span>:<span class="selector-tag">701</span>::<span class="selector-tag">40</span></span><br><span class="line"><span class="selector-tag">Connecting</span> <span class="selector-tag">to</span> <span class="selector-tag">ftp</span><span class="selector-class">.apnic</span><span class="selector-class">.net</span> (ftp.apnic.net)|<span class="selector-tag">203</span><span class="selector-class">.119</span><span class="selector-class">.102</span><span class="selector-class">.40</span>|:<span class="selector-tag">80</span>... <span class="selector-tag">connected</span>.</span><br><span class="line"><span class="selector-tag">HTTP</span> <span class="selector-tag">request</span> <span class="selector-tag">sent</span>, <span class="selector-tag">awaiting</span> <span class="selector-tag">response</span>... <span class="selector-tag">200</span> <span class="selector-tag">OK</span></span><br><span class="line"><span class="selector-tag">Length</span>: <span class="selector-tag">3352151</span> (<span class="number">3.2</span>M) <span class="selector-attr">[text/plain]</span></span><br><span class="line"><span class="selector-tag">Saving</span> <span class="selector-tag">to</span>: ‘<span class="selector-tag">delegated-apnic-latest</span>’</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">delegated-apnic-latest</span>            <span class="selector-tag">100%</span><span class="selector-attr">[=============================================================&gt;]</span>   <span class="selector-tag">3</span><span class="selector-class">.20M</span>  <span class="selector-tag">61</span><span class="selector-class">.3KB</span>/<span class="selector-tag">s</span>    <span class="selector-tag">in</span> <span class="selector-tag">44s</span>     </span><br><span class="line"></span><br><span class="line"><span class="selector-tag">2021-04-29</span> <span class="selector-tag">12</span>:<span class="selector-tag">17</span>:<span class="selector-tag">58</span> (<span class="number">74.0</span> KB/s) <span class="selector-tag">-</span> ‘<span class="selector-tag">delegated-apnic-latest</span>’ <span class="selector-tag">saved</span> <span class="selector-attr">[3352151/3352151]</span></span><br><span class="line"><span class="selector-attr">[root@cby cby]</span># <span class="selector-tag">ls</span></span><br><span class="line"><span class="selector-tag">delegated-apnic-latest</span>  <span class="selector-tag">index</span><span class="selector-class">.html</span>  <span class="selector-tag">ip</span><span class="selector-class">.sh</span>  <span class="selector-tag">ipv4-hk</span><span class="selector-class">.txt</span>  <span class="selector-tag">ipv4</span><span class="selector-class">.txt</span>  <span class="selector-tag">ipv6-hk</span><span class="selector-class">.txt</span>  <span class="selector-tag">ipv6</span><span class="selector-class">.txt</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>每日凌晨十二点十分会进行同步，若需要IP地址，可以访问如下地址：</p>
 <p><strong><a target="_blank" rel="noopener" href="http://aliyun.chenby.cn/">http://aliyun.chenby.cn/</a></strong></p>
-<p><strong>定时任务：</strong></p>
+<p><strong>定时任务：</strong>  </p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@cby cby]<span class="comment"># crontab -l</span></span><br><span class="line"><span class="number">10</span> <span class="number">0</span> * * *  <span class="regexp">/www/</span>server<span class="regexp">/cron/</span><span class="number">3</span>ab48c27ec99cb9787749c362afae517 &gt;&gt; <span class="regexp">/www/</span>server<span class="regexp">/cron/</span><span class="number">3</span>ab48c27ec99cb9787749c362afae517.log <span class="number">2</span>&gt;&amp;<span class="number">1</span></span><br><span class="line"><span class="number">10</span> <span class="number">0</span> * * *  rm -rf <span class="regexp">/www/</span>wwwroot<span class="regexp">/www.chenby.cn/</span>cby<span class="regexp">/ipv4.txt /</span>www<span class="regexp">/wwwroot/</span>www.chenby.cn<span class="regexp">/cby/i</span>pv4-hk.txt <span class="regexp">/www/</span>wwwroot<span class="regexp">/www.chenby.cn/</span>cby<span class="regexp">/ipv6.txt /</span>www<span class="regexp">/wwwroot/</span>www.chenby.cn<span class="regexp">/cby/i</span>pv6-hk.txt <span class="regexp">/www/</span>wwwroot<span class="regexp">/www.chenby.cn/</span>cby/delegated-apnic-latest </span><br><span class="line"><span class="number">11</span> <span class="number">0</span> * * *  <span class="regexp">/www/</span>wwwroot<span class="regexp">/www.chenby.cn/</span>cby<span class="regexp">/ip.sh &gt;&gt; /</span>home/ip.txt</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>本文使用 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6940875049587097631">文章同步助手</a> 同步</p>
@@ -523,12 +523,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-从APNIC获取中国IP地址列表/" data-toggle="tooltip" data-placement="top" title="从APNIC获取中国IP地址列表">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-华为人工智能atlasA800-9000物理服务器离线安装及CANN安装和MindSpore安装和Tensorflow安装/" data-toggle="tooltip" data-placement="top" title="华为人工智能atlasA800-9000物理服务器离线安装及CANN安装和MindSpore安装和Tensorflow安装">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-服务器被入侵，异常进程无法杀掉，随机进程名/" data-toggle="tooltip" data-placement="top" title="服务器被入侵，异常进程无法杀掉，随机进程名">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-从APNIC获取中国IP地址列表/" data-toggle="tooltip" data-placement="top" title="从APNIC获取中国IP地址列表">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -771,7 +771,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -782,7 +782,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -793,7 +793,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -810,7 +810,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

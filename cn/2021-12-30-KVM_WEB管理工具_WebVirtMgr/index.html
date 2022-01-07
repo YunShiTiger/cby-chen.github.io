@@ -494,7 +494,7 @@
 
         <p><strong>一、webvirtmgr介绍及环境说明</strong></p>
 <p>温馨提示：安装KVM是需要2台都操作的，因为我们是打算将2台都设置为宿主机所有都需要安装KVM相关组件</p>
-<p>github地址https://github.com/retspen/webvirtmgr</p>
+<p>github地址<a target="_blank" rel="noopener" href="https://github.com/retspen/webvirtmgr">https://github.com/retspen/webvirtmgr</a></p>
 <p>WebVirtMgr是一个基于libvirt的Web界面，用于管理虚拟机。它允许您创建和配置新域，并调整域的资源分配。VNC查看器为来宾域提供完整的图形控制台。KVM是目前唯一支持的虚拟机管理程序。</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1c4c4b18d6b6495c8d291a1befc1d826~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p><strong>查看服务器版本号</strong></p>
@@ -526,7 +526,7 @@
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#初始化环境</span></span><br><span class="line">[root<span class="symbol">@webc</span> webvirtmgr]<span class="meta"># ./manage.py syncdb</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#配置Django 静态页面</span></span><br><span class="line">[root<span class="symbol">@webc</span> webvirtmgr]<span class="meta"># ./manage.py collectstatic</span></span><br></pre></td></tr></table></figure>
 <p><strong>启动WebVirMgr</strong></p>
 <p><strong>前台启动WebVirMgr，默认是Debug模式同时日志打印在前台</strong></p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/789f53319bb245c69de4230c340b1585~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/789f53319bb245c69de4230c340b1585~tplv-k3u1fbpfcp-zoom-1.image" alt="图片">  </p>
 <p><strong>用户名和密码是我们刚刚创建的</strong></p>
 <p><strong>下载Nginx</strong></p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@webc</span> webvirtmgr]<span class="meta"># cd ..</span></span><br><span class="line">[root<span class="symbol">@webc</span> kvm]<span class="meta"># ls</span></span><br><span class="line">webvirtmgr</span><br><span class="line">[root<span class="symbol">@webc</span> kvm]<span class="meta">#</span></span><br><span class="line">[root<span class="symbol">@webc</span> kvm]<span class="meta"># mkdir nginx</span></span><br><span class="line">[root<span class="symbol">@webc</span> kvm]<span class="meta"># cd nginx</span></span><br><span class="line">[root<span class="symbol">@webc</span> nginx]<span class="meta"># wget https://nginx.org/download/nginx-1.20.1.tar.gz</span></span><br><span class="line">[root<span class="symbol">@webc</span> nginx]<span class="meta"># tar xf nginx-1.20.1.tar.gz</span></span><br><span class="line">[root<span class="symbol">@webc</span> nginx]<span class="meta"># cd nginx-1.20.1/</span></span><br><span class="line">[root<span class="symbol">@webc</span> nginx<span class="number">-1.20</span><span class="number">.1</span>]<span class="meta">#</span></span><br></pre></td></tr></table></figure>
@@ -568,12 +568,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-KVM_WEB管理工具_WebVirtMgr/" data-toggle="tooltip" data-placement="top" title="KVM WEB管理工具 WebVirtMgr">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-elk7.15.1安装部署搭建/" data-toggle="tooltip" data-placement="top" title="elk7.15.1安装部署搭建">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-Exchangis搭建安装/" data-toggle="tooltip" data-placement="top" title="Exchangis搭建安装">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-KVM_WEB管理工具_WebVirtMgr/" data-toggle="tooltip" data-placement="top" title="KVM WEB管理工具 WebVirtMgr">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -816,7 +816,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -827,7 +827,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -838,7 +838,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -855,7 +855,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

@@ -492,7 +492,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>腾讯蓝鲸智云，简称蓝鲸，是腾讯互动娱乐事业群（Interactive Entertainment Group，简称 IEG）自研自用的一套用于构建企业研发运营一体化体系的 PaaS 开发框架，提供了 aPaaS（DevOps 流水线、运行环境托管、前后台框架）和 iPaaS（持续集成、CMDB、作业平台、容器管理、计算平台、AI 等原子平台）等模块，帮助企业技术人员快速构建基础运营 PaaS。</p>
+        <p> 腾讯蓝鲸智云，简称蓝鲸，是腾讯互动娱乐事业群（Interactive Entertainment Group，简称 IEG）自研自用的一套用于构建企业研发运营一体化体系的 PaaS 开发框架，提供了 aPaaS（DevOps 流水线、运行环境托管、前后台框架）和 iPaaS（持续集成、CMDB、作业平台、容器管理、计算平台、AI 等原子平台）等模块，帮助企业技术人员快速构建基础运营 PaaS。</p>
 <p>关闭防火墙</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># sed -i &#x27;s/^SELINUX=enforcing/SELINUX=disabled/g&#x27; /etc/selinux/config</span></span><br><span class="line">[root@localhost ~]<span class="comment"># setenforce 0</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl stop firewalld</span></span><br><span class="line">[root@localhost ~]<span class="comment"># systemctl disable firewalld</span></span><br><span class="line">Removed symlink <span class="regexp">/etc/</span>systemd<span class="regexp">/system/mu</span>lti-user.target.wants/firewalld.service.</span><br><span class="line">Removed symlink <span class="regexp">/etc/</span>systemd<span class="regexp">/system/</span>dbus-org.fedoraproject.FirewallD1.service.</span><br></pre></td></tr></table></figure>
 <p>关闭网络管理</p>
@@ -507,8 +507,8 @@
 <p>解压各个产品软件包</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="symbol">root@</span>localhost <span class="keyword">data</span>]# cd /<span class="keyword">data</span>/src/; <span class="keyword">for</span> f <span class="keyword">in</span> *gz;<span class="keyword">do</span> tar xf $f; done</span><br></pre></td></tr></table></figure>
 <p>解压证书包</p>
-<p>在网站 <a target="_blank" rel="noopener" href="https://bk.tencent.com/download_ssl/">https://bk.tencent.com/download_ssl/</a> 中使用Mac地址进行注册</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]# install -d -m <span class="number">755</span> <span class="regexp">/data/</span>src/cert</span><br><span class="line">[root@localhost src]# tar xf <span class="regexp">/data/</span>ssl_certificates.tar.gz -C <span class="regexp">/data/</span>src<span class="regexp">/cert/</span></span><br><span class="line">[root@localhost src]# chmod <span class="number">644</span> <span class="regexp">/data/</span>src<span class="regexp">/cert/</span>*</span><br></pre></td></tr></table></figure>
+<pre><code>在网站 https://bk.tencent.com/download\_ssl/ 中使用Mac地址进行注册
+</code></pre><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]# install -d -m <span class="number">755</span> <span class="regexp">/data/</span>src/cert</span><br><span class="line">[root@localhost src]# tar xf <span class="regexp">/data/</span>ssl_certificates.tar.gz -C <span class="regexp">/data/</span>src<span class="regexp">/cert/</span></span><br><span class="line">[root@localhost src]# chmod <span class="number">644</span> <span class="regexp">/data/</span>src<span class="regexp">/cert/</span>*</span><br></pre></td></tr></table></figure>
 <p>拷贝 rpm 包文件夹到/opt/目录</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost src]<span class="comment"># cp -a /data/src/yum /opt</span></span><br><span class="line">[root@localhost src]<span class="comment">#</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>生成并配置 install.config</p>
@@ -563,12 +563,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-腾讯蓝鲸集群式部署/" data-toggle="tooltip" data-placement="top" title="腾讯蓝鲸集群式部署">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-华为_A800-9000_服务器_离线安装MindX_DL/" data-toggle="tooltip" data-placement="top" title="华为 A800-9000 服务器 离线安装MindX DL">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-YUM下载全量依赖/" data-toggle="tooltip" data-placement="top" title="YUM下载全量依赖">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-腾讯蓝鲸集群式部署/" data-toggle="tooltip" data-placement="top" title="腾讯蓝鲸集群式部署">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -811,7 +811,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -822,7 +822,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -833,7 +833,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -850,7 +850,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

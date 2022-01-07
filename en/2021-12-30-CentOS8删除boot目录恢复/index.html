@@ -492,14 +492,13 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p>系统安装完之后，boot分区最好做一个备份，因为这个分区 我们基本不会动它，所以备份一次一劳永逸，以防万一。如果我们不小心 误删除了这个目录，也不用慌，正因为这个分区，我们除了开机 其他时候基本用不到，所以恢复起来还是很容易的。而且恢复之后，我们操作系统里的其他服务基本没有影响，我们看一下，如果误删除了/boot，该如何恢复：</p>
+        <p> 系统安装完之后，boot分区最好做一个备份，因为这个分区 我们基本不会动它，所以备份一次一劳永逸，以防万一。如果我们不小心 误删除了这个目录，也不用慌，正因为这个分区，我们除了开机 其他时候基本用不到，所以恢复起来还是很容易的。而且恢复之后，我们操作系统里的其他服务基本没有影响，我们看一下，如果误删除了/boot，该如何恢复：</p>
 <p>由于/boot分区一般就是用于存放镜像和相关启动引导文件，所以误删之后，恢复并不影响系统其他服务的正常运行；但是误删之后 系统启动不了了，因为 grub.conf文件在 /boot/grub/中 也被删除了。</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/90f852e23d254098ac68d2d484e9fb6a~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p>删除boot目录</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1e9b0b0be060455a809ecf08349b3caf~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p>已无法启动，进入grub模式</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2d1202adf6cd4dd7b19ffa6ae0852a9f~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<p></p>
 <p>这时需要进行挂盘修复</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d637fec4500946259a3589609d4b07e2~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p>急救模式启动后加载一个shell</p>
@@ -518,7 +517,6 @@
 <p>Boot目录恢复</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c7526425e1cd4603b327d1a829b26657~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/12d66b1f8e874173bee11118aa09e6f2~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<p></p>
 <p>已可以正常引导</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e4866700ba744a868c6ddb24d50ccdfc~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 
@@ -528,12 +526,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/2021-12-30-Prometheus+Grafana监控系统/" data-toggle="tooltip" data-placement="top" title="Prometheus+Grafana监控系统">&larr; Previous Post</a>
+            <a href="/cn/2021-12-30-CentOS8删除boot目录恢复/" data-toggle="tooltip" data-placement="top" title="CentOS8删除boot目录恢复">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/2021-12-30-CentOS8删除boot目录恢复/" data-toggle="tooltip" data-placement="top" title="CentOS8删除boot目录恢复">Next Post &rarr;</a>
+            <a href="/cn/2021-12-30-Nginx主要功能/" data-toggle="tooltip" data-placement="top" title="Nginx主要功能">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -776,7 +774,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -787,7 +785,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -798,7 +796,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -815,7 +813,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

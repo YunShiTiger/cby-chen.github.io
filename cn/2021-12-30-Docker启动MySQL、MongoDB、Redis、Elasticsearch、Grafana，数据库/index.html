@@ -493,40 +493,40 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d57a34049f8d46f78a989b92b19bbb1d~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
-<p>前言：</p>
+<p>前言：  </p>
 <p>临时使用数据库时可以使用docker运行，这样可以防止在系统上安装破坏环境，同时使用docker启动会比在系统中安装配置要快速，可以说是最快的方式安装部署并启动数据库。</p>
 <hr>
-<p><strong>docker配置启动运行MySQL</strong></p>
+<p><strong>docker配置启动运行MySQL</strong>  </p>
 <p>首先创建目录并进入</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo docker run -p <span class="number">3306</span>:<span class="number">3306</span> \\</span><br><span class="line">--name mymysql \\</span><br><span class="line">--restart=always \\</span><br><span class="line">-v <span class="variable">$PWD</span><span class="regexp">/conf:/</span>etc<span class="regexp">/mysql/</span>conf.d \\</span><br><span class="line">-v <span class="variable">$PWD</span><span class="regexp">/logs:/</span>logs \\</span><br><span class="line">-v <span class="variable">$PWD</span><span class="regexp">/data:/</span>var<span class="regexp">/lib/my</span>sql \\</span><br><span class="line">-e MYSQL\_ROOT\_PASSWORD=<span class="number">123456</span> \\</span><br><span class="line">-d mysql:<span class="number">8</span></span><br></pre></td></tr></table></figure>
-<p>–restart=always：在容器退出时总是重启容器</p>
+<p>--restart=always：在容器退出时总是重启容器</p>
 <p>MYSQL_ROOT_PASSWORD=123456：root密码123456</p>
-<p>mysql:8  使用MySQL8</p>
-<p>-v $PWD/conf:/etc/mysql/conf.d  配置文件</p>
-<p>-v $PWD/logs:/logs   日志</p>
-<p>-v $PWD/data:/var/lib/mysql    数据</p>
+<p>mysql:8  使用MySQL8</p>
+<p>-v $PWD/conf:/etc/mysql/conf.d  配置文件</p>
+<p>-v $PWD/logs:/logs   日志</p>
+<p>-v $PWD/data:/var/lib/mysql    数据</p>
 <hr>
 <p><strong>docker配置启动运行phpMyAdmin</strong></p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="symbol">\\</span></span><br><span class="line">  -p 8001:80 <span class="symbol">\\</span></span><br><span class="line">  -e UPLOAD<span class="symbol">\_</span>LIMIT=128M <span class="symbol">\\</span></span><br><span class="line">  -e MAX<span class="symbol">\_</span>EXECUTION<span class="symbol">\_</span>TIME=10000 <span class="symbol">\\</span></span><br><span class="line">  --name phpmyadmin <span class="symbol">\\</span></span><br><span class="line">  phpmyadmin/phpmyadmin</span><br></pre></td></tr></table></figure>
 <p>UPLOAD_LIMIT 和 MAX_EXECUTION_TIME 需要设置一下</p>
 <hr>
-<p>****docker配置启动运行<strong>MongoDB</strong></p>
+<p><strong>**docker配置启动运行</strong>MongoDB**</p>
 <figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="symbol">\\</span></span><br><span class="line">  -p 27017:27017 <span class="symbol">\\</span></span><br><span class="line">  -v mongo-data:/data/db <span class="symbol">\\</span></span><br><span class="line">  -v mongo-config:/data/configdb <span class="symbol">\\</span></span><br><span class="line">  --name mongo <span class="symbol">\\</span></span><br><span class="line">  -e MONGO<span class="symbol">\_</span>INITDB<span class="symbol">\_</span>ROOT<span class="symbol">\_</span>USERNAME=mongoadmin <span class="symbol">\\</span></span><br><span class="line">  -e MONGO<span class="symbol">\_</span>INITDB<span class="symbol">\_</span>ROOT<span class="symbol">\_</span>PASSWORD=123123 <span class="symbol">\\</span></span><br><span class="line">  -v /data:/mnt/data <span class="symbol">\\</span></span><br><span class="line">  mongo</span><br></pre></td></tr></table></figure>
 <p>MONGO_INITDB_ROOT_USERNAME 用户名</p>
 <p>MONGO_INITDB_ROOT_PASSWORD 密码</p>
-<p>mongo-data 数据目录</p>
+<p>mongo-data 数据目录</p>
 <p>mongo-config 配置文件目录</p>
 <hr>
-<p>****docker配置启动运行<strong>Mongo Express</strong></p>
+<p><strong>**docker配置启动运行</strong>Mongo Express**</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="string">\\</span></span><br><span class="line">-p <span class="number">8002</span>:<span class="number">8081</span> <span class="string">\\</span></span><br><span class="line">--name mongo-express <span class="string">\\</span></span><br><span class="line">mongo-express</span><br></pre></td></tr></table></figure>
 <hr>
-<p>****docker配置启动运行<strong>Redis</strong></p>
+<p><strong>**docker配置启动运行</strong>Redis**</p>
 <figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="title">docker</span> run -d \\</span><br><span class="line">  -p <span class="number">6379</span>:<span class="number">6379</span> \\</span><br><span class="line">  -v redis-<span class="class"><span class="keyword">data</span>:/<span class="keyword">data</span> \\</span></span><br><span class="line">  <span class="comment">--name redis \\</span></span><br><span class="line">  redis</span><br></pre></td></tr></table></figure>
 <hr>
-<p>****docker配置启动运行<strong>Elasticsearch</strong></p>
+<p><strong>**docker配置启动运行</strong>Elasticsearch**</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \\</span><br><span class="line">  -p <span class="number">9100</span>:<span class="number">9100</span> -p <span class="number">9200</span>:<span class="number">9200</span> \\</span><br><span class="line">  -e discovery.type=single-node \\</span><br><span class="line">  -v es-data:<span class="regexp">/usr/</span>share<span class="regexp">/elasticsearch/</span>data \\</span><br><span class="line">  -v es-log:<span class="regexp">/usr/</span>share<span class="regexp">/elasticsearch/</span>logs \\</span><br><span class="line">  --name elasticsearch \\</span><br><span class="line">  elasticsearch</span><br></pre></td></tr></table></figure>
 <hr>
-<p>****docker配置启动运行<strong>Grafana</strong></p>
+<p><strong>**docker配置启动运行</strong>Grafana**</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d <span class="string">\\</span></span><br><span class="line">  -p <span class="number">8003</span>:<span class="number">3000</span> <span class="string">\\</span></span><br><span class="line">  --link mysql:mysql <span class="string">\\</span></span><br><span class="line">  --link mongo:mongo <span class="string">\\</span></span><br><span class="line">  --name grafana <span class="string">\\</span></span><br><span class="line">  grafana/grafana</span><br></pre></td></tr></table></figure>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f8044e051f1458b8a62e9da38458826~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
 
@@ -536,12 +536,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库/" data-toggle="tooltip" data-placement="top" title="Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-k8s加入新的master节点出现etcd检查失败/" data-toggle="tooltip" data-placement="top" title="k8s加入新的master节点出现etcd检查失败">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-Linux内核高性能优化/" data-toggle="tooltip" data-placement="top" title="Linux内核高性能优化">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库/" data-toggle="tooltip" data-placement="top" title="Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -784,7 +784,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -795,7 +795,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -806,7 +806,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -823,7 +823,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

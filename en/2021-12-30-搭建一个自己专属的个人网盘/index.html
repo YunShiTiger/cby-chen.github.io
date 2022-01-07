@@ -495,13 +495,13 @@
         <p>我们可以搭建一个自己的个人网盘（私有云盘），常用的开源框架包括ownCloud，Seafile，Nextcloud，本文介绍的是在CentOS 7下基于Nextcloud教你如何搭建一个私有云。</p>
 <p>安装MySQL</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">安装mysql源信息</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm</span></span><br><span class="line"></span><br><span class="line">安装mysql</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install mysql-community-server</span></span><br><span class="line"></span><br><span class="line">启动mysql</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl start mysqld</span></span><br><span class="line"></span><br><span class="line">查看密码</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># grep <span class="string">&#x27;temporary password&#x27;</span> /var/log/mysqld.log</span></span><br><span class="line"></span><br><span class="line">修改密码</span><br><span class="line">mysql&gt; ALTER USER <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;Cby123..&#x27;</span></span><br><span class="line"></span><br><span class="line">设置开机自启</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl enable mysqld</span></span><br></pre></td></tr></table></figure>
-<p>安装PHP并配置</p>
+<p>安装PHP并配置  </p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">安装epel</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install epel\*</span></span><br><span class="line"></span><br><span class="line">安装remi</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm  </span></span><br><span class="line"></span><br><span class="line">安装php以及php-fpm</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install -y php74-php-fpm php74-php-cli php74-php-bcmath php74-php-gd php74-php-json php74-php-mbstring php74-php-mcrypt php74-php-mysqlnd php74-php-opcache php74-php-pdo php74-php-pecl-crypto php74-php-pecl-mcrypt php74-php-pecl-geoip php74-php-recode php74-php-snmp php74-php-soap php74-php-xmll</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 编辑配置文件</span></span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># vim /etc/php.ini</span></span><br><span class="line"></span><br><span class="line"><span class="meta"># 找到</span></span><br><span class="line"><span class="comment">;cgi.fix\_pathinfo=1</span></span><br><span class="line"><span class="meta"># 去掉注释，并将1改成0</span></span><br><span class="line">cgi.fix\_pathinfo=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">添加开机自启</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl enable php74-php-fpm</span></span><br><span class="line"></span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl restart php74-php-fpm</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>安装Nginx并设置开启启动</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">安装Nginx</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install nginx</span></span><br><span class="line"></span><br><span class="line">启动Nginx</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl start nginx</span></span><br><span class="line"></span><br><span class="line">设置开机自启</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># systemctl enable nginx</span></span><br></pre></td></tr></table></figure>
-<p>安装nextcloud</p>
+<p>安装nextcloud  </p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">下载软件包</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># wget https://download.nextcloud.com/server/releases/nextcloud-18.0.2.tar.bz2</span></span><br><span class="line"></span><br><span class="line">安装解压依赖</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># yum install lbzip2</span></span><br><span class="line"></span><br><span class="line">进行解压</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># tar xvf nextcloud-18.0.2.tar.bz2 </span></span><br><span class="line"></span><br><span class="line">挪动文件夹</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># mv nextcloud /var/www/</span></span><br><span class="line"></span><br><span class="line">给文件权限</span><br><span class="line">\[root<span class="symbol">@xxx</span> ~\]<span class="meta"># chmod 777 /var/www/nextcloud -Rf</span></span><br></pre></td></tr></table></figure>
-<p>创建数据库</p>
+<p>创建数据库  </p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">\<span class="comment"># 进入MySQL</span></span><br><span class="line">mysql -u root -p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个名为nextclud\_db的数据库</span></span><br><span class="line">CREATE DATABASE nextcloud\_db;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个名为nextcloud、密码也为nextcloud的用户</span></span><br><span class="line">CREATE USER <span class="string">&#x27;nextcloud&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED BY <span class="string">&#x27;Cby123..&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 赋予用户nextcloud对数据库nextcloud\_db的所有操作权限</span></span><br><span class="line">GRANT ALL PRIVILEGES ON nextcloud\_db.\* TO <span class="string">&#x27;nextcloud&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新数据库权限</span></span><br><span class="line">FLUSH PRIVILEGES;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出</span></span><br><span class="line"><span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/33e805c7d85044d8b3d366dd4d5f9251~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/513c8a2b73dd4dddae09ec3187435c47~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
@@ -512,12 +512,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/2021-12-30-MySQL8.0允许外部访问/" data-toggle="tooltip" data-placement="top" title="MySQL8.0允许外部访问">&larr; Previous Post</a>
+            <a href="/cn/2021-12-30-搭建一个自己专属的个人网盘/" data-toggle="tooltip" data-placement="top" title="搭建一个自己专属的个人网盘">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/2021-12-30-搭建一个自己专属的个人网盘/" data-toggle="tooltip" data-placement="top" title="搭建一个自己专属的个人网盘">Next Post &rarr;</a>
+            <a href="/cn/2021-12-30-CentOS_的_YUM安装时卡死解决方案/" data-toggle="tooltip" data-placement="top" title="CentOS 的 YUM安装时卡死解决方案">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -760,7 +760,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -771,7 +771,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -782,7 +782,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -799,7 +799,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

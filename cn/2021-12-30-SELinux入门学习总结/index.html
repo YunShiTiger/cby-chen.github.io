@@ -502,11 +502,11 @@
 <p><strong>一、基本概念</strong></p>
 <p><strong>1、TE模型的安全上下文</strong></p>
 <p>所有的操作系统访问控制都基于主体、客体，以及与他们相关的访问控制属性。</p>
-<p>在selinux中，**访问控制属性叫做安全上下文。**所有对象(文件、进程间通信通道、套接字、网络主机等)和主体(进程)都有一个与之关联的安全上下文。</p>
-<p>**一个安全上下文包含三个元素：**用户（user）、角色（role）和类型标识符（type identifiers）</p>
-<p>**安全上下文的形式如下：**user：role：type</p>
-<p>**对进程来说：**分别表示用户、角色、类型标识符也被称为域</p>
-<p>**对客体来说：**前两项基本没有实际用途，role通常为object_r，user通常位创建这个对象的进程的user，对访问控制没有影响</p>
+<p>在selinux中，<strong>访问控制属性叫做安全上下文。</strong>所有对象(文件、进程间通信通道、套接字、网络主机等)和主体(进程)都有一个与之关联的安全上下文。</p>
+<p><strong>一个安全上下文包含三个元素：</strong>用户（user）、角色（role）和类型标识符（type identifiers）</p>
+<p><strong>安全上下文的形式如下：</strong>user：role：type</p>
+<p><strong>对进程来说：</strong>分别表示用户、角色、类型标识符也被称为域</p>
+<p><strong>对客体来说：</strong>前两项基本没有实际用途，role通常为object_r，user通常位创建这个对象的进程的user，对访问控制没有影响</p>
 <p><strong>总结：</strong></p>
 <p>SELinux是通过MAC(Mandatory Access Control)方式来控管进程，它控制的主体是进程，而目标则是该进程能否读取的”文件资源”。</p>
 <p><strong>主体</strong></p>
@@ -654,9 +654,9 @@
 <p>getsebool -a | grep ssh</p>
 <p>执行结果</p>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># </span></span><br><span class="line">[root@localhost ~]<span class="comment"># getsebool -a | grep ssh</span></span><br><span class="line">fenced_can_ssh --&gt; <span class="literal">off</span></span><br><span class="line">selinuxuser_use_ssh_chroot --&gt; <span class="literal">off</span></span><br><span class="line">ssh_chroot_rw_homedirs --&gt; <span class="literal">off</span></span><br><span class="line">ssh_keysign --&gt; <span class="literal">off</span></span><br><span class="line">ssh_sysadm_login --&gt; <span class="literal">off</span></span><br><span class="line">[root@localhost ~]<span class="comment">#</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><strong>6 开关一个布尔型规则</strong></p>
+<p><strong>6 开关一个布尔型规则</strong>  </p>
 <p>命令基本用法</p>
-<p>setsebool [选项] &lt;规则名称&gt; &lt;on|off&gt;</p>
+<p>setsebool [选项] &lt;规则名称&gt; <on|off></p>
 <p>用法举例</p>
 <p>开启 httpd_anon_write 规则。</p>
 <p>setsebool -P httpd_anon_write on</p>
@@ -673,7 +673,7 @@
 <p>注：目录或文件的默认安全上下文可以通过 semanage fcontext -l 命令配合 grep 过滤查看。</p>
 <p>用法举例</p>
 <p>为 Nginx 新增一个网站目录 /usr/share/nginx/html2 之后，需要为其设置与原目录相同的默认安全上下文。</p>
-<p>semanage fcontext -a -t httpd_sys_content_t &quot; /usr/share/nginx/html2(/.*)?&quot;</p>
+<p>semanage fcontext -a -t httpd_sys_content_t “ /usr/share/nginx/html2(/.*)?”</p>
 <p><strong>8 添加某类进程允许访问的端口</strong></p>
 <p>命令基本用法</p>
 <p>semanage port -a -t &lt;服务类型&gt; -p &lt;协议&gt; &lt;端口号&gt;</p>
@@ -683,7 +683,7 @@
 <p>semanage port -a -t http_port_t -p tcp 10080</p>
 <p><strong>9 参考其它进行修改</strong></p>
 <p>命令基本用法</p>
-<p>chcon --reference=&lt;源文件&gt;  &lt;要修改的文件&gt;</p>
+<p>chcon —reference=&lt;源文件&gt;  &lt;要修改的文件&gt;</p>
 <p>修改 1.txt文件</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost html]# <span class="keyword">ll</span> -Z</span><br><span class="line">-rw-r--r--. root root unconfined_u:object_r:usr_<span class="variable">t:s0</span>   <span class="number">1</span>.txt</span><br><span class="line">-rw-r--r--. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> <span class="number">404</span>.html</span><br><span class="line">-rw-r--r--. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> <span class="number">50</span><span class="keyword">x</span>.html</span><br><span class="line">lrwxrwxrwx. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> <span class="keyword">en</span>-US -&gt; ../../doc/HTML/<span class="keyword">en</span>-US</span><br><span class="line">drwxr-xr-<span class="keyword">x</span>. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> icons</span><br><span class="line">lrwxrwxrwx. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> img -&gt; ../../doc/HTML/img</span><br><span class="line">lrwxrwxrwx. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> <span class="built_in">index</span>.html -&gt; ../../doc/HTML/<span class="built_in">index</span>.h</span><br><span class="line">-rw-r--r--. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> nginx-logo.png</span><br><span class="line">lrwxrwxrwx. root root system_u:object_r:httpd_sys_content_<span class="variable">t:s0</span> poweredby.png -&gt; nginx-logo.png</span><br></pre></td></tr></table></figure>
 <p>执行结果</p>
@@ -709,7 +709,7 @@
 <p>sealert -a /var/log/audit/audit.log</p>
 <p>执行完命令之后，系统需要花一段时间去分析日志中的违规行为并给出分析报告。分析报告的结构讲解请看下图：</p>
 <figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># yum install setroubleshoot-server python3-pydbus</span></span><br></pre></td></tr></table></figure>
-<p><strong>3  SELinux 错误的思路</strong></p>
+<p><strong>3  SELinux 错误的思路</strong></p>
 <p>当发现一个服务出现错误的时候，请先检查一下 sealert 的分析报告里面是否有该服务进程名称的关键字。如果没有，说明不是 SELinux 造成的错误，请往其他方面排查。</p>
 <p>文件目录默认的权限在这个文件下，具体文件是file_contexts</p>
 <p>/etc/selinux/targeted/contexts/files/</p>
@@ -730,12 +730,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-SELinux入门学习总结/" data-toggle="tooltip" data-placement="top" title="SELinux入门学习总结">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-华为_A800-9000_服务器_离线安装MindX_DL_可视化环境+监控/" data-toggle="tooltip" data-placement="top" title="华为 A800-9000 服务器 离线安装MindX DL 可视化环境+监控">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-使用frp进行内网穿透/" data-toggle="tooltip" data-placement="top" title="使用frp进行内网穿透">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-SELinux入门学习总结/" data-toggle="tooltip" data-placement="top" title="SELinux入门学习总结">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -978,7 +978,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -989,7 +989,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -1000,7 +1000,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -1017,7 +1017,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

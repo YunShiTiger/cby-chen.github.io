@@ -590,9 +590,7 @@ Kubernetes 支持对节点上的 AMD 和 NVIDIA GPU （图形处理单元）进�
     </h3>
     <div class="post-content-preview">
       14、Ingress
-
-检查是否有安装
-12345678910[root@k8s-master-node1 ~/yaml/test]# kubectl get pod,svc -n ingress-nginxNAME                                           READY   STATUS      RESTARTS   AGEpod/ingress-......
+检查是否有安装12345678910[root@k8s-master-node1 ~/yaml/test]# kubectl get pod,svc -n ingress-nginxNAME                                           READY   STATUS      RESTARTS   AGEpod/ingress-ng......
     </div>
   </a>
   
@@ -623,11 +621,9 @@ Kubernetes 支持对节点上的 AMD 和 NVIDIA GPU （图形处理单元）进�
       
     </h3>
     <div class="post-content-preview">
-      13、service
-四层网络负载
+      13、service四层网络负载
 
-创建
-1234567891011121314151617181920212223242526272829303132[root@k8s-master-node1 ~/yaml/test]# [root@k8s-master-node1 ~/yaml/test]# vim my-app.yaml[root@k8s-master-node1 ~/yaml/t......
+创建1234567891011121314151617181920212223242526272829303132[root@k8s-master-node1 ~/yaml/test]# [root@k8s-master-node1 ~/yaml/test]# vim my-app.yaml[root@k8s-master-node1 ~/yaml/tes......
     </div>
   </a>
   
@@ -659,9 +655,7 @@ Kubernetes 支持对节点上的 AMD 和 NVIDIA GPU （图形处理单元）进�
     </h3>
     <div class="post-content-preview">
       10、job任务
-
-使用perl，做pi的圆周率计算
-12345678910111213141516171819[root@k8s-master-node1 ~/yaml/test]# vim job.yaml [root@k8s-master-node1 ~/yaml/test]# cat job.yaml apiVersion: batch/v1kind: Jobmetadata:  n......
+使用perl，做pi的圆周率计算12345678910111213141516171819[root@k8s-master-node1 ~/yaml/test]# vim job.yaml [root@k8s-master-node1 ~/yaml/test]# cat job.yaml apiVersion: batch/v1kind: Jobmetadata:  nam......
     </div>
   </a>
   
@@ -692,10 +686,8 @@ Kubernetes 支持对节点上的 AMD 和 NVIDIA GPU （图形处理单元）进�
       
     </h3>
     <div class="post-content-preview">
-      8、ConfigMap
-抽取应用配置，并且可以自动更新
-创建配置文件
-1234567891011121314[root@k8s-master-node1 ~/yaml/test]# vim configmap.yaml[root@k8s-master-node1 ~/yaml/test]# cat configmap.yaml apiVersion: v1data:     redis.co......
+      8、ConfigMap抽取应用配置，并且可以自动更新
+创建配置文件1234567891011121314[root@k8s-master-node1 ~/yaml/test]# vim configmap.yaml[root@k8s-master-node1 ~/yaml/test]# cat configmap.yaml apiVersion: v1data:     redis.conf......
     </div>
   </a>
   
@@ -726,10 +718,9 @@ Kubernetes 支持对节点上的 AMD 和 NVIDIA GPU （图形处理单元）进�
       
     </h3>
     <div class="post-content-preview">
-      7、StatefulSets
-StatefulSet 是用来管理有状态应用的工作负载 API 对象。
+      7、StatefulSetsStatefulSet 是用来管理有状态应用的工作负载 API 对象。
 StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod 提供序号和唯一性保证。
-和 Deployment 相同的是，StatefulSet 管理了基于相同容器定义的一组 Pod。但和 Deployment 不同的是，StatefulSet 为它们的每......
+和 Deployment 相同的是，StatefulSet 管理了基于相同容器定义的一组 Pod。但和 Deployment 不同的是，StatefulSet 为它们的每个......
     </div>
   </a>
   
@@ -760,10 +751,9 @@ StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod
       
     </h3>
     <div class="post-content-preview">
-      6、Deployments（重点）
-一个 Deployment 控制器为 Pods和 ReplicaSets提供描述性的更新方式。
+      6、Deployments（重点）一个 Deployment 控制器为 Pods和 ReplicaSets提供描述性的更新方式。
 
-描述 Deployment 中的 desired state，并且 Deployment 控制器以受控速率更改实际状态，以达到期望状态。可以定义 Deployments 以创建新的 ReplicaSets ，或删除现有 Deployments ，并通过新的 D......
+描述 Deployment 中的 desired state，并且 Deployment 控制器以受控速率更改实际状态，以达到期望状态。可以定义 Deployments 以创建新的 ReplicaSets ，或删除现有 Deployments ，并通过新的 De......
     </div>
   </a>
   
@@ -794,11 +784,9 @@ StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod
       
     </h3>
     <div class="post-content-preview">
-      5、ReplicationController
-ReplicationController 确保在任何时候都有特定数量的 Pod 副本处于运行状态。换句话说，ReplicationController 确保一个 Pod 或一组同类的 Pod 总是可用的。
+      5、ReplicationControllerReplicationController 确保在任何时候都有特定数量的 Pod 副本处于运行状态。换句话说，ReplicationController 确保一个 Pod 或一组同类的 Pod 总是可用的。
 
-ReplicationController 如何工作
-当 Pod 数量过多时，ReplicationController 会终止多余的 ......
+ReplicationController 如何工作当 Pod 数量过多时，ReplicationController 会终止多余的 Po......
     </div>
   </a>
   
@@ -952,23 +940,23 @@ ReplicationController 如何工作
 <div class="widget">
   <ul>
     
-    <a href="../../2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
-      <li>为kubernetes（k8s）单独配置kubectl工具</li>
-    </a>
-    
     <a href="../../../cn/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
       <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
-    <a href="../../2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
-      <li>GitLab 安装部署使用</li>
+    <a href="../../2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
+      <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
     <a href="../../../cn/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
       <li>GitLab 安装部署使用</li>
     </a>
     
-    <a href="../../2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
+    <a href="../../2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
+      <li>GitLab 安装部署使用</li>
+    </a>
+    
+    <a href="../../../cn/2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
       <li>部署lnmp环境，安装typecho博客</li>
     </a>
     
@@ -1041,7 +1029,7 @@ ReplicationController 如何工作
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -1052,7 +1040,7 @@ ReplicationController 如何工作
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -1063,7 +1051,7 @@ ReplicationController 如何工作
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -1080,7 +1068,7 @@ ReplicationController 如何工作
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

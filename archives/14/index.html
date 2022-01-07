@@ -478,40 +478,6 @@
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-k8s加入新的master节点出现etcd检查失败/">
-    <h2 class="post-title">
-      k8s加入新的master节点出现etcd检查失败
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      
-背景：
-昨天在建立好新的集群后，出现了新的问题，其中的一台master节点无法正常工作。虽然可以正常使用，但是就出现了单点故障，今天在修复时出现了etcd健康检查自检没通过。
-Yesterday, after a new cluster was established, a new problem a problem occurred, and one of the master node......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by cby on
-    2021-12-30
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
   <a href="/cn/2021-12-30-k8s加入新的master节点出现etcd检查失败/">
     <h2 class="post-title">
       k8s加入新的master节点出现etcd检查失败
@@ -521,9 +487,9 @@ Yesterday, after a new cluster was established, a new problem a problem occurred
     </h3>
     <div class="post-content-preview">
       
-背景：
-昨天在建立好新的集群后，出现了新的问题，其中的一台master节点无法正常工作。虽然可以正常使用，但是就出现了单点故障，今天在修复时出现了etcd健康检查自检没通过。
-Yesterday, after a new cluster was established, a new problem a problem occurred, and one of the master node......
+ 背景：  
+ 昨天在建立好新的集群后，出现了新的问题，其中的一台master节点无法正常工作。虽然可以正常使用，但是就出现了单点故障，今天在修复时出现了etcd健康检查自检没通过。
+ Yesterday, after a new cluster was established, a new problem a problem occurred, and one of the master......
     </div>
   </a>
   
@@ -546,21 +512,18 @@ Yesterday, after a new cluster was established, a new problem a problem occurred
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库/">
+  <a href="/en/2021-12-30-k8s加入新的master节点出现etcd检查失败/">
     <h2 class="post-title">
-      Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库
+      k8s加入新的master节点出现etcd检查失败
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
       
-前言：
-临时使用数据库时可以使用docker运行，这样可以防止在系统上安装破坏环境，同时使用docker启动会比在系统中安装配置要快速，可以说是最快的方式安装部署并启动数据库。
-
-docker配置启动运行MySQL
-首先创建目录并进入
-12345678sudo docker run -p 3306:3306 \\--name mymysql \\--restart=always \\-v ......
+ 背景：  
+ 昨天在建立好新的集群后，出现了新的问题，其中的一台master节点无法正常工作。虽然可以正常使用，但是就出现了单点故障，今天在修复时出现了etcd健康检查自检没通过。
+ Yesterday, after a new cluster was established, a new problem a problem occurred, and one of the master......
     </div>
   </a>
   
@@ -592,12 +555,12 @@ docker配置启动运行MySQL
     </h3>
     <div class="post-content-preview">
       
-前言：
+前言：  
 临时使用数据库时可以使用docker运行，这样可以防止在系统上安装破坏环境，同时使用docker启动会比在系统中安装配置要快速，可以说是最快的方式安装部署并启动数据库。
 
-docker配置启动运行MySQL
+docker配置启动运行MySQL  
 首先创建目录并进入
-12345678sudo docker run -p 3306:3306 \\--name mymysql \\--restart=always \\-v ......
+12345678sudo docker run -p 3306:3306 \\--name mymysql \\--restart=always \......
     </div>
   </a>
   
@@ -620,25 +583,21 @@ docker配置启动运行MySQL
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-Linux内核高性能优化/">
+  <a href="/en/2021-12-30-Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库/">
     <h2 class="post-title">
-      Linux内核高性能优化
+      Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      Linux内核高性能优化
+      
+前言：  
+临时使用数据库时可以使用docker运行，这样可以防止在系统上安装破坏环境，同时使用docker启动会比在系统中安装配置要快速，可以说是最快的方式安装部署并启动数据库。
 
-
-#—内核优化开始——–
-# 内核panic时，1秒后自动重启
-1kernel.panic = 1
-# 允许更多的PIDs (减少滚动翻转问题); may break some programs 32768
-1kernel.pid_max = 32768
-# 内核所允许的最大共享内存段的大小（bytes）
-1kernel.shmmax = 4294967296
-#......
+docker配置启动运行MySQL  
+首先创建目录并进入
+12345678sudo docker run -p 3306:3306 \\--name mymysql \\--restart=always \......
     </div>
   </a>
   
@@ -671,15 +630,13 @@ docker配置启动运行MySQL
     <div class="post-content-preview">
       Linux内核高性能优化
 
-
-#—内核优化开始——–
-# 内核panic时，1秒后自动重启
+—内核优化开始——–# 内核panic时，1秒后自动重启
 1kernel.panic = 1
 # 允许更多的PIDs (减少滚动翻转问题); may break some programs 32768
 1kernel.pid_max = 32768
 # 内核所允许的最大共享内存段的大小（bytes）
 1kernel.shmmax = 4294967296
-#......
+# 在任......
     </div>
   </a>
   
@@ -702,26 +659,23 @@ docker配置启动运行MySQL
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-利用_kubeadm_创建_kubernetes_的高可用集群/">
+  <a href="/en/2021-12-30-Linux内核高性能优化/">
     <h2 class="post-title">
-      利用 kubeadm 创建 kubernetes 的高可用集群
+      Linux内核高性能优化
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      引言：
-kubeadm提供了两种不同的高可用方案。
-堆叠方案：etcd服务和控制平面被部署在同样的节点中，对基础设施的要求较低，对故障的应对能力也较低
+      Linux内核高性能优化
 
-堆叠方案
-最小三个Master（也称工作平面），因为Etcd使用RAFT算法选主，节点数量需要为2n+1个。
-外置etcd方案：etcd和控制平面被分离，需要更多的硬件，也有更好的保障能力
-
-外置etcd方案
-一、资源环境
-
-下面采用的是k......
+—内核优化开始——–# 内核panic时，1秒后自动重启
+1kernel.panic = 1
+# 允许更多的PIDs (减少滚动翻转问题); may break some programs 32768
+1kernel.pid_max = 32768
+# 内核所允许的最大共享内存段的大小（bytes）
+1kernel.shmmax = 4294967296
+# 在任......
     </div>
   </a>
   
@@ -758,12 +712,15 @@ kubeadm提供了两种不同的高可用方案。
 
 堆叠方案
 最小三个Master（也称工作平面），因为Etcd使用RAFT算法选主，节点数量需要为2n+1个。
+
+
+
 外置etcd方案：etcd和控制平面被分离，需要更多的硬件，也有更好的保障能力
 
 外置etcd方案
 一、资源环境
 
-下面采用的是k......
+下面采用......
     </div>
   </a>
   
@@ -786,7 +743,52 @@ kubeadm提供了两种不同的高可用方案。
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-欢迎使用_Typecho/">
+  <a href="/en/2021-12-30-利用_kubeadm_创建_kubernetes_的高可用集群/">
+    <h2 class="post-title">
+      利用 kubeadm 创建 kubernetes 的高可用集群
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      引言：
+kubeadm提供了两种不同的高可用方案。
+堆叠方案：etcd服务和控制平面被部署在同样的节点中，对基础设施的要求较低，对故障的应对能力也较低
+
+堆叠方案
+最小三个Master（也称工作平面），因为Etcd使用RAFT算法选主，节点数量需要为2n+1个。
+
+
+
+外置etcd方案：etcd和控制平面被分离，需要更多的硬件，也有更好的保障能力
+
+外置etcd方案
+一、资源环境
+
+下面采用......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by cby on
+    2021-12-30
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/2021-12-30-欢迎使用_Typecho/">
     <h2 class="post-title">
       欢迎使用 Typecho
     </h2>
@@ -818,7 +820,7 @@ kubeadm提供了两种不同的高可用方案。
   <!-- top end -->
   
 
-  <a href="/cn/2021-12-30-欢迎使用_Typecho/">
+  <a href="/en/2021-12-30-欢迎使用_Typecho/">
     <h2 class="post-title">
       欢迎使用 Typecho
     </h2>
@@ -977,23 +979,23 @@ kubeadm提供了两种不同的高可用方案。
 <div class="widget">
   <ul>
     
-    <a href="../../en/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
-      <li>为kubernetes（k8s）单独配置kubectl工具</li>
-    </a>
-    
     <a href="../../cn/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
       <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
-    <a href="../../en/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
-      <li>GitLab 安装部署使用</li>
+    <a href="../../en/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
+      <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
     <a href="../../cn/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
       <li>GitLab 安装部署使用</li>
     </a>
     
-    <a href="../../en/2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
+    <a href="../../en/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
+      <li>GitLab 安装部署使用</li>
+    </a>
+    
+    <a href="../../cn/2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
       <li>部署lnmp环境，安装typecho博客</li>
     </a>
     
@@ -1066,7 +1068,7 @@ kubeadm提供了两种不同的高可用方案。
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -1077,7 +1079,7 @@ kubeadm提供了两种不同的高可用方案。
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -1088,7 +1090,7 @@ kubeadm提供了两种不同的高可用方案。
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -1105,7 +1107,7 @@ kubeadm提供了两种不同的高可用方案。
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

@@ -492,13 +492,10 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h3 id="kubernetes核心实战">kubernetes核心实战</h3>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/914bb248938e4a8997f638331b293d69~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<h4 id="1、资源创建方式">1、资源创建方式</h4>
-<p>命令行创建</p>
+        <h3 id="kubernetes核心实战"><a href="#kubernetes核心实战" class="headerlink" title="kubernetes核心实战"></a>kubernetes核心实战</h3><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/914bb248938e4a8997f638331b293d69~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<h4 id="1、资源创建方式"><a href="#1、资源创建方式" class="headerlink" title="1、资源创建方式"></a>1、资源创建方式</h4><p>命令行创建</p>
 <p>yaml文件创建</p>
-<h4 id="2、namespace">2、namespace</h4>
-<p>命名空间（namespace）是Kubernetes提供的组织机制，用于给集群中的任何对象组进行分类、筛选和管理。每一个添加到Kubernetes集群的工作负载必须放在一个命名空间中。</p>
+<h4 id="2、namespace"><a href="#2、namespace" class="headerlink" title="2、namespace"></a>2、namespace</h4><p>命名空间（namespace）是Kubernetes提供的组织机制，用于给集群中的任何对象组进行分类、筛选和管理。每一个添加到Kubernetes集群的工作负载必须放在一个命名空间中。</p>
 <p>命名空间为集群中的对象名称赋予作用域。虽然在命名空间中名称必须是唯一的，但是相同的名称可以在不同的命名空间中使用。这对于某些场景来说可能帮助很大。例如，如果使用命名空间来划分应用程序生命周期环境（如开发、staging、生产），则可以在每个环境中维护利用同样的名称维护相同对象的副本。</p>
 <p>命名空间还可以让用户轻松地将策略应用到集群的具体部分。你可以通过定义ResourceQuota对象来控制资源的使用，该对象在每个命名空间的基础上设置了使用资源的限制。类似地，当在集群上使用支持网络策略的CNI（容器网络接口）时，比如Calico或Canal（calico用于策略，flannel用于网络）。你可以将NetworkPolicy应用到命名空间，其中的规则定义了pod之间如何彼此通信。不同的命名空间可以有不同的策略。</p>
 <p>使用命名空间最大的好处之一是能够利用Kubernetes RBAC（基于角色的访问控制）。RBAC允许您在单个名称下开发角色，这样将权限或功能列表分组。ClusterRole对象用于定义集群规模的使用模式，而角色对象类型（Role object type）应用于具体的命名空间，从而提供更好的控制和粒度。在角色创建后，RoleBinding可以将定义的功能授予单个命名空间上下文中的具体具体用户或用户组。通过这种方式，命名空间可以使得集群操作者能够将相同的策略映射到组织好的资源集合。</p>
@@ -507,10 +504,8 @@
 <p><strong>使用命名空间隔离不同的使用者</strong></p>
 <figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># kubectl  create  namespace cby</span></span><br><span class="line">namespace/cby created</span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># </span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># kubectl  get namespaces </span></span><br><span class="line">NAME                   STATUS   AGE</span><br><span class="line">cby                    Active   <span class="number">2s</span></span><br><span class="line">default                Active   <span class="number">21h</span></span><br><span class="line">ingress-nginx          Active   <span class="number">21h</span></span><br><span class="line">kube-<span class="keyword">node</span><span class="title">-lease</span>        Active   <span class="number">21h</span></span><br><span class="line">kube-public            Active   <span class="number">21h</span></span><br><span class="line">kube-system            Active   <span class="number">21h</span></span><br><span class="line">kubernetes-dashboard   Active   <span class="number">21h</span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># </span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># kubectl  delete  namespace cby</span></span><br><span class="line">namespace <span class="string">&quot;cby&quot;</span> deleted</span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># </span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># </span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment"># kubectl  get namespaces </span></span><br><span class="line">NAME                   STATUS   AGE</span><br><span class="line">default                Active   <span class="number">21h</span></span><br><span class="line">ingress-nginx          Active   <span class="number">21h</span></span><br><span class="line">kube-<span class="keyword">node</span><span class="title">-lease</span>        Active   <span class="number">21h</span></span><br><span class="line">kube-public            Active   <span class="number">21h</span></span><br><span class="line">kube-system            Active   <span class="number">21h</span></span><br><span class="line">kubernetes-dashboard   Active   <span class="number">21h</span></span><br><span class="line">[root@k8s-<span class="literal">master</span>-node1 ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h5 id="查看yaml格式">查看yaml格式</h5>
-<ul>
-<li>
-<pre><code>[root@k8s-master-node1 ~]# kubectl  create  namespace cby
+<h5 id="查看yaml格式"><a href="#查看yaml格式" class="headerlink" title="查看yaml格式"></a>查看yaml格式</h5><ul>
+<li><pre><code>[root@k8s-master-node1 ~]# kubectl  create  namespace cby
 namespace/cby created
 [root@k8s-master-node1 ~]# 
 [root@k8s-master-node1 ~]# kubectl  get namespaces cby -o yaml
@@ -530,15 +525,14 @@ finalizers:
   status:
     phase: Active
 [root@k8s-master-node1 ~]#
-</code></pre>
-</li>
+</code></pre></li>
 </ul>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e358ba9f0bfa41e39fa47c8f7420ffab~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
 <p><strong>Linux运维交流社区</strong></p>
 <p>Linux运维交流社区，互联网新闻以及技术交流。</p>
 <p>57篇原创内容</p>
 <p>公众号</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d357157ea1e4fceb1a22c8e6dc229c3~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d357157ea1e4fceb1a22c8e6dc229c3~tplv-k3u1fbpfcp-zoom-1.image" alt="图片">  </p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750">https://blog.csdn.net/qq_33921750</a></p>
 <p><a target="_blank" rel="noopener" href="https://my.oschina.net/u/3981543">https://my.oschina.net/u/3981543</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/chen-bu-yun-2">https://www.zhihu.com/people/chen-bu-yun-2</a></p>
@@ -557,12 +551,12 @@ finalizers:
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/2021-12-30-kubernetes核心实战（二）---Pod+ReplicaSet/" data-toggle="tooltip" data-placement="top" title="kubernetes核心实战（二）---Pod+ReplicaSet">&larr; Previous Post</a>
+            <a href="/cn/2021-12-30-kubernetes核心实战（一）---_namespace/" data-toggle="tooltip" data-placement="top" title="kubernetes核心实战（一）--- namespace">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/2021-12-30-kubernetes核心实战（一）---_namespace/" data-toggle="tooltip" data-placement="top" title="kubernetes核心实战（一）--- namespace">Next Post &rarr;</a>
+            <a href="/cn/2021-12-30-Kubernetes基础概念/" data-toggle="tooltip" data-placement="top" title="Kubernetes基础概念">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -805,7 +799,7 @@ finalizers:
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -816,7 +810,7 @@ finalizers:
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -827,7 +821,7 @@ finalizers:
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -844,7 +838,7 @@ finalizers:
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

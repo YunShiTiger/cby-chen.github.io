@@ -430,7 +430,7 @@
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">944</span> In Total
+              Words <span class="post-count">928</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -492,65 +492,97 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><strong>Ubuntu 通过 Netplan 配置网络教程</strong></p>
-<p>Ubuntu through Netplan configuration network tutorial</p>
+        <p><strong>Ubuntu 通过 Netplan 配置网络教程</strong></p>
+<p>Ubuntu through Netplan configuration network tutorial</p>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/4f57883d164c4b79a4210075234a7ee8~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<p><strong>一、Netplan 配置流程</strong></p>
-<p>1. Netplan configuration process</p>
+<p><strong>一、Netplan 配置流程</strong></p>
+<ol>
+<li>Netplan configuration process</li>
+</ol>
 <p><strong>1、Netplan默认配置文件在/etc/netplan目录下。您可以使用以下命令找到：</strong></p>
-<p>1. The default configuration file of Netplan is in the /etc/netplan directory. You can find it with the following command:</p>
+<ol>
+<li>The default configuration file of Netplan is in the /etc/netplan directory. You can find it with the following command:</li>
+</ol>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls <span class="regexp">/etc/</span>netplan/</span><br></pre></td></tr></table></figure>
 <p><strong>就可以看到配置文件名称。</strong></p>
-<p>You can see the configuration file name.</p>
+<p>You can see the configuration file name.</p>
 <p><strong>2、查看Netplan网络配置文件的内容，执行以下命令：</strong></p>
-<p>2. View the contents of the Netplan network configuration file and execute the following command:</p>
+<ol>
+<li>View the contents of the Netplan network configuration file and execute the following command:</li>
+</ol>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>netplan/*.yaml</span><br></pre></td></tr></table></figure>
-<p><strong>3、现在你需要在任何编辑器中打开配置文件： 由于我使用 vim 编辑器来编辑配置文件，所以我将运行：</strong></p>
-<p>3. Now you need to open the configuration file in any editor: Since I use the vim editor to edit the configuration file, I will run:</p>
+<p><strong>3、现在你需要在任何编辑器中打开配置文件： 由于我使用 vim 编辑器来编辑配置文件，所以我将运行：</strong></p>
+<ol>
+<li>Now you need to open the configuration file in any editor: Since I use the vim editor to edit the configuration file, I will run:</li>
+</ol>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>netplan/*.yaml</span><br></pre></td></tr></table></figure>
 <p><strong>根据您的网络需要更新配置文件。对于静态 IP 寻址，添加 IP 地址、网关、DNS 信息，而对于动态 IP 寻址，无需添加此信息，因为它将从 DHCP 服务器获取此信息。使用以下语法编辑配置文件。</strong></p>
-<p>Update the configuration file according to your network needs. For static IP addressing, add IP address, gateway, DNS information, and for dynamic IP addressing, there is no need to add this information because it will get this information from the DHCP server. Use the following syntax to edit the configuration file.</p>
+<p>Update the configuration file according to your network needs. For static IP addressing, add IP address, gateway, DNS information, and for dynamic IP addressing, there is no need to add this information because it will get this information from the DHCP server. Use the following syntax to edit the configuration file.</p>
 <p><strong>4、在应用任何更改之前，我们将测试配置文件。</strong></p>
-<p>4. We will test the configuration file before applying any changes.</p>
+<ol>
+<li>We will test the configuration file before applying any changes.</li>
+</ol>
 <figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan <span class="keyword">try</span></span><br></pre></td></tr></table></figure>
 <p><strong>如果没有问题，它将返回配置接受消息。如果配置文件未通过测试，它将恢复为以前的工作配置。</strong></p>
-<p>If there is no problem, it will return a configuration acceptance message. If the configuration file fails the test, it will revert to the previous working configuration.</p>
+<p>If there is no problem, it will return a configuration acceptance message. If the configuration file fails the test, it will revert to the previous working configuration.</p>
 <p><strong>5、运行以下命令来应用新配置：</strong></p>
-<p>5. Run the following command to apply the new configuration:</p>
+<ol>
+<li>Run the following command to apply the new configuration:</li>
+</ol>
 <figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netplan <span class="built_in">apply</span></span><br></pre></td></tr></table></figure>
 <p><strong>6、成功应用所有配置后，通过运行以下命令重新启动 Network-Manager 服务：</strong></p>
-<p>6. After successfully applying all the configurations, restart the Network-Manager service by running the following command:</p>
+<ol>
+<li>After successfully applying all the configurations, restart the Network-Manager service by running the following command:</li>
+</ol>
 <p><strong>如果是桌面版：</strong></p>
-<p>If it is the desktop version:</p>
+<p>If it is the desktop version:</p>
 <figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">restart</span> <span class="built_in">system</span>-networkd</span><br></pre></td></tr></table></figure>
 <p><strong>如果您使用的是 Ubuntu 服务器，请改用以下命令：</strong></p>
-<p>If you are using an Ubuntu server, use the following command instead:</p>
+<p>If you are using an Ubuntu server, use the following command instead:</p>
 <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo systemctl restart network-manager</span></span><br></pre></td></tr></table></figure>
-<p><strong>7、验证 IP 地址</strong></p>
-<p>7. Verify the IP address</p>
+<p><strong>7、验证 IP 地址</strong></p>
+<ol>
+<li>Verify the IP address</li>
+</ol>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip <span class="selector-tag">a</span></span><br></pre></td></tr></table></figure>
-<p><strong>二、Netplan 配置文件详解</strong></p>
-<p>2. Detailed explanation of Netplan configuration file</p>
+<p><strong>二、Netplan 配置文件详解</strong></p>
+<ol>
+<li>Detailed explanation of Netplan configuration file </li>
+</ol>
 <p><strong>1、使用 DHCP：</strong></p>
-<p>1. Use DHCP:</p>
+<ol>
+<li>Use DHCP:</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">renderer:</span> <span class="string">networkd</span></span><br><span class="line">  <span class="attr">ethernets:</span></span><br><span class="line">    <span class="attr">enp3s0:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p><strong>2、使用静态 IP：</strong></p>
-<p>2. Use static IP:</p>
+<ol>
+<li>Use static IP:</li>
+</ol>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">network:</span></span><br><span class="line"><span class="symbol">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="symbol">  renderer:</span> networkd</span><br><span class="line"><span class="symbol">  ethernets:</span></span><br><span class="line"><span class="symbol">    enp3s0:</span></span><br><span class="line"><span class="symbol">      addresses:</span></span><br><span class="line">        - <span class="number">10.0</span><span class="number">.0</span><span class="number">.10</span>/<span class="number">8</span></span><br><span class="line"><span class="symbol">      gateway4:</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"><span class="symbol">      nameservers:</span></span><br><span class="line"><span class="symbol">          search:</span> [mydomain, otherdomain]</span><br><span class="line"><span class="symbol">          addresses:</span> [<span class="number">10.0</span><span class="number">.0</span><span class="number">.5</span>, <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span>]</span><br></pre></td></tr></table></figure>
 <p><strong>3、多个网口 DHCP：</strong></p>
-<p>3. Multiple network ports DHCP:</p>
+<ol>
+<li>Multiple network ports DHCP:</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">ethernets:</span></span><br><span class="line">    <span class="attr">enred:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">yes</span></span><br><span class="line">      <span class="attr">dhcp4-overrides:</span></span><br><span class="line">        <span class="attr">route-metric:</span> <span class="number">100</span></span><br><span class="line">    <span class="attr">engreen:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">yes</span></span><br><span class="line">      <span class="attr">dhcp4-overrides:</span></span><br><span class="line">        <span class="attr">route-metric:</span> <span class="number">200</span></span><br></pre></td></tr></table></figure>
 <p><strong>4、连接开放的 WiFi（无密码）：</strong></p>
-<p>4. Connect to open WiFi (without password):</p>
+<ol>
+<li>Connect to open WiFi (without password):</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">wifis:</span></span><br><span class="line">    <span class="attr">wl0:</span></span><br><span class="line">      <span class="attr">access-points:</span></span><br><span class="line">        <span class="attr">opennetwork:</span> &#123;&#125;</span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">yes</span></span><br></pre></td></tr></table></figure>
 <p><strong>5、连接 WPA 加密的 WiFi：</strong></p>
-<p>5. Connect to WPA encrypted WiFi:</p>
+<ol>
+<li>Connect to WPA encrypted WiFi:</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">renderer:</span> <span class="string">networkd</span></span><br><span class="line">  <span class="attr">wifis:</span></span><br><span class="line">    <span class="attr">wlp2s0b1:</span></span><br><span class="line">      <span class="attr">dhcp4:</span> <span class="literal">no</span></span><br><span class="line">      <span class="attr">dhcp6:</span> <span class="literal">no</span></span><br><span class="line">      <span class="attr">addresses:</span> [<span class="number">10.0</span><span class="number">.0</span><span class="number">.10</span><span class="string">/8</span>]</span><br><span class="line">      <span class="attr">gateway4:</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">      <span class="attr">nameservers:</span></span><br><span class="line">        <span class="attr">addresses:</span> [<span class="number">10.0</span><span class="number">.0</span><span class="number">.5</span>, <span class="number">8.8</span><span class="number">.8</span><span class="number">.8</span>]</span><br><span class="line">      <span class="attr">access-points:</span></span><br><span class="line">        <span class="attr">&quot;network_ssid_name&quot;:</span></span><br><span class="line">          <span class="attr">password:</span> <span class="string">&quot;**********&quot;</span></span><br></pre></td></tr></table></figure>
 <p><strong>6、在单网卡上使用多个 IP 地址（同一网段）：</strong></p>
-<p>6. Use multiple IP addresses on a single network card (same network segment):</p>
+<ol>
+<li>Use multiple IP addresses on a single network card (same network segment):</li>
+</ol>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">network:</span></span><br><span class="line"><span class="symbol">  version:</span> <span class="number">2</span></span><br><span class="line"><span class="symbol">  renderer:</span> networkd</span><br><span class="line"><span class="symbol">  ethernets:</span></span><br><span class="line"><span class="symbol">    enp3s0:</span></span><br><span class="line"><span class="symbol">     addresses:</span></span><br><span class="line">       - <span class="number">10.0</span><span class="number">.0</span><span class="number">.10</span>/<span class="number">8</span></span><br><span class="line">       - <span class="number">10.0</span><span class="number">.0</span><span class="number">.10</span>/<span class="number">8</span></span><br><span class="line"><span class="symbol">     gateway4:</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
 <p><strong>7、在单网卡使用多个不同网段的 IP 地址：</strong></p>
-<p>7. Use multiple IP addresses of different network segments on a single network card:</p>
+<ol>
+<li>Use multiple IP addresses of different network segments on a single network card:</li>
+</ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">network:</span></span><br><span class="line">  <span class="attr">version:</span> <span class="number">2</span></span><br><span class="line">  <span class="attr">renderer:</span> <span class="string">networkd</span></span><br><span class="line">  <span class="attr">ethernets:</span></span><br><span class="line">    <span class="attr">enp3s0:</span></span><br><span class="line">     <span class="attr">addresses:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="number">9.0</span><span class="number">.0</span><span class="number">.9</span><span class="string">/24</span></span><br><span class="line">       <span class="bullet">-</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.10</span><span class="string">/24</span></span><br><span class="line">       <span class="bullet">-</span> <span class="number">11.0</span><span class="number">.0</span><span class="number">.11</span><span class="string">/24</span></span><br><span class="line">     <span class="comment">#gateway4:    # unset, since we configure routes below</span></span><br><span class="line">     <span class="attr">routes:</span></span><br><span class="line">       <span class="bullet">-</span> <span class="attr">to:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/0</span></span><br><span class="line">         <span class="attr">via:</span> <span class="number">9.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">         <span class="attr">metric:</span> <span class="number">100</span></span><br><span class="line">       <span class="bullet">-</span> <span class="attr">to:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/0</span></span><br><span class="line">         <span class="attr">via:</span> <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">         <span class="attr">metric:</span> <span class="number">100</span></span><br><span class="line">       <span class="bullet">-</span> <span class="attr">to:</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">/0</span></span><br><span class="line">         <span class="attr">via:</span> <span class="number">11.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line">         <span class="attr">metric:</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/65712ff42e42446097889a0b6bd631b1~tplv-k3u1fbpfcp-zoom-1.image" alt="Linux运维交流社区"></p>
 <p><strong>Linux运维交流社区</strong></p>
@@ -568,12 +600,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/cn/2021-12-30-Kubernetes基础概念/" data-toggle="tooltip" data-placement="top" title="Kubernetes基础概念">&larr; Previous Post</a>
+            <a href="/cn/2021-12-30-Ubuntu_通过_Netplan_配置网络教程/" data-toggle="tooltip" data-placement="top" title="Ubuntu 通过 Netplan 配置网络教程">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/cn/2021-12-30-Ubuntu_通过_Netplan_配置网络教程/" data-toggle="tooltip" data-placement="top" title="Ubuntu 通过 Netplan 配置网络教程">Next Post &rarr;</a>
+            <a href="/cn/2021-12-30-kubernetes_安装_Prometheus_+_Grafana/" data-toggle="tooltip" data-placement="top" title="kubernetes 安装 Prometheus + Grafana">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -816,7 +848,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -827,7 +859,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -838,7 +870,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -855,7 +887,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

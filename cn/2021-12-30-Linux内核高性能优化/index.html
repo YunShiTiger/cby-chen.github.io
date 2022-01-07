@@ -492,11 +492,9 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1>Linux内核高性能优化</h1>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/38aa0cb9e1da43ecb7b3c39980f8e24f~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+        <h1 id="Linux内核高性能优化"><a href="#Linux内核高性能优化" class="headerlink" title="Linux内核高性能优化"></a>Linux内核高性能优化</h1><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/38aa0cb9e1da43ecb7b3c39980f8e24f~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/db5c004355e542a689cc95288ea43f82~tplv-k3u1fbpfcp-watermark.image" alt="image.png"></p>
-<p>#—内核优化开始——–</p>
-<p># 内核panic时，1秒后自动重启</p>
+<h1 id="—内核优化开始——–"><a href="#—内核优化开始——–" class="headerlink" title="—内核优化开始——–"></a>—内核优化开始——–</h1><p># 内核panic时，1秒后自动重启</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kernel.panic</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p># 允许更多的PIDs (减少滚动翻转问题); may break some programs 32768</p>
 <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">kernel.pid_max</span> = <span class="number">32768</span></span><br></pre></td></tr></table></figure>
@@ -545,15 +543,15 @@
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp_window_scaling = <span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p># 进入SYN包的最大请求队列.默认1024</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp_max_syn_backlog = <span class="number">8192</span></span><br></pre></td></tr></table></figure>
-<p># 打开TIME-WAIT套接字重用功能，对于存在大量连接的Web服务器非常有效。</p>
+<p># 打开TIME-WAIT套接字重用功能，对于存在大量连接的Web服务器非常有效。 </p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_tw\_recycle = <span class="number">1</span> </span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_tw\_reuse = <span class="number">0</span>  </span><br></pre></td></tr></table></figure>
 <p># 表示是否启用以一种比超时重发更精确的方法（请参阅 RFC 1323）来启用对 RTT 的计算；为了实现更好的性能应该启用这个选项</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp_timestamps = <span class="number">0</span></span><br></pre></td></tr></table></figure>
 <p># 表示本机向外发起TCP SYN连接超时重传的次数</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_syn\_retries = <span class="number">2</span></span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_synack\_retries = <span class="number">2</span></span><br></pre></td></tr></table></figure>
-<p># 减少处于FIN-WAIT-2连接状态的时间，使系统可以处理更多的连接。</p>
+<p># 减少处于FIN-WAIT-2连接状态的时间，使系统可以处理更多的连接。 </p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp_fin_timeout = <span class="number">10</span> </span><br></pre></td></tr></table></figure>
-<p># 减少TCP KeepAlive连接侦测的时间，使系统可以处理更多的连接。</p>
+<p># 减少TCP KeepAlive连接侦测的时间，使系统可以处理更多的连接。 </p>
 <p># 如果某个TCP连接在idle 300秒后,内核才发起probe.如果probe 2次(每次2秒)不成功,内核才彻底放弃,认为该连接已失效.</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_keepalive\_time = <span class="number">300</span> </span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_keepalive\_probes = <span class="number">2</span></span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp\_keepalive\_intvl = <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p># 系统所能处理不属于任何进程的TCP sockets最大数量</p>
@@ -562,8 +560,7 @@
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.tcp_max_tw_buckets = <span class="number">20000</span> </span><br></pre></td></tr></table></figure>
 <p># arp_table的缓存限制优化</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.neigh.default.gc\_thresh<span class="number">1</span> = <span class="number">128</span></span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.neigh.default.gc\_thresh<span class="number">2</span> = <span class="number">512</span></span><br><span class="line"><span class="attribute">net</span>.ipv<span class="number">4</span>.neigh.default.gc\_thresh<span class="number">3</span> = <span class="number">4096</span></span><br></pre></td></tr></table></figure>
-<p>#——内核优化结束——–</p>
-<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3fabe4023f8646169d3188d3dc53601e~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<h1 id="——内核优化结束——–"><a href="#——内核优化结束——–" class="headerlink" title="——内核优化结束——–"></a>——内核优化结束——–</h1><p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3fabe4023f8646169d3188d3dc53601e~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 
 
         <hr>
@@ -571,12 +568,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-Linux内核高性能优化/" data-toggle="tooltip" data-placement="top" title="Linux内核高性能优化">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库/" data-toggle="tooltip" data-placement="top" title="Docker启动MySQL、MongoDB、Redis、Elasticsearch、Grafana，数据库">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-利用_kubeadm_创建_kubernetes_的高可用集群/" data-toggle="tooltip" data-placement="top" title="利用 kubeadm 创建 kubernetes 的高可用集群">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-Linux内核高性能优化/" data-toggle="tooltip" data-placement="top" title="Linux内核高性能优化">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -819,7 +816,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -830,7 +827,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -841,7 +838,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -858,7 +855,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>

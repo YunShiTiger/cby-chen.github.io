@@ -493,11 +493,11 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d2be64bec43d454abe1b2c003d3322cf~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
-<p><strong>Python安装-在Linux系统中使用编译进行安装</strong></p>
+<p><strong>Python安装-在Linux系统中使用编译进行安装</strong>  </p>
 <p>你可以使用Ubuntu自带的Python3，不过你不能自由的控制版本，还要单独安装pip3，如果你想升级pip3，还会出现一些让人不愉快的使用问题。而在CentOS系统中，默认只有Python2，通过yum安装Python3，也同样面临版本落后以及pip3的问题。如果不自己编译安装，还有什么别的方法来一直保持使用最新的版本呢？！除非你用Win系统。</p>
 <p>You can use the Python3 that comes with Ubuntu, but you can’t control the version freely. You have to install pip3 separately. If you want to upgrade pip3, there will be some unpleasant usage problems. In the CentOS system, there is only Python2 by default. Installing Python3 through yum also faces the problems of backward version and pip3. If you don’t compile and install it yourself, what other methods are there to keep using the latest version? ! Unless you use Win system.</p>
 <p>在CentOS中安装Python3需要的依赖库</p>
-<p>Install the dependency libraries required by Python3 in CentOS</p>
+<p> Install the dependency libraries required by Python3 in CentOS</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> yum install zlib-devel bzip<span class="number">2</span>-developenssl-devel ncurses-devel sqlite-devel readline-devel tk-devel libffi-develexpat-devel gdbm-devel xz-devel db<span class="number">4</span>-devel libpcap-devel make</span><br></pre></td></tr></table></figure>
 <p>在Ubuntu中安装Python3需要的依赖库</p>
 <p>Install the dependency libraries required by Python3 in Ubuntu</p>
@@ -506,7 +506,6 @@
 <p><strong>Install GCC</strong></p>
 <p>CentOS的minimal版本，以及Ubuntu，都没有预装gcc，如果你用的是这两个版本，需要确保系统有gcc编译器可以使用。安装和查看gcc的方法：</p>
 <p>The minimal version of CentOS and Ubuntu do not have gcc pre-installed. If you are using these two versions, you need to make sure that the system has a gcc compiler that can be used. How to install and view gcc:</p>
-<p></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install gcc  <span class="comment"># install gcc in centos</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install gcc  <span class="comment"># install gcc in ubuntu</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">which</span> gcc <span class="comment"># check if gcc is there</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> gcc --version  <span class="comment"># check gcc version</span></span></span><br></pre></td></tr></table></figure>
 <p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ce578f7240e5458ca63771461d0a120c~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
 <p>下载Python3源码并解压</p>
@@ -514,7 +513,6 @@
 <p>Python3的官方源码下载页面是：<a target="_blank" rel="noopener" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
 <p>The official source code download page of Python3 is:</p>
 <p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></p>
-<p></p>
 <p>使用curl或wget下载，然后解压：</p>
 <p>Use curl or wget to download, and then unzip:</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Wget</span> https://www.python.org/ftp/python/<span class="number">3</span>.<span class="number">9</span>.<span class="number">2</span>/Python-<span class="number">3</span>.<span class="number">9</span>.<span class="number">2</span>.tgz</span><br><span class="line"><span class="attribute">tar</span> xvf Python-<span class="number">3</span>.<span class="number">9</span>.<span class="number">2</span>.tgz</span><br></pre></td></tr></table></figure>
@@ -540,12 +538,12 @@
         <ul class="pager">
           
           <li class="previous">
-            <a href="/en/2021-12-30-Python安装-在Linux系统中使用编译进行安装/" data-toggle="tooltip" data-placement="top" title="Python安装-在Linux系统中使用编译进行安装">&larr; Previous Post</a>
+            <a href="/en/2021-12-30-CentOS_的_YUM安装时卡死解决方案/" data-toggle="tooltip" data-placement="top" title="CentOS 的 YUM安装时卡死解决方案">&larr; Previous Post</a>
           </li>
           
           
           <li class="next">
-            <a href="/en/2021-12-30-华为人工智能atlasA800-9000物理服务器离线安装及CANN安装和MindSpore安装和Tensorflow安装/" data-toggle="tooltip" data-placement="top" title="华为人工智能atlasA800-9000物理服务器离线安装及CANN安装和MindSpore安装和Tensorflow安装">Next Post &rarr;</a>
+            <a href="/en/2021-12-30-Python安装-在Linux系统中使用编译进行安装/" data-toggle="tooltip" data-placement="top" title="Python安装-在Linux系统中使用编译进行安装">Next Post &rarr;</a>
           </li>
           
         </ul>
@@ -788,7 +786,7 @@
 
           
             <li>
-              <a target="_blank" href="https://github.com/V-Vincen">
+              <a target="_blank" href="https://github.com/cby-chen/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -799,7 +797,7 @@
 
           
             <li>
-              <a target="_blank" href="https://twitter.com/V_Vincen_">
+              <a target="_blank" href="https://twitter.com/Mr_cby">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -810,7 +808,7 @@
 
           
             <li>
-              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+              <a target="_blank" href="https://instagram.com/chenby_cby/">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
@@ -827,7 +825,7 @@
 
           
             <li>
-              <a target="_blank" href="http://weibo.com/WVincen">
+              <a target="_blank" href="https://weibo.com/u/5982474121">
                 <span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
