@@ -478,40 +478,6 @@
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-kubernetes核心实战（七）---_job、CronJob、Secret/">
-    <h2 class="post-title">
-      kubernetes核心实战（七）--- job、CronJob、Secret
-    </h2>
-    <h3 class="post-subtitle">
-      
-    </h3>
-    <div class="post-content-preview">
-      10、job任务
-
-使用perl，做pi的圆周率计算
-12345678910111213141516171819[root@k8s-master-node1 ~/yaml/test]# vim job.yaml [root@k8s-master-node1 ~/yaml/test]# cat job.yaml apiVersion: batch/v1kind: Jobmetadata:  n......
-    </div>
-  </a>
-  
-  <p class="post-meta" style="margin: 10px 0;">
-    Posted by cby on
-    2021-12-30
-  </p>
-  <div class="tags">
-    
-  </div>
-  
-
-</div>
-<hr>
-
-<div class="post-preview">
-  
-  <!-- top start (article top hot config) -->
-  
-  <!-- top end -->
-  
-
   <a href="/cn/2021-12-30-kubernetes核心实战（七）---_job、CronJob、Secret/">
     <h2 class="post-title">
       kubernetes核心实战（七）--- job、CronJob、Secret
@@ -546,18 +512,18 @@
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-kubernetes核心实战（六）---_ConfigMap/">
+  <a href="/en/2021-12-30-kubernetes核心实战（七）---_job、CronJob、Secret/">
     <h2 class="post-title">
-      kubernetes核心实战（六）--- ConfigMap
+      kubernetes核心实战（七）--- job、CronJob、Secret
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      8、ConfigMap
-抽取应用配置，并且可以自动更新
-创建配置文件
-1234567891011121314[root@k8s-master-node1 ~/yaml/test]# vim configmap.yaml[root@k8s-master-node1 ~/yaml/test]# cat configmap.yaml apiVersion: v1data:     redis.co......
+      10、job任务
+
+使用perl，做pi的圆周率计算
+12345678910111213141516171819[root@k8s-master-node1 ~/yaml/test]# vim job.yaml [root@k8s-master-node1 ~/yaml/test]# cat job.yaml apiVersion: batch/v1kind: Jobmetadata:  n......
     </div>
   </a>
   
@@ -614,18 +580,18 @@
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-kubernetes核心实战（五）---_StatefulSets/">
+  <a href="/en/2021-12-30-kubernetes核心实战（六）---_ConfigMap/">
     <h2 class="post-title">
-      kubernetes核心实战（五）--- StatefulSets
+      kubernetes核心实战（六）--- ConfigMap
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      7、StatefulSets
-StatefulSet 是用来管理有状态应用的工作负载 API 对象。
-StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod 提供序号和唯一性保证。
-和 Deployment 相同的是，StatefulSet 管理了基于相同容器定义的一组 Pod。但和 Deployment 不同的是，StatefulSet 为它们的每......
+      8、ConfigMap
+抽取应用配置，并且可以自动更新
+创建配置文件
+1234567891011121314[root@k8s-master-node1 ~/yaml/test]# vim configmap.yaml[root@k8s-master-node1 ~/yaml/test]# cat configmap.yaml apiVersion: v1data:     redis.co......
     </div>
   </a>
   
@@ -682,18 +648,18 @@ StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-kubernetes核心实战（四）---_Deployments/">
+  <a href="/en/2021-12-30-kubernetes核心实战（五）---_StatefulSets/">
     <h2 class="post-title">
-      kubernetes核心实战（四）--- Deployments
+      kubernetes核心实战（五）--- StatefulSets
     </h2>
     <h3 class="post-subtitle">
       
     </h3>
     <div class="post-content-preview">
-      6、Deployments（重点）
-一个 Deployment 控制器为 Pods和 ReplicaSets提供描述性的更新方式。
-
-描述 Deployment 中的 desired state，并且 Deployment 控制器以受控速率更改实际状态，以达到期望状态。可以定义 Deployments 以创建新的 ReplicaSets ，或删除现有 Deployments ，并通过新的 D......
+      7、StatefulSets
+StatefulSet 是用来管理有状态应用的工作负载 API 对象。
+StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod 提供序号和唯一性保证。
+和 Deployment 相同的是，StatefulSet 管理了基于相同容器定义的一组 Pod。但和 Deployment 不同的是，StatefulSet 为它们的每......
     </div>
   </a>
   
@@ -750,7 +716,41 @@ StatefulSet 用来管理 Deployment 和扩展一组 Pod，并且能为这些 Pod
   <!-- top end -->
   
 
-  <a href="/en/2021-12-30-kubernetes核心实战（三）---_ReplicationController/">
+  <a href="/en/2021-12-30-kubernetes核心实战（四）---_Deployments/">
+    <h2 class="post-title">
+      kubernetes核心实战（四）--- Deployments
+    </h2>
+    <h3 class="post-subtitle">
+      
+    </h3>
+    <div class="post-content-preview">
+      6、Deployments（重点）
+一个 Deployment 控制器为 Pods和 ReplicaSets提供描述性的更新方式。
+
+描述 Deployment 中的 desired state，并且 Deployment 控制器以受控速率更改实际状态，以达到期望状态。可以定义 Deployments 以创建新的 ReplicaSets ，或删除现有 Deployments ，并通过新的 D......
+    </div>
+  </a>
+  
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by cby on
+    2021-12-30
+  </p>
+  <div class="tags">
+    
+  </div>
+  
+
+</div>
+<hr>
+
+<div class="post-preview">
+  
+  <!-- top start (article top hot config) -->
+  
+  <!-- top end -->
+  
+
+  <a href="/cn/2021-12-30-kubernetes核心实战（三）---_ReplicationController/">
     <h2 class="post-title">
       kubernetes核心实战（三）--- ReplicationController
     </h2>
@@ -785,7 +785,7 @@ ReplicationController 如何工作
   <!-- top end -->
   
 
-  <a href="/cn/2021-12-30-kubernetes核心实战（三）---_ReplicationController/">
+  <a href="/en/2021-12-30-kubernetes核心实战（三）---_ReplicationController/">
     <h2 class="post-title">
       kubernetes核心实战（三）--- ReplicationController
     </h2>
@@ -951,23 +951,23 @@ ReplicationController 如何工作
 <div class="widget">
   <ul>
     
-    <a href="../../en/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
-      <li>为kubernetes（k8s）单独配置kubectl工具</li>
-    </a>
-    
     <a href="../../cn/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
       <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
-    <a href="../../en/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
-      <li>GitLab 安装部署使用</li>
+    <a href="../../en/2022-01-06-%E4%B8%BAkubernetes%EF%BC%88k8s%EF%BC%89%E5%8D%95%E7%8B%AC%E9%85%8D%E7%BD%AEkubectl%E5%B7%A5%E5%85%B7/">
+      <li>为kubernetes（k8s）单独配置kubectl工具</li>
     </a>
     
     <a href="../../cn/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
       <li>GitLab 安装部署使用</li>
     </a>
     
-    <a href="../../en/2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
+    <a href="../../en/2022-01-04-GitLab_%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8/">
+      <li>GitLab 安装部署使用</li>
+    </a>
+    
+    <a href="../../cn/2022-01-03-%E9%83%A8%E7%BD%B2lnmp%E7%8E%AF%E5%A2%83%EF%BC%8C%E5%AE%89%E8%A3%85typecho%E5%8D%9A%E5%AE%A2/">
       <li>部署lnmp环境，安装typecho博客</li>
     </a>
     
