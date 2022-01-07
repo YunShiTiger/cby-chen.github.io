@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/2021-12-30-搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2/">
+  <title>
+    
+      搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2 - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Your Title</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/2021-12-30-搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2/">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by cby on
+              2021-12-30
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">20</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">3.7k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p><strong>Hadoop 简介</strong></p>
+<p>Hadoop是一个用Java编写的Apache开源框架，允许使用简单的编程模型跨计算机集群分布式处理大型数据集。Hadoop框架工作的应用程序在跨计算机集群提供分布式存储和计算的环境中工作。Hadoop旨在从单个服务器扩展到数千个机器，每个都提供本地计算和存储。</p>
+<p><strong>Hive简介</strong></p>
+<p>Apache Hive是一个构建于Hadoop顶层的数据仓库，可以将结构化的数据文件映射为一张数据库表，并提供简单的SQL查询功能，可以将SQL语句转换为MapReduce任务进行运行。需要注意的是，Hive它并不是数据库。</p>
+<p>Hive依赖于HDFS和MapReduce，其对HDFS的操作类似于SQL，我们称之为HQL，它提供了丰富的SQL查询方式来分析存储在HDFS中的数据。HQL可以编译转为MapReduce作业，完成查询、汇总、分析数据等工作。这样一来，即使不熟悉MapReduce 的用户也可以很方便地利用SQL 语言查询、汇总、分析数据。而MapReduce开发人员可以把己写的mapper 和reducer 作为插件来支持Hive 做更复杂的数据分析。</p>
+<p><strong>Apache Spark 简介</strong></p>
+<p>用于大数据工作负载的分布式开源处理系统</p>
+<p>Apache Spark 是一种用于大数据工作负载的分布式开源处理系统。它使用内存中缓存和优化的查询执行方式，可针对任何规模的数据进行快速分析查询。它提供使用 Java、Scala、Python 和 R 语言的开发 API，支持跨多个工作负载重用代码—批处理、交互式查询、实时分析、机器学习和图形处理等。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/6afdfd92a4324cb1bfe1d8f726d59201~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><strong>本文将先搭建 jdk1.8 + MySQL5.7基础环境</strong></p>
+<p><strong>之后搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2</strong></p>
+<p><strong>此文章搭建为单机版</strong></p>
+<p><strong>1.创建目录并解压jdk安装包</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># mkdir  jdk</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># cd jdk/</span></span><br><span class="line">[root<span class="symbol">@localhost</span> jdk]<span class="meta"># ls</span></span><br><span class="line">jdk<span class="number">-8</span>u202-linux-x64.tar.gz</span><br><span class="line">[root<span class="symbol">@localhost</span> jdk]<span class="meta"># ll</span></span><br><span class="line">total <span class="number">189496</span></span><br><span class="line">-rw-r--r--. <span class="number">1</span> root root <span class="number">194042837</span> Oct <span class="number">18</span> <span class="number">12</span>:<span class="number">05</span> jdk<span class="number">-8</span>u202-linux-x64.tar.gz</span><br><span class="line">[root<span class="symbol">@localhost</span> jdk]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> jdk]<span class="meta"># tar xvf jdk-8u202-linux-x64.tar.gz</span></span><br></pre></td></tr></table></figure>
+<p><strong>2.配置环境变量</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/profile</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tail -n 3 /etc/profile</span></span><br><span class="line">export JAVA_HOME=<span class="regexp">/root/</span>jdk<span class="regexp">/jdk1.8.0_202/</span></span><br><span class="line">export PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line">export CLASSPATH=.:<span class="variable">$JAVA_HOME</span><span class="regexp">/lib/</span>dt.jar:<span class="variable">$JAVA_HOME</span><span class="regexp">/lib/</span>tools.jar</span><br><span class="line">[root@localhost ~]<span class="comment"># </span></span><br><span class="line">[root@localhost ~]<span class="comment"># source /etc/profile</span></span><br></pre></td></tr></table></figure>
+<p><strong>3.下载安装MySQL并设置为开机自启</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># mkdir mysql</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># cd mysql</span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># wget https://downloads.mysql.com/archives/get/p/23/file/mysql-5.7.35-1.el7.x86_64.rpm-bundle.tar</span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># tar xvf mysql-5.7.35-1.el7.x86_64.rpm-bundle.tar </span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># yum install ./*.rpm</span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># systemctl start mysqld.service </span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># systemctl enable mysqld.service </span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> mysql]<span class="meta">#</span></span><br></pre></td></tr></table></figure>
+<p><strong>4.查看MySQL默认密码，并修改默认密码，同时创建新的用户，将其设置为可以远程登录</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span> mysql]# sudo grep <span class="string">&#x27;temporary password&#x27;</span> <span class="operator">/</span>var<span class="operator">/</span>log<span class="operator">/</span>mysqld.log</span><br><span class="line"><span class="number">2021</span><span class="number">-10</span><span class="number">-18</span>T06:<span class="number">12</span>:<span class="number">35.519726</span>Z <span class="number">6</span> [Note] [MY<span class="number">-010454</span>] [Server] A temporary password <span class="keyword">is</span> generated <span class="keyword">for</span> root<span class="variable">@localhost</span>: eNHu<span class="operator">&lt;</span>sXHt3rq</span><br><span class="line">[root<span class="variable">@localhost</span> mysql]# </span><br><span class="line">[root<span class="variable">@localhost</span> mysql]# </span><br><span class="line">[root<span class="variable">@localhost</span> mysql]# mysql <span class="operator">-</span>u root <span class="operator">-</span>p </span><br><span class="line">Enter password: </span><br><span class="line">Welcome <span class="keyword">to</span> the MySQL monitor.  Commands <span class="keyword">end</span> <span class="keyword">with</span> ; <span class="keyword">or</span> \g.</span><br><span class="line">Your MySQL connection id <span class="keyword">is</span> <span class="number">9</span></span><br><span class="line">Server version: <span class="number">8.0</span><span class="number">.25</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Copyright (c) <span class="number">2000</span>, <span class="number">2021</span>, Oracle <span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span> its affiliates.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Oracle <span class="keyword">is</span> a registered trademark <span class="keyword">of</span> Oracle Corporation <span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span> its</span><br><span class="line">affiliates. Other names may be trademarks <span class="keyword">of</span> their respective</span><br><span class="line">owners.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Type <span class="string">&#x27;help;&#x27;</span> <span class="keyword">or</span> <span class="string">&#x27;\h&#x27;</span> <span class="keyword">for</span> help. Type <span class="string">&#x27;\c&#x27;</span> <span class="keyword">to</span> clear the <span class="keyword">current</span> input statement.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> </span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;localhost&#x27;</span> IDENTIFIED <span class="keyword">WITH</span> mysql_native_password <span class="keyword">BY</span> <span class="string">&#x27;Cby123..&#x27;</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.02</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> </span><br><span class="line">mysql<span class="operator">&gt;</span> </span><br><span class="line">mysql<span class="operator">&gt;</span> use mysql;</span><br><span class="line">Database changed</span><br><span class="line">mysql<span class="operator">&gt;</span> </span><br><span class="line">mysql<span class="operator">&gt;</span> update <span class="keyword">user</span> <span class="keyword">set</span> host<span class="operator">=</span><span class="string">&#x27;%&#x27;</span> <span class="keyword">where</span> <span class="keyword">user</span> <span class="operator">=</span><span class="string">&#x27;root&#x27;</span>;</span><br><span class="line">Query OK, <span class="number">1</span> <span class="type">row</span> affected (<span class="number">0.01</span> sec)</span><br><span class="line"><span class="keyword">Rows</span> matched: <span class="number">1</span>  Changed: <span class="number">1</span>  Warnings: <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">set</span> <span class="keyword">global</span> validate_password_policy<span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">set</span> <span class="keyword">global</span> validate_password_mixed_case_count<span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span>  <span class="keyword">set</span> <span class="keyword">global</span> validate_password_number_count<span class="operator">=</span><span class="number">3</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">set</span> <span class="keyword">global</span> validate_password_special_char_count<span class="operator">=</span><span class="number">0</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">set</span> <span class="keyword">global</span> validate_password_length<span class="operator">=</span><span class="number">3</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">SHOW</span> VARIABLES <span class="keyword">LIKE</span> <span class="string">&#x27;validate_password%&#x27;</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------+-------+</span></span><br><span class="line"><span class="operator">|</span> Variable_name                        <span class="operator">|</span> <span class="keyword">Value</span> <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------+-------+</span></span><br><span class="line"><span class="operator">|</span> validate_password_check_user_name    <span class="operator">|</span> OFF   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_dictionary_file    <span class="operator">|</span>       <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_length             <span class="operator">|</span> <span class="number">3</span>     <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_mixed_case_count   <span class="operator">|</span> <span class="number">0</span>     <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_number_count       <span class="operator">|</span> <span class="number">3</span>     <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_policy             <span class="operator">|</span> LOW   <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> validate_password_special_char_count <span class="operator">|</span> <span class="number">0</span>     <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">--------------------------------------+-------+</span></span><br><span class="line"><span class="number">7</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">create</span> <span class="keyword">user</span> <span class="string">&#x27;cby&#x27;</span>@<span class="string">&#x27;%&#x27;</span> identified <span class="keyword">by</span> <span class="string">&#x27;cby&#x27;</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">grant</span> <span class="keyword">all</span> <span class="keyword">on</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">to</span> <span class="string">&#x27;cby&#x27;</span>@<span class="string">&#x27;%&#x27;</span>;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> FLUSH PRIVILEGES;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> <span class="operator">*</span>.<span class="operator">*</span> <span class="keyword">TO</span> <span class="string">&#x27;root&#x27;</span>@<span class="string">&#x27;%&#x27;</span><span class="keyword">WITH</span> <span class="keyword">GRANT</span> OPTION;</span><br><span class="line">Query OK, <span class="number">0</span> <span class="keyword">rows</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">CREATE</span> DATABASE dss_dev;</span><br><span class="line">Query OK, <span class="number">1</span> <span class="type">row</span> affected (<span class="number">0.00</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span> </span><br><span class="line">mysql<span class="operator">&gt;</span> <span class="keyword">select</span> host,<span class="keyword">user</span>,plugin <span class="keyword">from</span> <span class="keyword">user</span>;</span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+---------------+-----------------------+</span></span><br><span class="line"><span class="operator">|</span> host      <span class="operator">|</span> <span class="keyword">user</span>          <span class="operator">|</span> plugin                <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+---------------+-----------------------+</span></span><br><span class="line"><span class="operator">|</span> <span class="operator">%</span>         <span class="operator">|</span> root          <span class="operator">|</span> mysql_native_password <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> localhost <span class="operator">|</span> mysql.session <span class="operator">|</span> mysql_native_password <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> localhost <span class="operator">|</span> mysql.sys     <span class="operator">|</span> mysql_native_password <span class="operator">|</span></span><br><span class="line"><span class="operator">+</span><span class="comment">-----------+---------------+-----------------------+</span></span><br><span class="line"><span class="number">3</span> <span class="keyword">rows</span> <span class="keyword">in</span> <span class="keyword">set</span> (<span class="number">0.01</span> sec)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mysql<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>注：若上面root不是mysql_native_password使用以下命令将其改掉</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update<span class="built_in"> user </span><span class="builtin-name">set</span> <span class="attribute">plugin</span>=<span class="string">&#x27;mysql_native_password&#x27;</span> where <span class="attribute">user</span>=<span class="string">&#x27;root&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/732afa3a5c5a4b23bc1fdfba94105597~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><strong>5.添加hosts解析，同时设置免密登录</strong></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># mkdir Hadoop</span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># </span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># vim /etc/hosts</span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># </span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># </span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># cat /etc/hosts</span></span><br><span class="line"><span class="number">127.0</span>.0.<span class="number">1</span>   localhost localhost.localdomain localhost4 localhost4.localdomain4</span><br><span class="line">::<span class="number">1</span>         localhost localhost.localdomain localhost6 localhost6.localdomain6</span><br><span class="line"><span class="number">127.0</span>.0.<span class="number">1</span> namenode</span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># ssh-keygen</span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># ssh-copy-id -i ~/.ssh/id_rsa.pub root@127.0.0.1</span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment">#</span></span><br></pre></td></tr></table></figure>
+<p><strong>6.下载Hadoop，解压后创建所需目录</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># cd Hadoop/</span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># ls</span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># wget https://archive.apache.org/dist/hadoop/core/hadoop-2.7.2/hadoop-2.7.2.tar.gz</span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># tar xvf hadoop-2.7.2.tar.gz </span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># mkdir  -p /root/Hadoop/hadoop-2.7.2/hadoopinfra/hdfs/namenode</span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> Hadoop]<span class="meta"># mkdir  -p /root/Hadoop/hadoop-2.7.2/hadoopinfra/hdfs/datanode</span></span><br></pre></td></tr></table></figure>
+<p><strong>7.添加Hadoop环境变量</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# vim /etc/profile</span><br><span class="line">[root@localhost ~]# tail -n 8 /etc/profile</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_HOME</span>=/root/Hadoop/hadoop-2.7.2/</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_INSTALL</span>=<span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_MAPRED_HOME</span>=<span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_COMMON_HOME</span>=<span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_HDFS_HOME</span>=<span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">YARN_HOME</span>=<span class="variable">$HADOOP_HOME</span></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_COMMON_LIB_NATIVE_DIR</span>=<span class="variable">$HADOOP_HOME</span>/lib/native</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>:$HADOOP_HOME/sbin:$HADOOP_HOME/bin</span><br><span class="line">[root@localhost ~]# </span><br><span class="line">[root@localhost ~]# source /etc/profile</span><br></pre></td></tr></table></figure>
+<p><strong>8.修改Hadoop配置</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cd Hadoop/hadoop-2.7.2/</span><br><span class="line">[root@localhost hadoop]# vim /root/Hadoop/hadoop-2.7.2/etc/hadoop/core-site.xml</span><br><span class="line">[root@localhost hadoop]# </span><br><span class="line">[root@localhost hadoop]# </span><br><span class="line">[root@localhost hadoop]# tail /root/Hadoop/hadoop-2.7.2/etc/hadoop/core-site.xml</span><br><span class="line"><span class="comment">&lt;!-- Put site-specific property overrides in this file. --&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 指定HDFS中NameNode的地址 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://127.0.0.1:9000<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 指定Hadoop运行时产生文件的存储目录 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>/home/hadoop/hadoop-2.7.2/data/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>9.修改Hadoop的hdfs目录配置</strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># vim /root/Hadoop/hadoop-2.7.2/etc/hadoop/hdfs-site.xml </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># tail -n 15  /root/Hadoop/hadoop-2.7.2/etc/hadoop/hdfs-site.xml </span></span><br><span class="line"><span class="variable">&lt;configuration&gt;</span></span><br><span class="line">   <span class="variable">&lt;property&gt;</span> </span><br><span class="line">      <span class="variable">&lt;name&gt;</span>dfs.replication<span class="variable">&lt;/name&gt;</span> </span><br><span class="line">      <span class="variable">&lt;value&gt;</span>1<span class="variable">&lt;/value&gt;</span> </span><br><span class="line">   <span class="variable">&lt;/property&gt;</span> </span><br><span class="line">   <span class="variable">&lt;property&gt;</span> </span><br><span class="line">      <span class="variable">&lt;name&gt;</span>dfs.name.dir<span class="variable">&lt;/name&gt;</span> </span><br><span class="line">      <span class="variable">&lt;value&gt;</span>/root/Hadoop/hadoop-2.7.2/hadoopinfra/hdfs/namenode<span class="variable">&lt;/value&gt;</span> </span><br><span class="line">   <span class="variable">&lt;/property&gt;</span> </span><br><span class="line">   <span class="variable">&lt;property&gt;</span> </span><br><span class="line">      <span class="variable">&lt;name&gt;</span>dfs.data.dir<span class="variable">&lt;/name&gt;</span></span><br><span class="line">      <span class="variable">&lt;value&gt;</span>/root/Hadoop/hadoop-2.7.2/hadoopinfra/hdfs/datanode<span class="variable">&lt;/value&gt;</span> </span><br><span class="line">   <span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;/configuration&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>10.修改Hadoop的yarn配置</strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># vim  /root/Hadoop/hadoop-2.7.2/etc/hadoop/yarn-site.xml</span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># </span></span><br><span class="line">[root<span class="meta">@localhost</span> hadoop]<span class="comment"># tail -n 6 /root/Hadoop/hadoop-2.7.2/etc/hadoop/yarn-site.xml</span></span><br><span class="line"><span class="variable">&lt;configuration&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="variable">&lt;property&gt;</span> </span><br><span class="line">      <span class="variable">&lt;name&gt;</span>yarn.nodemanager.aux-services<span class="variable">&lt;/name&gt;</span> </span><br><span class="line">      <span class="variable">&lt;value&gt;</span>mapreduce_shuffle<span class="variable">&lt;/value&gt;</span> </span><br><span class="line">   <span class="variable">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;/configuration&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost hadoop]# </span><br><span class="line">[root@localhost hadoop]# cp <span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span>etc<span class="regexp">/hadoop/m</span>apred-site.xml.template <span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span>etc<span class="regexp">/hadoop/m</span>apred-site.xml</span><br><span class="line">[root@localhost hadoop]# vim <span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span>etc<span class="regexp">/hadoop/m</span>apred-site.xml</span><br><span class="line">[root@localhost hadoop]# </span><br><span class="line">[root@localhost hadoop]# </span><br><span class="line">[root@localhost hadoop]# tail <span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span>etc<span class="regexp">/hadoop/m</span>apred-site.xml</span><br><span class="line">&lt;configuration&gt;</span><br><span class="line">   &lt;property&gt; </span><br><span class="line">      &lt;name&gt;mapreduce.framework.name&lt;/name&gt; </span><br><span class="line">      &lt;value&gt;yarn&lt;/value&gt; </span><br><span class="line">   &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br><span class="line">[root@localhost hadoop]#</span><br></pre></td></tr></table></figure>
+<p><strong>11.修改Hadoop环境配置文件</strong></p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost hadoop]<span class="comment"># vim /root/Hadoop/hadoop-2.7.2/etc/hadoop/hadoop-env.sh</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">修改JAVA_HOME</span><br><span class="line"><span class="keyword">export</span> JAVA_HOME=/root/jdk/jdk1<span class="number">.8</span><span class="number">.0</span>_202/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost ~]<span class="comment"># hdfs namenode -format</span></span><br><span class="line">[root@localhost ~]<span class="comment"># start-dfs.sh </span></span><br><span class="line">[root@localhost ~]<span class="comment"># start-yarn.sh</span></span><br></pre></td></tr></table></figure>
+<p><strong>若重置太多次会导致clusterID不匹配，datanode起不来，删除版本后在初始化启动</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># rm -rf /root/Hadoop/hadoop-2.7.2/hadoopinfra/hdfs/datanode/current/VERSION </span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># hadoop namenode -format</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># hdfs namenode -format</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># start-dfs.sh </span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># start-yarn.sh</span></span><br></pre></td></tr></table></figure>
+<p><strong>在浏览器访问Hadoop</strong></p>
+<p>访问Hadoop的默认端口号为50070.使用以下网址，以获取浏览器Hadoop服务。</p>
+<p><strong><a target="_blank" rel="noopener" href="http://localhost:50070/">http://localhost:50070/</a></strong></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/e6e5d35c40ba4ab1824e48f88a081536~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><strong>验证集群的所有应用程序</strong></p>
+<p>访问集群中的所有应用程序的默认端口号为8088。使用以下URL访问该服务。</p>
+<p><strong><a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088/</a></strong></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/a8ef9393ee3c422c8c1a3e1df487ef62~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><strong>12.创建hive目录并解压</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># mkdir hive</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># cd hive</span></span><br><span class="line">[root<span class="symbol">@localhost</span> hive]<span class="meta"># wget https://archive.apache.org/dist/hive/hive-2.3.3/apache-hive-2.3.3-bin.tar.gz</span></span><br><span class="line">[root<span class="symbol">@localhost</span> hive]<span class="meta"># tar xvf apache-hive-2.3.3-bin.tar.gz </span></span><br><span class="line">[root<span class="symbol">@localhost</span> hive]<span class="meta">#</span></span><br></pre></td></tr></table></figure>
+<p><strong>13.备份hive配置文件</strong></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost hive]# <span class="keyword">cd</span> /root/hive/apache-hive-<span class="number">2.3</span>.<span class="number">3</span>-bin/<span class="keyword">conf</span>/</span><br><span class="line">[root@localhost <span class="keyword">conf</span>]# <span class="keyword">cp</span> hive-env.<span class="keyword">sh</span>.template hive-env.<span class="keyword">sh</span></span><br><span class="line">[root@localhost <span class="keyword">conf</span>]# <span class="keyword">cp</span> hive-default.xml.template hive-site.xml</span><br><span class="line">[root@localhost <span class="keyword">conf</span>]# <span class="keyword">cp</span> hive-log4j2.properties.template hive-log4j2.properties</span><br><span class="line">[root@localhost <span class="keyword">conf</span>]# <span class="keyword">cp</span> hive-exec-log4j2.properties.template hive-exec-log4j2.properties</span><br></pre></td></tr></table></figure>
+<p><strong>14.在Hadoop中创建文件夹并设置权限</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -mkdir -p /data/hive/warehouse</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">03</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># </span></span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -mkdir /data/hive/tmp</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">12</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># </span></span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -mkdir /data/hive/log</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">18</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># </span></span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -chmod -R 777 /data/hive/warehouse</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">49</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -chmod -R 777 /data/hive/tmp</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">50</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta"># hadoop fs -chmod -R 777 /data/hive/log</span></span><br><span class="line"><span class="number">21</span>/<span class="number">10</span>/<span class="number">18</span> <span class="number">14</span>:<span class="number">27</span>:<span class="number">51</span> WARN util.NativeCodeLoader: Unable to load native-hadoop library <span class="keyword">for</span> your platform... <span class="keyword">using</span> builtin-java classes <span class="keyword">where</span> applicable</span><br><span class="line">[<span class="meta">root@localhost conf</span>]<span class="meta">#</span></span><br></pre></td></tr></table></figure>
+<p><strong>15.修改hive配置文件</strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="meta">@localhost</span> conf]<span class="comment"># vim hive-site.xml</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">hive 配置入下：</span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>hive.exec.scratchdir<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>hdfs://127.0.0.1:9000/data/hive/tmp<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">   <span class="variable">&lt;name&gt;</span>hive.metastore.warehouse.dir<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>hdfs://127.0.0.1:9000/data/hive/warehouse<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>hive.querylog.location<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>hdfs://127.0.0.1:9000/data/hive/log<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;!—该配置是关闭hive元数据版本认证，否则会在启动spark程序时报错--&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>hive.metastore.schema.verification<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>false<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">配置mysql IP 端口以及放元数据的库名称</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>jdbc:mysql://127.0.0.1:3306/hive?createDatabaseIfNotExist=true<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;!—配置mysql启动器名称 --&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>javax.jdo.option.ConnectionDriverName<span class="variable">&lt;/name&gt;</span></span><br><span class="line">   <span class="variable">&lt;value&gt;</span>com.mysql.jdbc.Driver<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;!—配置连接mysql用户名 --&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>javax.jdo.option.ConnectionUserName<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>root<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"><span class="variable">&lt;!—配置连接mysql用户名登录密码--&gt;</span></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>javax.jdo.option.ConnectionPassword<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>Cby123..<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>修改配置文件中 system:java.io.tmpdir 和 system:user.name 相关信息，改为实际目录和用户名，或者加入如下配置</strong></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;property&gt;</span></span><br><span class="line">  <span class="params">&lt;name&gt;</span>system:java.io.tmpdir<span class="params">&lt;/name&gt;</span></span><br><span class="line">  <span class="params">&lt;value&gt;</span><span class="meta-keyword">/tmp/</span>hive/java<span class="params">&lt;/value&gt;</span></span><br><span class="line"><span class="params">&lt;/property&gt;</span></span><br><span class="line"><span class="params">&lt;property&gt;</span></span><br><span class="line">  <span class="params">&lt;name&gt;</span>system:user.name<span class="params">&lt;/name&gt;</span></span><br><span class="line">  <span class="params">&lt;value&gt;</span>$&#123;user.name&#125;<span class="params">&lt;/value&gt;</span></span><br><span class="line"><span class="params">&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>并修改临时路径 ：</strong></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="params">&lt;property&gt;</span></span><br><span class="line">    <span class="params">&lt;name&gt;</span>hive.exec.local.scratchdir<span class="params">&lt;/name&gt;</span></span><br><span class="line">    <span class="params">&lt;value&gt;</span><span class="meta-keyword">/root/</span>hive/apache-hive<span class="number">-2.3</span><span class="number">.3</span>-bin<span class="meta-keyword">/tmp/</span>$&#123;system:user.name&#125;<span class="params">&lt;/value&gt;</span></span><br><span class="line">    <span class="params">&lt;description&gt;</span>Local scratch space for Hive jobs<span class="params">&lt;/description&gt;</span></span><br><span class="line">  <span class="params">&lt;/property&gt;</span></span><br><span class="line">  <span class="params">&lt;property&gt;</span></span><br><span class="line">    <span class="params">&lt;name&gt;</span>hive.downloaded.resources.dir<span class="params">&lt;/name&gt;</span></span><br><span class="line">    <span class="params">&lt;value&gt;</span><span class="meta-keyword">/root/</span>hive/apache-hive<span class="number">-2.3</span><span class="number">.3</span>-bin<span class="meta-keyword">/tmp/</span>$&#123;hive.session.id&#125;_resources<span class="params">&lt;/value&gt;</span></span><br><span class="line">    <span class="params">&lt;description&gt;</span>Temporary local directory for added resources in the remote file system.<span class="params">&lt;/description&gt;</span></span><br><span class="line">  <span class="params">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="params">&lt;property&gt;</span></span><br><span class="line">    <span class="params">&lt;name&gt;</span>hive.server2.logging.operation.log.location<span class="params">&lt;/name&gt;</span></span><br><span class="line">    <span class="params">&lt;value&gt;</span><span class="meta-keyword">/root/</span>hive/apache-hive<span class="number">-2.3</span><span class="number">.3</span>-bin<span class="meta-keyword">/tmp/</span>root/operation_logs<span class="params">&lt;/value&gt;</span></span><br><span class="line">    <span class="params">&lt;description&gt;</span>Top level directory where operation logs are stored if logging functionality is enabled<span class="params">&lt;/description&gt;</span></span><br><span class="line">  <span class="params">&lt;/property&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>16.配置hive中jdbc的MySQL驱动</strong></p>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost lib]# cd <span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>lib/</span><br><span class="line">[root@localhost lib]# wget https:<span class="comment">//downloads.mysql.com/archives/get/p/3/file/mysql-connector-java-5.1.49.tar.gz</span></span><br><span class="line">[root@localhost lib]# tar xvf mysql-connector-java-<span class="number">5.1</span>.<span class="number">49</span>.tar.gz </span><br><span class="line">[root@localhost lib]# cp mysql-connector-java-<span class="number">5.1</span>.<span class="number">49</span>/mysql-connector-java-<span class="number">5.1</span>.<span class="number">49</span>.jar .</span><br><span class="line">[root@localhost bin]# </span><br><span class="line">[root@localhost bin]# vim <span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>conf/hive-env.sh</span><br><span class="line">[root@localhost bin]# tail -n <span class="number">3</span> <span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>conf/hive-env.sh</span><br><span class="line">export HADOOP_HOME=<span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span></span><br><span class="line">export HIVE_CONF_DIR=<span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>conf</span><br><span class="line">export HIVE_AUX_JARS_PATH=<span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>lib</span><br><span class="line">[root@localhost bin]#</span><br></pre></td></tr></table></figure>
+<p><strong>17.配置hive环境变量</strong></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># vim /etc/profile</span></span><br><span class="line">[root@localhost ~]<span class="comment"># tail -n 6 /etc/profile</span></span><br><span class="line">export HADOOP_HOME=<span class="regexp">/root/</span>Hadoop<span class="regexp">/hadoop-2.7.2/</span></span><br><span class="line">export HIVE_CONF_DIR=<span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>conf</span><br><span class="line">export HIVE_AUX_JARS_PATH=<span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span>lib</span><br><span class="line">export HIVE_PATH=<span class="regexp">/root/</span>hive<span class="regexp">/apache-hive-2.3.3-bin/</span></span><br><span class="line">export PATH=<span class="variable">$PATH</span>:<span class="variable">$HADOOP_HOME</span><span class="regexp">/sbin:$HADOOP_HOME/</span>bin:<span class="variable">$HIVE_PATH</span>/bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root@localhost bin]<span class="comment"># ./schematool -dbType mysql -initSchema</span></span><br></pre></td></tr></table></figure>
+<p><strong>初始化完成后修改MySQL链接信息，之后配置mysql IP 端口以及放元数据的库名称</strong></p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="meta">@localhost</span> conf]<span class="comment"># vim hive-site.xml</span></span><br><span class="line"></span><br><span class="line"><span class="variable">&lt;property&gt;</span></span><br><span class="line">  <span class="variable">&lt;name&gt;</span>javax.jdo.option.ConnectionURL<span class="variable">&lt;/name&gt;</span></span><br><span class="line">  <span class="variable">&lt;value&gt;</span>jdbc:mysql://127.0.0.1:3306/hive?characterEncoding=utf8&amp;amp;useSSL=false<span class="variable">&lt;/value&gt;</span></span><br><span class="line"><span class="variable">&lt;/property&gt;</span></span><br><span class="line"></span><br><span class="line">[root<span class="meta">@localhost</span> bin]<span class="comment"># nohup hive --service metastore &amp;</span></span><br><span class="line">[root<span class="meta">@localhost</span> bin]<span class="comment"># nohup hive --service hiveserver2 &amp;</span></span><br></pre></td></tr></table></figure>
+<p>**18.创建spark目录并下载所需文件<br>
+**</p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># mkdir  spark</span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> ~]<span class="meta"># cd spark</span></span><br><span class="line">[root<span class="symbol">@localhost</span> spark]<span class="meta"># </span></span><br><span class="line">[root<span class="symbol">@localhost</span> spark]<span class="meta"># wget https://dlcdn.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-without-hadoop.tgz --no-check-certificate</span></span><br><span class="line">[root<span class="symbol">@localhost</span> spark]<span class="meta"># tar xvf  spark-3.1.2-bin-without-hadoop.tgz</span></span><br></pre></td></tr></table></figure>
+<p><strong>19.配置spark环境变量以及备份配置文件</strong></p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># vim /etc/profile</span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># </span></span><br><span class="line">[root<span class="variable">@localhost</span> ~]<span class="comment"># tail -n 3 /etc/profile</span></span><br><span class="line">export SPARK_HOME=<span class="regexp">/root/spark</span><span class="regexp">/spark-3.1.2-bin-without-hadoop/</span></span><br><span class="line">export PATH=<span class="variable">$PATH</span><span class="symbol">:</span><span class="variable">$SPARK_HOME</span>/bin</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root<span class="variable">@localhost</span> spark]<span class="comment"># cd /root/spark/spark-3.1.2-bin-without-hadoop/conf/</span></span><br><span class="line">[root<span class="variable">@localhost</span> conf]<span class="comment"># cp spark-env.sh.template spark-env.sh</span></span><br><span class="line">[root<span class="variable">@localhost</span> conf]<span class="comment"># cp spark-defaults.conf.template spark-defaults.conf</span></span><br><span class="line">[root<span class="variable">@localhost</span> conf]<span class="comment"># cp metrics.properties.template metrics.properties</span></span><br></pre></td></tr></table></figure>
+<p><strong>20.配置程序的环境变量</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]# cp workers.template workers</span><br><span class="line">[root@localhost conf]# vim spark-env.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/root/jdk/jdk1.8.0_202</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_HOME</span>=/root/Hadoop/hadoop-2.7.2</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">HADOOP_CONF_DIR</span>=/root/Hadoop/hadoop-2.7.2/etc/hadoop</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">SPARK_DIST_CLASSPATH</span>=$(/root/Hadoop/hadoop-2.7.2/bin/hadoop classpath)</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">SPARK_MASTER_HOST</span>=127.0.0.1</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">SPARK_MASTER_PORT</span>=7077</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">SPARK_HISTORY_OPTS</span>=<span class="string">&quot;-Dspark.history.ui.port=18080 -</span></span><br><span class="line"><span class="string">Dspark.history.retainedApplications=50 -</span></span><br><span class="line"><span class="string">Dspark.history.fs.logDirectory=hdfs://127.0.0.1:9000/spark-eventlog&quot;</span></span><br></pre></td></tr></table></figure>
+<p><strong>21.修改默认的配置文件</strong></p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost <span class="keyword">conf</span>]# vim spark-defaults.<span class="keyword">conf</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">spark.master                     spark:<span class="comment">//127.0.0.1:7077</span></span><br><span class="line">spark.eventLog.enabled           true</span><br><span class="line">spark.eventLog.<span class="keyword">dir</span>               hdfs:<span class="comment">//127.0.0.1:9000/spark-eventlog</span></span><br><span class="line">spark.serializer                 org.apache.spark.serializer.KryoSerializer</span><br><span class="line">spark.driver.<span class="keyword">memory</span>              3g</span><br><span class="line">spark.eventLog.enabled           true</span><br><span class="line">spark.eventLog.<span class="keyword">dir</span>               hdfs:<span class="comment">//127.0.0.1:9000/spark-eventlog</span></span><br><span class="line">spark.eventLog.<span class="keyword">compress</span>          true</span><br></pre></td></tr></table></figure>
+<p><strong>22.配置工作节点</strong></p>
+<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root<span class="symbol">@localhost</span> conf]<span class="meta"># vim workers</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@localhost</span> conf]<span class="meta"># cat workers</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@localhost</span> conf]<span class="meta"># </span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[root<span class="symbol">@localhost</span> sbin]<span class="meta"># /root/spark/spark-3.1.2-bin-without-hadoop/sbin/start-all.sh</span></span><br></pre></td></tr></table></figure>
+<p><strong>验证应用程序</strong></p>
+<p>访问集群中的所有应用程序的默认端口号为8080。使用以下URL访问该服务。</p>
+<p><strong><a target="_blank" rel="noopener" href="http://localhost:8080/">http://localhost:8080/</a></strong></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/35679b2bcb784216a1ec18a153319e61~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3fa0c9539aeb49eca25a60861911abd7~tplv-k3u1fbpfcp-zoom-1.image" alt="Linux运维交流社区"></p>
+<p><strong>Linux运维交流社区</strong></p>
+<p>Linux运维交流社区，互联网新闻以及技术交流。</p>
+<p>41篇原创内容</p>
+<p>公众号</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c010a1ccc0094b208340e06f26566146~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<blockquote>
+<p>本文使用 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6940875049587097631">文章同步助手</a> 同步</p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/2021-12-30-HaProxy_安装搭建配置/" data-toggle="tooltip" data-placement="top" title="HaProxy 安装搭建配置">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/2021-12-30-搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2/" data-toggle="tooltip" data-placement="top" title="搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/2021-12-30-搭建Hadoop2.7.2和Hive2.3.3以及Spark3.1.2/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Dec 30 2021 17:09:41 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/V-Vincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/V_Vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/WVincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Your Name
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

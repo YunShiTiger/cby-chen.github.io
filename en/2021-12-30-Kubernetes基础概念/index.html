@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/en/2021-12-30-Kubernetes基础概念/">
+  <title>
+    
+      Kubernetes基础概念 - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Your Title</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">HOME</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              ABOUT
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              CATEGORIES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              TAGS
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>SEARCH</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="en/2021-12-30-Kubernetes基础概念/">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Kubernetes基础概念</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by cby on
+              2021-12-30
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">7</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <h2 id="Kubernetes基础概念">Kubernetes基础概念</h2>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/03e85186ae7a494d8f57cba0a08cc3c0~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<h3 id="kubernetes特性：">kubernetes特性：</h3>
+<p><strong>- 服务发现和负载均衡</strong></p>
+<p>Kubernetes 可以使用 DNS 名称或自己的 IP 地址公开容器，如果进入容器的流量很大， Kubernetes 可以负载均衡并分配网络流量，从而使部署稳定。</p>
+<p><strong>- 存储编排</strong></p>
+<p>Kubernetes 允许你自动挂载你选择的存储系统，例如本地存储、公共云提供商等。</p>
+<p><strong>- 自动部署和回滚</strong></p>
+<p>你可以使用 Kubernetes 描述已部署容器的所需状态，它可以以受控的速率将实际状态 更改为期望状态。例如，你可以自动化 Kubernetes 来为你的部署创建新容器， 删除现有容器并将它们的所有资源用于新容器。</p>
+<p><strong>- 自动完成装箱计算</strong></p>
+<p>Kubernetes 允许你指定每个容器所需 CPU 和内存（RAM）。当容器指定了资源请求时，Kubernetes 可以做出更好的决策来管理容器的资源。</p>
+<p><strong>- 自我修复</strong></p>
+<p>Kubernetes 重新启动失败的容器、替换容器、杀死不响应用户定义的 运行状况检查的容器，并且在准备好服务之前不将其通告给客户端。</p>
+<p><strong>- 密钥与配置管理</strong></p>
+<p>Kubernetes 允许你存储和管理敏感信息，例如密码、OAuth 令牌和 ssh 密钥。你可以在不重建容器镜像的情况下部署和更新密钥和应用程序配置，也无需在堆栈配置中暴露密钥。</p>
+<p>Kubernetes 为你提供了一个可弹性运行分布式系统的框架。Kubernetes 会满足你的扩展要求、故障转移、部署模式等。例如，Kubernetes 可以轻松管理系统的 Canary 部署。</p>
+<h3 id="kubernetes组件结构与介绍">kubernetes组件结构与介绍</h3>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/921cf51e835043c59023c9df0cd1c583~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<h4 id="1、控制平面组件（Control-Plane-Components）">1、控制平面组件（Control Plane Components）</h4>
+<p>控制平面的组件对集群做出全局决策(比如调度)，以及检测和响应集群事件（例如，当不满足部署的 replicas 字段时，启动新的 pod）。</p>
+<p>控制平面组件可以在集群中的任何节点上运行。然而，为了简单起见，设置脚本通常会在同一个计算机上启动所有控制平面组件， 并且不会在此计算机上运行用户容器。请参阅使用 kubeadm 构建高可用性集群 中关于多 VM 控制平面设置的示例。</p>
+<h5 id="kube-apiserver">kube-apiserver</h5>
+<p>API 服务器是 Kubernetes 控制面的组件， 该组件公开了 Kubernetes API。API 服务器是 Kubernetes 控制面的前端。</p>
+<p>Kubernetes API 服务器的主要实现是 kube-apiserver。kube-apiserver 设计上考虑了水平伸缩，也就是说，它可通过部署多个实例进行伸缩。你可以运行 kube-apiserver 的多个实例，并在这些实例之间平衡流量。</p>
+<h5 id="etcd">etcd</h5>
+<p>etcd 是兼具一致性和高可用性的键值数据库，可以作为保存 Kubernetes 所有集群数据的后台数据库。</p>
+<p>您的 Kubernetes 集群的 etcd 数据库通常需要有个备份计划。</p>
+<p>要了解 etcd 更深层次的信息，请参考 etcd 文档。</p>
+<h5 id="kube-scheduler">kube-scheduler</h5>
+<p>控制平面组件，负责监视新创建的、未指定运行节点（node）的 Pods，选择节点让 Pod 在上面运行。</p>
+<p>调度决策考虑的因素包括单个 Pod 和 Pod 集合的资源需求、硬件/软件/策略约束、亲和性和反亲和性规范、数据位置、工作负载间的干扰和最后时限。</p>
+<h5 id="kube-controller-manager">kube-controller-manager</h5>
+<p>在主节点上运行 控制器 的组件。</p>
+<p>从逻辑上讲，每个控制器都是一个单独的进程， 但是为了降低复杂性，它们都被编译到同一个可执行文件，并在一个进程中运行。</p>
+<p>这些控制器包括:</p>
+<p>● 节点控制器（Node Controller）: 负责在节点出现故障时进行通知和响应</p>
+<p>● 任务控制器（Job controller）: 监测代表一次性任务的 Job 对象，然后创建 Pods 来运行这些任务直至完成</p>
+<p>● 端点控制器（Endpoints Controller）: 填充端点(Endpoints)对象(即加入 Service 与 Pod)</p>
+<p>● 服务帐户和令牌控制器（Service Account &amp; Token Controllers）: 为新的命名空间创建默认帐户和 API 访问令牌</p>
+<h5 id="cloud-controller-manager">cloud-controller-manager</h5>
+<p>云控制器管理器是指嵌入特定云的控制逻辑的 控制平面组件。云控制器管理器允许您链接集群到云提供商的应用编程接口中， 并把和该云平台交互的组件与只和您的集群交互的组件分离开。</p>
+<p>cloud-controller-manager 仅运行特定于云平台的控制回路。如果你在自己的环境中运行 Kubernetes，或者在本地计算机中运行学习环境， 所部署的环境中不需要云控制器管理器。</p>
+<p>与 kube-controller-manager 类似，cloud-controller-manager 将若干逻辑上独立的 控制回路组合到同一个可执行文件中，供你以同一进程的方式运行。你可以对其执行水平扩容（运行不止一个副本）以提升性能或者增强容错能力。</p>
+<p>下面的控制器都包含对云平台驱动的依赖：</p>
+<p>● 节点控制器（Node Controller）: 用于在节点终止响应后检查云提供商以确定节点是否已被删除</p>
+<p>● 路由控制器（Route Controller）: 用于在底层云基础架构中设置路由</p>
+<p>● 服务控制器（Service Controller）: 用于创建、更新和删除云提供商负载均衡器</p>
+<h4 id="2、Node-组件">2、Node 组件</h4>
+<p>节点组件在每个节点上运行，维护运行的 Pod 并提供 Kubernetes 运行环境。</p>
+<h5 id="kubelet">kubelet</h5>
+<p>一个在集群中每个节点（node）上运行的代理。它保证容器（containers）都 运行在 Pod 中。</p>
+<p>kubelet 接收一组通过各类机制提供给它的 PodSpecs，确保这些 PodSpecs 中描述的容器处于运行状态且健康。kubelet 不会管理不是由 Kubernetes 创建的容器。</p>
+<h5 id="kube-proxy">kube-proxy</h5>
+<p>kube-proxy 是集群中每个节点上运行的网络代理， 实现 Kubernetes 服务（Service） 概念的一部分。</p>
+<p>kube-proxy 维护节点上的网络规则。这些网络规则允许从集群内部或外部的网络会话与 Pod 进行网络通信。</p>
+<p>如果操作系统提供了数据包过滤层并可用的话，kube-proxy 会通过它来实现网络规则。否则， kube-proxy 仅转发流量本身。</p>
+<h4 id="3、集群安装">3、集群安装</h4>
+<p>使用脚本一键部署：<a target="_blank" rel="noopener" href="https://github.com/lework/kainstall">https://github.com/lework/kainstall</a></p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">root<span class="variable">@hello</span><span class="symbol">:~</span><span class="comment"># wget https://cdn.jsdelivr.net/gh/lework/kainstall<span class="doctag">@master</span>/kainstall-ubuntu.sh</span></span><br><span class="line"></span><br><span class="line">--<span class="number">2021</span>-<span class="number">11</span>-<span class="number">17</span> <span class="number">02</span><span class="symbol">:</span><span class="number">56</span><span class="symbol">:</span><span class="number">26</span>--  <span class="symbol">https:</span>/<span class="regexp">/cdn.jsdelivr.net/gh</span><span class="regexp">/lework/kainstall</span><span class="variable">@master</span>/kainstall-ubuntu.sh</span><br><span class="line"></span><br><span class="line">Resolving cdn.jsdelivr.net (cdn.jsdelivr.net)... <span class="number">117.12</span>.<span class="number">41.16</span>, <span class="number">2408</span><span class="symbol">:</span><span class="number">8726</span><span class="symbol">:</span><span class="number">7000</span><span class="symbol">:</span><span class="number">5</span><span class="symbol">:</span><span class="symbol">:</span><span class="number">10</span></span><br><span class="line"></span><br><span class="line">Connecting to cdn.jsdelivr.net (cdn.jsdelivr.net)<span class="params">|117.12.41.16|</span><span class="symbol">:</span><span class="number">443</span>... connected.</span><br><span class="line"></span><br><span class="line">HTTP request sent, awaiting response... <span class="number">200</span> OK</span><br><span class="line"></span><br><span class="line"><span class="symbol">Length:</span> <span class="number">128359</span> (125K) [application/x-sh]</span><br><span class="line"></span><br><span class="line">Saving <span class="symbol">to:</span> ‘kainstall-ubuntu.sh’</span><br><span class="line"></span><br><span class="line">kainstall-ubuntu.sh          <span class="number">100</span><span class="string">%[========================================================================&gt;]</span> <span class="number">125</span>.35K  --.-KB/s   <span class="keyword">in</span> <span class="number">0</span>.006s  </span><br><span class="line"></span><br><span class="line"><span class="number">2021</span>-<span class="number">11</span>-<span class="number">17</span> <span class="number">02</span><span class="symbol">:</span><span class="number">56</span><span class="symbol">:</span><span class="number">26</span> (<span class="number">19.2</span> MB/s) - ‘kainstall-ubuntu.sh’ saved [<span class="number">128359</span>/<span class="number">128359</span>]</span><br><span class="line"></span><br><span class="line">root<span class="variable">@hello</span><span class="symbol">:~</span><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">root<span class="variable">@hello</span><span class="symbol">:~</span><span class="comment"># chmod +x kainstall-ubuntu.sh</span></span><br><span class="line"></span><br><span class="line">root<span class="variable">@hello</span><span class="symbol">:~</span><span class="comment"># </span></span><br><span class="line"></span><br><span class="line">root<span class="variable">@hello</span><span class="symbol">:~</span><span class="comment">#  kainstall-ubuntu.sh init \</span></span><br><span class="line"></span><br><span class="line">&gt;  --master <span class="number">192.168</span>.<span class="number">1.100</span>,<span class="number">192.168</span>.<span class="number">1.101</span>,<span class="number">192.168</span>.<span class="number">1.102</span> \</span><br><span class="line"></span><br><span class="line">&gt;  --worker <span class="number">192.168</span>.<span class="number">1.103</span>,<span class="number">192.168</span>.<span class="number">1.104</span>,<span class="number">192.168</span>.<span class="number">1.105</span>,<span class="number">192.168</span>.<span class="number">1.106</span> \</span><br><span class="line"></span><br><span class="line">&gt;  --user root \</span><br><span class="line"></span><br><span class="line">&gt;  --password <span class="number">123456</span> \</span><br><span class="line"></span><br><span class="line">&gt;  --version <span class="number">1.20</span>.<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可参考：</p>
+<p>kubeadm 手动安装高可用：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750/article/details/110298506">https://blog.csdn.net/qq_33921750/article/details/110298506</a></p>
+<p>kubeadm 手动安装单master集群：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750/article/details/103613599">https://blog.csdn.net/qq_33921750/article/details/103613599</a></p>
+<h4 id="4、部署dashboard">4、部署dashboard</h4>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750/article/details/121026799">https://blog.csdn.net/qq_33921750/article/details/121026799</a></p>
+<h4 id="5、命令自动补全（可选）">5、命令自动补全（可选）</h4>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750/article/details/121173706">https://blog.csdn.net/qq_33921750/article/details/121173706</a></p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3669d712337f4951bde355838cbe968d~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p><strong>Linux运维交流社区</strong></p>
+<p>Linux运维交流社区，互联网新闻以及技术交流。</p>
+<p>55篇原创内容</p>
+<p>公众号</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d5cd432fa11d48ffa9e8ac3478bd8a67~tplv-k3u1fbpfcp-zoom-1.image" alt="图片"></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_33921750">https://blog.csdn.net/qq_33921750</a></p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/u/3981543">https://my.oschina.net/u/3981543</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.zhihu.com/people/chen-bu-yun-2">https://www.zhihu.com/people/chen-bu-yun-2</a></p>
+<p><a target="_blank" rel="noopener" href="https://segmentfault.com/u/hppyvyv6/articles">https://segmentfault.com/u/hppyvyv6/articles</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/user/3315782802482007">https://juejin.cn/user/3315782802482007</a></p>
+<p><a target="_blank" rel="noopener" href="https://space.bilibili.com/352476552/article">https://space.bilibili.com/352476552/article</a></p>
+<p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/column/93230">https://cloud.tencent.com/developer/column/93230</a></p>
+<p>知乎、CSDN、开源中国、思否、掘金、哔哩哔哩、腾讯云</p>
+<blockquote>
+<p>本文使用 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6940875049587097631">文章同步助手</a> 同步</p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/cn/2021-12-30-Kubernetes基础概念/" data-toggle="tooltip" data-placement="top" title="Kubernetes基础概念">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/cn/2021-12-30-Ubuntu_通过_Netplan_配置网络教程/" data-toggle="tooltip" data-placement="top" title="Ubuntu 通过 Netplan 配置网络教程">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      If you like this blog or find it useful for you, you are welcome to comment on it. You are also welcome to share this blog, so that more people can participate in it. If the images used in the blog infringe your copyright, please contact the author to delete them. Thank you !
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Kubernetes基础概念&body=Hi,I found this website and thought you might like it http://yoursite-url/en/2021-12-30-Kubernetes基础概念/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Dec 30 2021 17:11:40 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">FEATURED TAGS</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>FRIENDS</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/V-Vincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/V_Vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/WVincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Your Name
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

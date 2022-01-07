@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag (contains Google-Analytics、Baidu-Tongji)-->
+<head>
+  <!-- Google Analytics -->
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-xxxxxx-xx"></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'UA-xxxxxx-xx');
+    </script>
+  
+
+  <!-- Baidu Tongji -->
+  
+    <script type="text/javascript">
+      // Originial
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  <!-- Baidu Push -->
+  
+    <script>
+      (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+    </script>
+  
+
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+  <meta name="google-site-verification" content="lxDfCplOZbIzjhG34NuQBgu2gdyRlAtMB4utP5AgEBc"/>
+  <meta name="baidu-site-verification" content="PpzM9WxOJU"/>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="It&#39;s an IT blog..."/>
+  <meta name="keyword" content="v-vincen,v-vincen,livemylife,IT  blog,Blog"/>
+  <link rel="shortcut icon" href="/img/avatar/roguerabbit.jpg"/>
+
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async="async" defer="defer" src="https://buttons.github.io/buttons.js"></script>
+
+  
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/beantech.min.css"/>
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css"/>
+    <link rel="stylesheet" href="/css/widget.css"/>
+    <link rel="stylesheet" href="/css/rocket.css"/>
+    <link rel="stylesheet" href="/css/signature.css"/>
+    <link rel="stylesheet" href="/css/catalog.css"/>
+    <link rel="stylesheet" href="/css/livemylife.css"/>
+
+    
+      <!-- wave start -->
+      <link rel="stylesheet" href="/css/wave.css"/>
+      <!-- wave end -->
+    
+
+    
+      <!-- top start (article top hot config) -->
+      <link rel="stylesheet" href="/css/top.css"/>
+      <!-- top end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/scroll.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+      <!-- viewer start (Picture preview) -->
+      <link rel="stylesheet" href="/css/viewer.min.css"/>
+      <!-- viewer end -->
+    
+
+    
+      <!-- Search start -->
+      <link rel="stylesheet" href="/css/search.css"/>
+      <!-- Search end -->
+    
+
+    
+      <!-- ThemeColor start -->
+      <link rel="stylesheet" href="/css/themecolor.css"/>
+      <!-- ThemeColor end -->
+    
+
+    
+
+    
+      <!-- gitalk start -->
+      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css"> -->
+      <link rel="stylesheet" href="/css/gitalk.css"/>
+      <!-- gitalk end -->
+    
+  
+
+  <!-- Custom Fonts -->
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+  <!-- Hux change font-awesome CDN to qiniu -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Hux Delete, sad but pending in China <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'> <link
+  href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/ css'> -->
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
+
+  <!-- ga & ba script hoook -->
+  <link rel="canonical" href="http://yoursite-url/cn/2021-12-30-Proxmox_VE镜像分析与定制/">
+  <title>
+    
+      Proxmox VE镜像分析与定制 - either thin | or die
+    
+  </title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<!-- hack iOS CSS :active style -->
+
+	<body ontouchstart="" class="body--light body--dark">
+
+
+		<!-- ThemeColor -->
+		
+		<!-- ThemeColor -->
+<style type="text/css">
+  .body--light {
+    --light-mode: none;
+    --dark-mode: block;
+  }
+  .body--dark {
+    --light-mode: block;
+    --dark-mode: none;
+  }
+  i.mdui-icon.material-icons.light-mode {
+    display: var(--light-mode);
+  }
+  i.mdui-icon.material-icons.dark-mode {
+    display: var(--dark-mode);
+  }
+</style>
+<div class="toggle" onclick="document.body.classList.toggle('body--dark')">
+  <i class="mdui-icon material-icons light-mode"></i>
+  <i class="mdui-icon material-icons dark-mode"></i>
+</div>
+<script>
+  //getCookieValue
+  function getCookieValue(a) {
+    var b = document.cookie.match('(^|[^;]+)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b
+      ? b.pop()
+      : '';
+  }
+  let themeMode = 'dark';
+  if (getCookieValue('sb-color-mode') && (getCookieValue('sb-color-mode') !== themeMode)) {
+    let dbody = document.body.classList;
+    themeMode === 'dark' ? dbody.remove('body--dark') : dbody.add('body--dark');
+  }
+
+  //setCookieValue
+  var toggleBtn = document.querySelector(".toggle");
+  toggleBtn.addEventListener("click", function () {
+    var e = document.body.classList.contains("body--dark");
+    var cookieString = e
+      ? "dark"
+      : "light";
+    var exp = new Date();
+    exp.setTime(exp.getTime() + 3 * 24 * 60 * 60 * 1000); //3天过期
+    document.cookie = "sb-color-mode=" + cookieString + ";expires=" + exp.toGMTString() + ";path=/";
+  });
+</script>
+
+		
+
+		<!-- Gitter -->
+		
+		<!-- Gitter -->
+<!-- Docs:https://gitter.im/?utm_source=left-menu-logo -->
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'your-community/your-room'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+
+		
+
+		<!-- Navigation (contains search)-->
+		<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header page-scroll">
+      <button type="button" class="navbar-toggle">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Your Title</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <!-- Known Issue, found by Hux: <nav>'s height woule be hold on by its content. so, when navbar scale out, the <nav> will cover tags. also mask any touch event of tags, unfortunately. -->
+    <div id="huxblog_navbar">
+      <div class="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">首页</a>
+          </li>
+
+          
+          
+          
+          
+          <li>
+            <a href="/about/">
+              
+              关于
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/archive/">
+              
+              归档
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/categories/">
+              
+              分类
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags/">
+              
+              标签
+              
+              
+            </a>
+          </li>
+          
+          
+
+          
+          <li>
+            <a class="popup-trigger">
+              <span class="search-icon"></span>搜索</a>
+          </li>
+          
+
+          <!-- LangSelect -->
+          
+          
+          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      简体中文
+    </span>
+    <select id="lang-select" data-canonical="cn/2021-12-30-Proxmox_VE镜像分析与定制/">
+      
+      
+      <option value="en" >
+        English
+      </option>
+      
+      <option value="cn"  selected >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container -->
+</nav>
+<!-- progress -->
+<div id="progress">
+  <div class="line" style="width: 0%;"></div>
+</div>
+
+<script>
+  // Drop Bootstarp low-performance Navbar Use customize navbar with high-quality material design animation in high-perf jank-free CSS3 implementation
+  var $body = document.body;
+  var $toggle = document.querySelector('.navbar-toggle');
+  var $navbar = document.querySelector('#huxblog_navbar');
+  var $collapse = document.querySelector('.navbar-collapse');
+
+  $toggle.addEventListener('click', handleMagic)
+
+  function handleMagic(e) {
+    if ($navbar.className.indexOf('in') > 0) {
+      // CLOSE
+      $navbar.className = " ";
+      // wait until animation end.
+      setTimeout(function() {
+        // prevent frequently toggle
+        if ($navbar.className.indexOf('in') < 0) {
+          $collapse.style.height = "0px"
+        }
+      }, 400)
+    } else {
+      // OPEN
+      $collapse.style.height = "auto"
+      $navbar.className += " in";
+    }
+  }
+</script>
+
+
+		<!-- Post Header (contains intro-header、signature、wordcount、busuanzi、waveoverlay) -->
+		<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+
+  <style type="text/css">
+    .body--light {
+      /* intro-header */
+      --intro-header-background-image-url-home: url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: url('');
+      --intro-header-background-image-url-page: url('/img/header_img/archive_bg2.jpg');
+    }
+    .body--dark {
+      --intro-header-background-image-url-home: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/newhome_bg.jpg');
+      --intro-header-background-image-url-post: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('');
+      --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('/img/header_img/archive_bg2.jpg');
+    }
+
+    header.intro-header {
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url(''); */
+      
+    }
+
+    
+      #signature {/*signature*/
+        background-image: url('/img/signature/vincent-white.png');
+      }
+    
+  </style>
+
+
+
+
+
+<header class="intro-header">
+  <!-- Signature -->
+  <div id="signature">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>Proxmox VE镜像分析与定制</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by cby on
+              2021-12-30
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">23</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">4.8k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  <!-- waveoverlay start -->
+  <div class="preview-overlay">
+    <svg class="preview-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="preview-parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill=var(--gentle-wave1)></use>
+        <use xlink:href="#gentle-wave" x="48" y="3" fill=var(--gentle-wave2)></use>
+        <use xlink:href="#gentle-wave" x="48" y="5" fill=var(--gentle-wave3)></use>
+        <use xlink:href="#gentle-wave" x="48" y="7" fill=var(--gentle-wave)></use>
+      </g>
+    </svg>
+  </div>
+  <!-- waveoverlay end -->
+  
+
+</header>
+
+
+
+		<!-- Main Content (Post contains
+	Pager、
+	tip、
+	socialshare、
+	gitalk、gitment、disqus-comment、
+	Catalog、
+	Sidebar、
+	Featured-Tags、
+	Friends Blog、
+	anchorjs、
+	) -->
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+
+        <p>Proxmox VE（Proxmox Virtual Environment，简称PVE）是一个开源的服务器虚拟化环境Linux发行版，基于Debian，使用给予Ubuntu的定制内核。相比于其他虚拟化平台，PVE具有的一个显著的特点就是无需master节点，安装完成后，无需特殊配置即可将多个节点组成集群。</p>
+<p>由于工程要求，PVE需要大规模部署在物理服务器上，所以定制镜像就显得很有必要。</p>
+<p>定制目标包括</p>
+<p>（1）修改initrd中init脚本的提示信息</p>
+<p>（2）删除GRUB界面多余选项，直接进入安装界面</p>
+<p>（3）添加预装软件</p>
+<p>（4）在安装过程中对软件进行个性化配置</p>
+<p>（5）修改PVE安装界面，在PVE安装界面中的所有输入框设置默认文本</p>
+<p><strong>Proxmox VE镜像分析</strong></p>
+<p>下载Proxmox VE 6.4版镜像后挂载，观察文件结构</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ tree -L <span class="number">2</span></span><br><span class="line">.</span><br><span class="line">├── boot</span><br><span class="line">│   ├── boot.cat</span><br><span class="line">│   ├── grub</span><br><span class="line">│   ├── initrd.img</span><br><span class="line">│   ├── linux26</span><br><span class="line">│   └── memtest86+.bin</span><br><span class="line">├── COPYING</span><br><span class="line">├── COPYRIGHT</span><br><span class="line">├── debian -&gt; .</span><br><span class="line">├── dists</span><br><span class="line">│   └── stretch</span><br><span class="line">├── efi.img</span><br><span class="line">├── EULA</span><br><span class="line">├── mach_kernel</span><br><span class="line">├── proxmox</span><br><span class="line">│   ├── country.dat</span><br><span class="line">│   ├── packages</span><br><span class="line">│   └── pve-base.cnt</span><br><span class="line">├── pve-base.squashfs</span><br><span class="line">├── pve-installer.squashfs</span><br><span class="line">├── Release.txt</span><br><span class="line">└── System</span><br><span class="line">    └── Library</span><br><span class="line"></span><br><span class="line"><span class="number">9</span> directories, <span class="number">14</span> files</span><br></pre></td></tr></table></figure>
+<p>其中：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">grub</span>文件夹：包含引导程序GRUB所用到的文件。</span><br><span class="line"><span class="attribute">initrd</span>.img：系统初始化所使用的镜像，里面包含一个最小化的系统，包含了/dev、/etc、/bin等很多基本的目录，还有关键的init程序，负责驱动的加载和文件系统的初始化。</span><br><span class="line"><span class="attribute">linux26</span>：Linux <span class="number">2</span>.<span class="number">6</span>内核</span><br><span class="line"><span class="attribute">efi</span>.img：系统引导镜像，内含boot.efi、bootia<span class="number">32</span>.efi、bootx<span class="number">64</span>.efi。</span><br><span class="line"><span class="attribute">proxmox</span>文件夹：系统预安装包的存放目录</span><br><span class="line"><span class="attribute">PVE</span>的根系统默认安装包是在proxmox文件夹下的，只要不破坏其依赖关系，可以将需要预安装的包及其依赖放到这个文件夹下。</span><br><span class="line"><span class="attribute">PVE</span>预安装包时候使用的是循环读取proxmox/packages中的deb，然后使用的安装方法是先解压然后再配置，这样不会产生依赖关系而导致装不上deb的问题。</span><br><span class="line"><span class="attribute">pve</span>-base.squashfs：安装的根系统，也就是最终的系统</span><br><span class="line"><span class="attribute">pve</span>-installer.squashfs：安装时需要的系统</span><br></pre></td></tr></table></figure>
+<p><strong>Proxmox VE安装流程</strong></p>
+<p>PVE安装流程主要分为以下4个步骤：</p>
+<p>（1）Boot Loader：由 BIOS 加载，用于将后续的 kernel 和 initrd 的装载到内存中。（PVE安装时使用的是UEFI模式的安装，但是又不是传统意义上的UEFI，它先是使用了BIOS加载kernel和initrd到内存，然后又跳到UEFI分区执行efi.img文件，调用proxinstall进入到系统安装界面，然后是挂载pve-base.squashfs进行系统安装）</p>
+<p>（2）kernel：为 initrd 运行提供基础的运行环境，对应boot目录下的linux26文件</p>
+<p>（3）initrd：检测并加载各种驱动程序，并执行init，对应boot目录下的initrd.img文件</p>
+<p>（4）rootfs：根文件系统，用户的各种操作都是基于这个被最后加载的文件系统，这里对应了pve-base.squashfs</p>
+<p><strong>Proxmox VE镜像定制</strong></p>
+<p>ISO解压与压缩</p>
+<p>在原先使用ISO Master作为解压缩ISO的工具中，产生的ISO文件可以直接作为cdrom启动，但刻录进USB设备后缺失MBR等重要部分所以无法启动，因此改用命令行进行解压缩。</p>
+<p>（1）ISO提取</p>
+<p>首先挂载镜像文件。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mount -o loop Desktop<span class="regexp">/proxmox-ve_6.4-1.iso cby/</span></span><br></pre></td></tr></table></figure>
+<p>挂载点目录中的文件是只读的，所以需要同步到工作目录下。</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd cby</span><br><span class="line">$ sudo rsync -av <span class="regexp">/home/</span>cby<span class="regexp">/cby/</span> <span class="regexp">/home/</span>cby/</span><br></pre></td></tr></table></figure>
+<p>同步之后就即可修改ISO内的文件。</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">$ sudo umount /home/cby/cby </span><br><span class="line">$ ll</span><br><span class="line">total 386672</span><br><span class="line">dr-xr-xr-x<span class="number"> 10 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 ./</span><br><span class="line">dr-xr-xr-x<span class="number"> 23 </span>root root     <span class="number"> 4096 </span>May<span class="number"> 19 </span>18:56 ../</span><br><span class="line">dr-xr-xr-x <span class="number"> 3 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 boot/</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root       <span class="number"> 89 </span>Apr<span class="number"> 27 </span>04:26 .cd-info</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root    <span class="number"> 32386 </span>Apr<span class="number"> 27 </span>04:26 COPYING</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root      <span class="number"> 955 </span>Apr<span class="number"> 27 </span>04:26 COPYRIGHT</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root        <span class="number"> 1 </span>Apr<span class="number"> 27 </span>04:26 debian -&gt; ./</span><br><span class="line">dr-xr-xr-x <span class="number"> 3 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 dists/</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root  <span class="number"> 2949120 </span>Apr<span class="number"> 27 </span>04:26 efi.img</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root     <span class="number"> 4470 </span>Apr<span class="number"> 27 </span>04:26 EULA</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root        <span class="number"> 0 </span>Apr<span class="number"> 27 </span>04:26 mach_kernel</span><br><span class="line">dr-xr-xr-x <span class="number"> 3 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 proxmox/</span><br><span class="line">dr-xr-xr-x <span class="number"> 2 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 .pve-base/</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root<span class="number"> 101306368 </span>Apr<span class="number"> 27 </span>04:26 pve-base.squashfs</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root       <span class="number"> 37 </span>Apr<span class="number"> 27 </span>04:26 .pve-cd-id.txt</span><br><span class="line">dr-xr-xr-x <span class="number"> 2 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 .pve-installer/</span><br><span class="line">dr-xr-xr-x <span class="number"> 2 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 .pve-installer-mp/</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root<span class="number"> 291586048 </span>Apr<span class="number"> 27 </span>04:26 pve-installer.squashfs</span><br><span class="line">-r--r--r-- <span class="number"> 1 </span>root root    <span class="number"> 15792 </span>Apr<span class="number"> 27 </span>04:26 Release.txt</span><br><span class="line">dr-xr-xr-x <span class="number"> 3 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 System/</span><br><span class="line">dr-xr-xr-x <span class="number"> 2 </span>root root     <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:26 .workdir/</span><br></pre></td></tr></table></figure>
+<p>（2）ISO压缩</p>
+<p>使用原镜像的MBR（前512字节）作为定制镜像的MBR</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dd <span class="attribute">if</span>=/home/cby/proxmox-ve_6.4-1.iso <span class="attribute">bs</span>=512 <span class="attribute">count</span>=1 <span class="attribute">of</span>=proxmox.mbr</span><br><span class="line">1+0 records <span class="keyword">in</span></span><br><span class="line">1+0 records out</span><br><span class="line">512 bytes copied, 0.000134541 s, 3.8 MB/s</span><br></pre></td></tr></table></figure>
+<p>打包ISO镜像</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xorriso -<span class="keyword">as</span> mkisofs -o proxmox-ve_6<span class="number">.4</span><span class="number">-1.</span>iso -r -V <span class="string">&#x27;inspur&#x27;</span> <span class="comment">--grub2-mbr proxmox.mbr --protective-msdos-label -efi-boot-part --efi-boot-image  -c &#x27;/boot/boot.cat&#x27; -b &#x27;/boot/grub/i386-pc/eltorito.img&#x27; -no-emul-boot -boot-load-size 4 -boot-info-table --grub2-boot-info -eltorito-alt-boot -e &#x27;/efi.img&#x27; -no-emul-boot .</span></span><br><span class="line">xorriso <span class="number">1.5</span><span class="number">.2</span> : RockRidge filesystem manipulator, libburnia project.</span><br><span class="line"></span><br><span class="line">Drive <span class="keyword">current</span>: -outdev <span class="string">&#x27;stdio:proxmox-ve_6.4-1.iso&#x27;</span></span><br><span class="line">Media <span class="keyword">current</span>: stdio file, overwriteable</span><br><span class="line">Media status : <span class="keyword">is</span> blank</span><br><span class="line">Media <span class="keyword">summary</span>: <span class="number">0</span> sessions, <span class="number">0</span> data blocks, <span class="number">0</span> data, <span class="number">80.6</span>g free</span><br><span class="line">xorriso : <span class="built_in">WARNING</span> : -volid <span class="type">text</span> does <span class="keyword">not</span> comply <span class="keyword">to</span> ISO <span class="number">9660</span> / ECMA <span class="number">119</span> rules</span><br><span class="line">Added <span class="keyword">to</span> ISO image: directory <span class="string">&#x27;/&#x27;</span>=<span class="string">&#x27;/home/cby/chenby&#x27;</span></span><br><span class="line">xorriso : <span class="keyword">UPDATE</span> :    <span class="number">1421</span> files added <span class="keyword">in</span> <span class="number">1</span> seconds</span><br><span class="line">xorriso : <span class="keyword">UPDATE</span> :    <span class="number">1421</span> files added <span class="keyword">in</span> <span class="number">1</span> seconds</span><br><span class="line">xorriso : NOTE : Copying <span class="keyword">to</span> <span class="keyword">System</span> Area: <span class="number">512</span> bytes <span class="keyword">from</span> file <span class="string">&#x27;/home/cby/chenby/proxmox.mbr&#x27;</span></span><br><span class="line">xorriso : <span class="keyword">UPDATE</span> :  <span class="number">1.00</span>% done</span><br><span class="line">xorriso : <span class="keyword">UPDATE</span> :  <span class="number">42.39</span>% done</span><br><span class="line">xorriso : <span class="keyword">UPDATE</span> :  <span class="number">86.68</span>% done</span><br><span class="line">ISO image produced: <span class="number">453265</span> sectors</span><br><span class="line">Written <span class="keyword">to</span> medium : <span class="number">453265</span> sectors at LBA <span class="number">0</span></span><br><span class="line">Writing <span class="keyword">to</span> <span class="string">&#x27;stdio:proxmox-ve_6.4-1.iso&#x27;</span> completed successfully.</span><br></pre></td></tr></table></figure>
+<p>修改initrd</p>
+<p>initrd.img位于原始镜像的boot目录下，修改initrd的目的是修改安装过程中的输出文本，是一个比较特殊的部分，要从initrd引入的目的讲起。</p>
+<p>initrd 的英文含义是 boot loader initialized RAM disk，就是由 boot loader 初始化的内存盘。initrd的最初的目的是为了把kernel的启动分成两个阶段：在kernel中保留最少最基本的启动代码，然后把对各种各样硬件设备的支持以模块的方式放在initrd中，这样就在启动过程中可以从initrd所mount的根文件系统中装载需要的模块。这样的一个好处就是在保持kernel不变的情况下，通过修改initrd中的内容就可以灵活的支持不同的硬件。在启动完成的最后阶段，根文件系统可以重新mount到其他设备上。也就是说由于initrd会在内存虚拟一个文件系统，然后可以根据不同的硬件加载不同的驱动，而不需要重新编译整个核心。所以，大部分的发行版都会通过这种方式对驱动进行加载。</p>
+<p>initrd引入之后Linux的引导会变成如下流程。</p>
+<p>（1）boot loader 把内核以及 initrd 文件加载到内存的特定位置。</p>
+<p>（2）内核判断initrd的文件格式，如果是cpio格式。</p>
+<p>（3）将initrd的内容释放到rootfs中。</p>
+<p>（4）执行initrd中的/init文件，执行到这一点，内核的工作全部结束，完全交给/init文件处理。</p>
+<p>根据核心版本的不同，initrd文件有两种格式：image和cpio。**kernel 2.4只使用image格式，而kernel 2.6可同时支持两种格式。**它们不单格式不一样，而且运作的机制和流程也完全不同，甚至制作方法也不一样。pve的kernel版本是2.6，所以在此只讲cpio格式的initrd制作。</p>
+<p>initrd解压、修改与压缩流程：</p>
+<p>（1）解压proxmox-ve_6.4-1.iso，boot目录下的initrd.img就是gz格式的压缩文件</p>
+<p>（2）将initrd.img备份后重命名为initrd.org.img，并解压缩</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo gzip -d -S <span class="string">&quot;.img&quot;</span> ./initrd<span class="meta">.org</span>.img</span><br></pre></td></tr></table></figure>
+<p>执行file后查看格式</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> sudo <span class="keyword">file</span> initrd.org</span><br><span class="line">initrd.org: ASCII cpio archive (SVR4 with <span class="keyword">no</span> CRC)</span><br></pre></td></tr></table></figure>
+<p>（3）创建initrd.tmp目录以存放后续还原出来的文件，然后执行cpio命令将文件还原</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo mkdir initrd.tmp</span><br><span class="line"><span class="variable">$</span> <span class="built_in">cd</span> initrd.tmp</span><br><span class="line"><span class="variable">$</span> sudo cpio <span class="literal">-id</span> &lt; ../initrd.org</span><br><span class="line"><span class="number">241820</span> blocks</span><br><span class="line"><span class="variable">$</span> <span class="built_in">ls</span></span><br><span class="line">bin  dev  devfs  etc  init  lib  lib64  mnt  proc  sbin  sys  tmp  usr</span><br></pre></td></tr></table></figure>
+<p>去除GRUB界面</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/76f87ea449a14ac5960020d6a0fa4a6f~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>pve在安装时使用了GRUB2，所以想要去除掉GRUB界面需要找到原始镜像中boot/grub/grub.cfg文件，添加set timeout=0，就可以直接进入默认选项Install Proxmox VE模式。如果有需要我们也可以修改默认选项来实现直接进入其他模式的功能。</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> vim grub.cfg </span><br><span class="line"><span class="symbol">$</span> cat grub.cfg</span><br><span class="line">insmod gzio</span><br><span class="line">insmod iso9660</span><br><span class="line">insmod png</span><br><span class="line"></span><br><span class="line">loadfont /boot/grub/unicode.pf2</span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> gfxmode=640x400</span><br><span class="line"># <span class="keyword">set</span> <span class="comment">kernel parameter vga=791</span></span><br><span class="line"># do <span class="comment">not specify color depth here (else efifb can fall back to 800x600)</span></span><br><span class="line"><span class="keyword">set</span> <span class="comment">gfxpayload=1024x768</span></span><br><span class="line">#<span class="keyword">set</span> <span class="comment">gfxmode=auto</span></span><br><span class="line">#<span class="keyword">set</span> <span class="comment">gfxpayload=keep</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> <span class="comment">timeout=0</span></span><br><span class="line"></span><br><span class="line">insmod <span class="comment">all_video</span></span><br><span class="line">insmod <span class="comment">gfxterm</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> <span class="comment">theme=</span>/boot/<span class="comment">grub</span>/pvetheme/<span class="comment">theme.txt</span></span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><strong>定制预装软件</strong></p>
+<p>Proxmox VE所有的预装软件都以deb包的形式存放在镜像的proxmox/packages下，并将在安装pve的过程中统一安装这些软件包，全部安装完成之后再进行配置，这样可以避免依赖关系出现问题。</p>
+<p>所以定制预装软件只需要在proxmox/packages目录下放入需要的deb包，pve将会自动安装并进行默认配置。</p>
+<p><strong>配置预装程序</strong></p>
+<p>pve在配置软件是只会按照默认的配置，如果希望将软件配置成我们想要的形式，则只需要修改pve-installer.squashfs里的usr/bin/proxinstall文件。pve-installer.squashfs是pve安装时由initrd加载的系统，安装过程中proxinstall负责所有业务逻辑，其中配置软件部分的代码如下：</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># needed for postfix postinst in case no other NIC is active</span></span><br><span class="line">syscmd(<span class="string">&quot;chroot $targetdir ifup lo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">my</span> $cmd = <span class="string">&quot;chroot $targetdir dpkg $dpkg_opts --force-confold --configure -a&quot;</span>;</span><br><span class="line">$count = <span class="number">0</span>; </span><br><span class="line">run_command ($cmd, <span class="function"><span class="keyword">sub</span> </span>&#123;</span><br><span class="line">    <span class="keyword">my</span> $line = <span class="keyword">shift</span>;</span><br><span class="line">    <span class="keyword">if</span> ($line =~ <span class="regexp">m/Setting up\s+(\S+)/</span>) &#123;</span><br><span class="line">    update_progress ((++$count)/$pkg_count, <span class="number">0</span>.<span class="number">75</span>, <span class="number">0</span>.<span class="number">95</span>,</span><br><span class="line">             <span class="string">&quot;configuring $1&quot;</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>…</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># set apt mirror</span></span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">my</span> $mirror = $cmap-&gt;&#123;country&#125;-&gt;&#123;$country&#125;-&gt;&#123;mirror&#125;) &#123;</span><br><span class="line">    <span class="keyword">my</span> $fn = <span class="string">&quot;$targetdir/etc/apt/sources.list&quot;</span>;</span><br><span class="line">    syscmd (<span class="string">&quot;sed -i &#x27;s/ftp\\.debian\\.org/$mirror/&#x27; &#x27;$fn&#x27;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># create extended_states for apt (avoid cron job warning if that</span></span><br><span class="line"><span class="comment"># file does not exist)</span></span><br><span class="line">write_config (<span class="string">&#x27;&#x27;</span>, <span class="string">&quot;$targetdir/var/lib/apt/extended_states&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># allow ssh root login</span></span><br><span class="line">syscmd([<span class="string">&#x27;sed&#x27;</span>, <span class="string">&#x27;-i&#x27;</span>, <span class="string">&#x27;s/^#\?PermitRootLogin.*/PermitRootLogin yes/&#x27;</span>, <span class="string">&quot;$targetdir/etc/ssh/sshd_config&quot;</span>]);</span><br></pre></td></tr></table></figure>
+<p>可以看出pve也是对部分程序进行了个性化的配置，所以对配置文件的编辑的代码只需要仿照后者，使用syscmd函数，将修改的命令作为参数，写在前者之后即可。</p>
+<p><strong>定制安装界面</strong></p>
+<p>在pve-installer.squashfs里的usr/bin/proxinstall文件中，有create_main_window函数，这个函数的功能是创建图形界面窗口里的各种组件，通过分析这个函数我们可以得到安装UI的结构。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/90857943437e4edf91a77c7e9f77705e~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>顶部的image、中心的htmlview窗口以及下方的cmdbox构成了我们所看到的外观。在此只修改image和htmlview。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/49987692502f454999d981cd118a1417~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p><strong>定制安装界面</strong></p>
+<p>在pve-installer.squashfs里的usr/bin/proxinstall文件中，有create_main_window函数，这个函数的功能是创建图形界面窗口里的各种组件，通过分析这个函数我们可以得到安装UI的结构。</p>
+<p>顶部的image、中心的htmlview窗口以及下方的cmdbox构成了我们所看到的外观。在此只修改image和htmlview。</p>
+<p>顶部的image是在1785行加载pve-installer下var/lib/pve-installer/pve-banner.png来完成的，所以只需要用一个尺寸同样为1024X164的图像替代。</p>
+<p>中心的htmlview是通过在每个create_*函数中调用display_html函数来加载，加载的html文件都位于var/lib/pve-installer/html文件夹下，对应的只需要修改每个html文件就可以实现外观上的替换。</p>
+<p>另外由于窗口运行环境openbox的语言设置默认不是中文，所以使用中文字符展示会出现乱码，因此可以由html加载含中文的图片，以此来展示中文。</p>
+<p>默认输入信息的修改就只需要在proxinstall中找到对应的输入框，修改预设文本。</p>
+<p>使用命令unsquashfs将unsquashfs格式的镜像将其解压</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">$ sudo unsquashfs pve-installer.squashfs</span><br><span class="line">Parallel unsquashfs: Using<span class="number"> 16 </span>processors</span><br><span class="line">20078 inodes (25826 blocks) to write</span><br><span class="line"></span><br><span class="line">[===========================================================\] 25826/25826 100%</span><br><span class="line"></span><br><span class="line">created<span class="number"> 19247 </span>files</span><br><span class="line">created<span class="number"> 2620 </span>directories</span><br><span class="line">created<span class="number"> 819 </span>symlinks</span><br><span class="line">created<span class="number"> 0 </span>devices</span><br><span class="line">created<span class="number"> 0 </span>fifos</span><br><span class="line"></span><br><span class="line">$ ll</span><br><span class="line">total 3256748</span><br><span class="line">dr-xr-xr-x<span class="number"> 12 </span>root root      <span class="number"> 4096 </span>May<span class="number"> 19 </span>19:55 ./</span><br><span class="line">dr-xr-xr-x<span class="number"> 24 </span>root root      <span class="number"> 4096 </span>May<span class="number"> 19 </span>19:29 ../</span><br><span class="line">-rw-r--r-- <span class="number"> 1 </span>root root <span class="number"> 348389376 </span>May<span class="number"> 19 </span>19:42 pve-installer.squashfs</span><br><span class="line">drwxr-xr-x<span class="number"> 17 </span>root root      <span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 squashfs-root/</span><br><span class="line"></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>解压完成后会出现pve-installer.squashfs镜像盘的squashfs-root/ 文件夹，进入该文件夹即可看到安装时的引导系统</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ ll</span><br><span class="line">total 68</span><br><span class="line">drwxr-xr-x<span class="number"> 11 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>03:08 ./</span><br><span class="line">dr-xr-xr-x<span class="number"> 12 </span>root root<span class="number"> 4096 </span>May<span class="number"> 19 </span>19:55 ../</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>03:08 boot/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 cdrom/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 devfs/</span><br><span class="line">drwxr-xr-x<span class="number"> 40 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 etc/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 rpool/</span><br><span class="line">-rwxr-xr-x <span class="number"> 1 </span>root root <span class="number"> 376 </span>Apr<span class="number"> 26 </span>09:53 .spice-vdagent.sh*</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 target/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:25 tmp/</span><br><span class="line">drwxr-xr-x <span class="number"> 8 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>03:08 usr/</span><br><span class="line">drwxr-xr-x <span class="number"> 5 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 26 </span>09:53 var/</span><br><span class="line">-rw-r--r-- <span class="number"> 1 </span>root root  <span class="number"> 87 </span>Apr<span class="number"> 26 </span>09:53 .Xdefaults</span><br><span class="line">-rw-r--r-- <span class="number"> 1 </span>root root <span class="number"> 140 </span>Apr<span class="number"> 26 </span>09:53 .xinitrc</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>把准备好的图片替换</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo cp <span class="regexp">/home/</span>cby<span class="regexp">/Desktop/</span>pve-banner.png .</span><br></pre></td></tr></table></figure>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/d5b6be93678b4f5d9461aa6d82d60d97~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>使用命令解压完成后会出现pve-base.squashfs镜像盘的squashfs-root/ 文件夹</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$ sudo unsquashfs pve-base.squashfs </span><br><span class="line">Parallel unsquashfs: Using<span class="number"> 16 </span>processors</span><br><span class="line">12892 inodes (14248 blocks) to write</span><br><span class="line"></span><br><span class="line">[===========================================================-] 14248/14248 100%</span><br><span class="line"></span><br><span class="line">created<span class="number"> 10856 </span>files</span><br><span class="line">created<span class="number"> 1385 </span>directories</span><br><span class="line">created<span class="number"> 2024 </span>symlinks</span><br><span class="line">created<span class="number"> 9 </span>devices</span><br><span class="line">created<span class="number"> 0 </span>fifos</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>进入该文件夹即可看到安装后的系统根目录</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ ll</span><br><span class="line">total 68</span><br><span class="line">drwxr-xr-x<span class="number"> 17 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 ./</span><br><span class="line">dr-xr-xr-x<span class="number"> 12 </span>root root<span class="number"> 4096 </span>May<span class="number"> 19 </span>19:55 ../</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root   <span class="number"> 7 </span>Apr<span class="number"> 27 </span>04:22 bin -&gt; usr/bin/</span><br><span class="line">drwxr-xr-x <span class="number"> 3 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 boot/</span><br><span class="line">drwxr-xr-x <span class="number"> 5 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 dev/</span><br><span class="line">drwxr-xr-x<span class="number"> 57 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 etc/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>16:44 home/</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root   <span class="number"> 7 </span>Apr<span class="number"> 27 </span>04:22 lib -&gt; usr/lib/</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root   <span class="number"> 9 </span>Apr<span class="number"> 27 </span>04:22 lib32 -&gt; usr/lib32/</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root   <span class="number"> 9 </span>Apr<span class="number"> 27 </span>04:22 lib64 -&gt; usr/lib64/</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root  <span class="number"> 10 </span>Apr<span class="number"> 27 </span>04:22 libx32 -&gt; usr/libx32/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 media/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 mnt/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 opt/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>16:44 proc/</span><br><span class="line">drwx------ <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 root/</span><br><span class="line">drwxr-xr-x <span class="number"> 5 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 run/</span><br><span class="line">lrwxrwxrwx <span class="number"> 1 </span>root root   <span class="number"> 8 </span>Apr<span class="number"> 27 </span>04:22 sbin -&gt; usr/sbin/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 srv/</span><br><span class="line">drwxr-xr-x <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Mar<span class="number"> 19 </span>16:44 sys/</span><br><span class="line">drwxrwxrwt <span class="number"> 2 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:23 tmp/</span><br><span class="line">drwxr-xr-x<span class="number"> 13 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 usr/</span><br><span class="line">drwxr-xr-x<span class="number"> 11 </span>root root<span class="number"> 4096 </span>Apr<span class="number"> 27 </span>04:22 var/</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>修改完需要定制的文件系统后，使用如下命进行打包</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">$ sudo mksquashfs  squashfs-root/ pve-installer.squashfs</span><br><span class="line">Parallel mksquashfs: Using <span class="number">16</span> processors</span><br><span class="line">Creating <span class="number">4.0</span> filesystem on pve-installer.squashfs-, <span class="keyword">block</span> <span class="built_in">size</span> <span class="number">131072.</span></span><br><span class="line">[===========================================================\] <span class="number">25008</span>/<span class="number">25008</span> <span class="number">100</span>%</span><br><span class="line"></span><br><span class="line">Exportable Squashfs <span class="number">4.0</span> filesystem, gzip compressed, <span class="keyword">data</span> <span class="keyword">block</span> <span class="built_in">size</span> <span class="number">131072</span></span><br><span class="line">  compressed <span class="keyword">data</span>, compressed metadata, compressed fragments,</span><br><span class="line">  compressed xattrs, compressed ids</span><br><span class="line">  duplicates are removed</span><br><span class="line">Filesystem <span class="built_in">size</span> <span class="number">340223.99</span> Kbytes (<span class="number">332.25</span> Mbytes)</span><br><span class="line">  <span class="number">33.70</span>% of uncompressed filesystem <span class="built_in">size</span> (<span class="number">1009698.26</span> Kbytes)</span><br><span class="line">Inode table <span class="built_in">size</span> <span class="number">225637</span> bytes (<span class="number">220.35</span> Kbytes)</span><br><span class="line">  <span class="number">29.06</span>% of uncompressed inode table <span class="built_in">size</span> (<span class="number">776542</span> bytes)</span><br><span class="line">Directory table <span class="built_in">size</span> <span class="number">235667</span> bytes (<span class="number">230.14</span> Kbytes)</span><br><span class="line">  <span class="number">38.69</span>% of uncompressed directory table <span class="built_in">size</span> (<span class="number">609117</span> bytes)</span><br><span class="line">Xattr table <span class="built_in">size</span> <span class="number">673</span> bytes (<span class="number">0.66</span> Kbytes)</span><br><span class="line">  <span class="number">7.40</span>% of uncompressed xattr table <span class="built_in">size</span> (<span class="number">9096</span> bytes)</span><br><span class="line"><span class="keyword">Number</span> of duplicate files found <span class="number">853</span></span><br><span class="line"><span class="keyword">Number</span> of inodes <span class="number">22686</span></span><br><span class="line"><span class="keyword">Number</span> of files <span class="number">19247</span></span><br><span class="line"><span class="keyword">Number</span> of fragments <span class="number">1982</span></span><br><span class="line"><span class="keyword">Number</span> of symbolic links  <span class="number">819</span></span><br><span class="line"><span class="keyword">Number</span> of device nodes <span class="number">0</span></span><br><span class="line"><span class="keyword">Number</span> of fifo nodes <span class="number">0</span></span><br><span class="line"><span class="keyword">Number</span> of socket nodes <span class="number">0</span></span><br><span class="line"><span class="keyword">Number</span> of directories <span class="number">2620</span></span><br><span class="line"><span class="keyword">Number</span> of ids (unique uids + gids) <span class="number">9</span></span><br><span class="line"><span class="keyword">Number</span> of uids <span class="number">3</span></span><br><span class="line">  root (<span class="number">0</span>)</span><br><span class="line">  man (<span class="number">6</span>)</span><br><span class="line">  syslog (<span class="number">104</span>)</span><br><span class="line"><span class="keyword">Number</span> of gids <span class="number">7</span></span><br><span class="line">  root (<span class="number">0</span>)</span><br><span class="line">  shadow (<span class="number">42</span>)</span><br><span class="line">  bluetooth (<span class="number">112</span>)</span><br><span class="line">  utmp (<span class="number">43</span>)</span><br><span class="line">  staff (<span class="number">50</span>)</span><br><span class="line">  man (<span class="number">12</span>)</span><br><span class="line">  tss (<span class="number">111</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>使用该名进行制作ISO镜像盘</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ sudo xorriso -as mkisofs -o proxmox-ve_6.<span class="number">4</span>-<span class="number">1</span>.iso -r -V <span class="symbol">&#x27;inspur</span>&#x27; <span class="comment">--grub2-mbr proxmox.mbr --protective-msdos-label -efi-boot-part --efi-boot-image  -c &#x27;/boot/boot.cat&#x27; -b &#x27;/boot/grub/i386-pc/eltorito.img&#x27; -no-emul-boot -boot-load-size 4 -boot-info-table --grub2-boot-info -eltorito-alt-boot -e &#x27;/efi.img&#x27; -no-emul-boot .</span></span><br><span class="line">xorriso <span class="number">1.5</span>.<span class="number">2</span> : <span class="type">RockRidge</span> filesystem manipulator, libburnia project.</span><br><span class="line"></span><br><span class="line">Drive current: -outdev <span class="symbol">&#x27;stdio</span>:proxmox-ve_6.<span class="number">4</span>-<span class="number">1</span>.iso&#x27;</span><br><span class="line">Media current: stdio file, overwriteable</span><br><span class="line">Media status : <span class="type">is</span> blank</span><br><span class="line">Media summary: <span class="number">0</span> sessions, <span class="number">0</span> data blocks, <span class="number">0</span> data, <span class="number">78.0</span>g free</span><br><span class="line">xorriso : <span class="type">WARNING</span> : -<span class="type">volid</span> text does <span class="keyword">not</span> comply to ISO <span class="number">9660</span> / ECMA <span class="number">119</span> rules</span><br><span class="line">Added to ISO image: directory <span class="string">&#x27;/&#x27;</span>=&#x27;/home/cby/chenby&#x27;</span><br><span class="line">xorriso : <span class="type">UPDATE</span> :   32892 <span class="type">files</span> added <span class="keyword">in</span> <span class="number">1</span> seconds</span><br><span class="line">xorriso : <span class="type">UPDATE</span> :   32892 <span class="type">files</span> added <span class="keyword">in</span> <span class="number">1</span> seconds</span><br><span class="line">xorriso : <span class="type">NOTE</span> : <span class="type">Copying</span> to System Area: <span class="number">512</span> bytes from file &#x27;/home/cby/chenby/proxmox.mbr&#x27;</span><br><span class="line">libisofs: NOTE : <span class="type">Automatically</span> adjusted MBR geometry to <span class="number">1021</span>/<span class="number">155</span>/<span class="number">32</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  0.66% <span class="type">done</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  8.03% <span class="type">done</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  19.34% <span class="type">done</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  34.06% <span class="type">done</span>, estimate finish Wed May <span class="number">19</span> <span class="number">19</span>:<span class="number">46</span>:<span class="number">25</span> <span class="number">2021</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  48.84% <span class="type">done</span>, estimate finish Wed May <span class="number">19</span> <span class="number">19</span>:<span class="number">46</span>:<span class="number">24</span> <span class="number">2021</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  61.72% <span class="type">done</span>, estimate finish Wed May <span class="number">19</span> <span class="number">19</span>:<span class="number">46</span>:<span class="number">24</span> <span class="number">2021</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  73.41% <span class="type">done</span>, estimate finish Wed May <span class="number">19</span> <span class="number">19</span>:<span class="number">46</span>:<span class="number">25</span> <span class="number">2021</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  82.19% <span class="type">done</span>, estimate finish Wed May <span class="number">19</span> <span class="number">19</span>:<span class="number">46</span>:<span class="number">25</span> <span class="number">2021</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  92.15% <span class="type">done</span></span><br><span class="line">xorriso : <span class="type">UPDATE</span> :  97.28% <span class="type">done</span></span><br><span class="line">ISO image produced: <span class="number">1264917</span> sectors</span><br><span class="line">Written to medium : 1264917 <span class="type">sectors</span> <span class="keyword">at</span> LBA <span class="number">0</span></span><br><span class="line">Writing to <span class="symbol">&#x27;stdio</span>:proxmox-ve_6.<span class="number">4</span>-<span class="number">1</span>.iso&#x27; completed successfully.</span><br></pre></td></tr></table></figure>
+<p>使用新创建的ISO镜像盘启动后，已出现修改过后的背景图，以此类推，通过修改根目录文件，可以实现完全定制化的pve系统。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f2598c6d809e4791b7cac905c02fe787~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>若修改安装后的管理后台的页面，在proxmox/packages目录下找到pve-manager的deb安装包。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2830eb0747a04abab976cb403960c347~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="keyword">ls</span> | <span class="keyword">grep</span> manager</span><br><span class="line">pve-<span class="keyword">ha</span>-manager_3.<span class="number">1</span>-<span class="number">1</span>_amd64.<span class="keyword">deb</span></span><br><span class="line">pve-manager_6.<span class="number">4</span>-<span class="number">4</span>_amd64.<span class="keyword">deb</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">mkdir</span> extract，在当前目录下新建文件夹，用于存放解压后的内容</span><br><span class="line">$ <span class="built_in">mkdir</span> extract/DEBIAN，新建DEBIAN目录用于存放包的控制信息</span><br><span class="line">$ sudo dpkg -<span class="keyword">X</span> ./pve-manager_6.<span class="number">4</span>-<span class="number">4</span>_amd64.<span class="keyword">deb</span> extract/，将要修改的<span class="keyword">deb</span>包解压到extract目录下，可以看到：</span><br></pre></td></tr></table></figure>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3d513af1f6a44bfb9788cd5bcc18ca7c~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<p>在其解压出来的包内修改所需的代码后，导入debian包的控制信息，可以使用命令再次打包成deb包。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ sudo dpkg-<span class="keyword">deb</span> -<span class="keyword">e</span> ./pve-manager_6.<span class="number">4</span>-<span class="number">4</span>_amd64.<span class="keyword">deb</span> extract/DEBIAN/</span><br><span class="line">$ <span class="keyword">ls</span> extract/DEBIAN/</span><br><span class="line">conffiles  control  md5sums  postinst  postrm  preinst  prerm  triggers</span><br><span class="line"></span><br><span class="line">$ sudo dpkg-<span class="keyword">deb</span> -<span class="keyword">b</span> ./extract <span class="number">123</span>.<span class="keyword">deb</span></span><br><span class="line">dpkg-de<span class="variable">b:</span> building package <span class="string">&#x27;pve-manager&#x27;</span> in <span class="string">&#x27;123.deb&#x27;</span>.</span><br><span class="line"></span><br><span class="line">$ <span class="keyword">ll</span> <span class="number">123</span>.<span class="keyword">deb</span> </span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">2042764</span> May <span class="number">19</span> <span class="number">21</span>:<span class="number">54</span> <span class="number">123</span>.<span class="keyword">deb</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>查看deb包的详细信息。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">$ dpkg-<span class="keyword">deb</span> -I <span class="number">123</span>.<span class="keyword">deb</span> </span><br><span class="line"> <span class="keyword">new</span> Debian package, <span class="keyword">version</span> <span class="number">2.0</span>.</span><br><span class="line"> size <span class="number">2042764</span> byte<span class="variable">s:</span> control archive=<span class="number">16976</span> bytes.</span><br><span class="line">     <span class="number">320</span> bytes,    <span class="number">10</span> lines      conffiles            </span><br><span class="line">    <span class="number">1532</span> bytes,    <span class="number">15</span> lines      control              </span><br><span class="line">   <span class="number">56553</span> bytes,   <span class="number">574</span> lines      md5sums              </span><br><span class="line">    <span class="number">3246</span> bytes,   <span class="number">101</span> lines   *  postinst             #!/bin/<span class="keyword">sh</span></span><br><span class="line">    <span class="number">1645</span> bytes,    <span class="number">44</span> lines   *  postrm               #!/bin/<span class="keyword">sh</span></span><br><span class="line">     <span class="number">192</span> bytes,     <span class="number">5</span> lines   *  preinst              #!/bin/<span class="keyword">sh</span></span><br><span class="line">     <span class="number">626</span> bytes,    <span class="number">24</span> lines   *  prerm                #!/bin/<span class="keyword">sh</span></span><br><span class="line">      <span class="number">33</span> bytes,     <span class="number">1</span> lines      triggers             </span><br><span class="line"> Package: pve-manager</span><br><span class="line"> Version: <span class="number">6.4</span>-<span class="number">4</span></span><br><span class="line"> Architecture: amd64</span><br><span class="line"> Maintainer: Proxmox Support Team &lt;support@proxmox.<span class="keyword">com</span>&gt;</span><br><span class="line"> Installed-Size: <span class="number">9876</span></span><br><span class="line"> Depend<span class="variable">s:</span> apt-transport-https | apt (&gt;= <span class="number">1.5</span>~), <span class="keyword">ca</span>-certificates, cstream, dtach, fonts-font-awesome, gdisk, hdparm, ifenslave (&gt;= <span class="number">2.6</span>) | ifupdown2 (&gt;= <span class="number">2.0</span>.<span class="number">1</span>-<span class="number">1</span>+pve8), libapt-pkg-<span class="keyword">perl</span>, libc6 (&gt;= <span class="number">2.14</span>), libcrypt-ssleay-<span class="keyword">perl</span>, libfile-readbackwards-<span class="keyword">perl</span>, libfilesys-df-<span class="keyword">perl</span>, libjs-extjs (&gt;= <span class="number">6.0</span>.<span class="number">1</span>), libjson-<span class="keyword">perl</span>, liblwp-protocol-https-<span class="keyword">perl</span>, libnet-dns-<span class="keyword">perl</span>, libproxmox-acme-<span class="keyword">perl</span>, libpve-access-control (&gt;= <span class="number">6.0</span>-<span class="number">6</span>), libpve-cluster-api-<span class="keyword">perl</span>, libpve-cluster-<span class="keyword">perl</span> (&gt;= <span class="number">6.1</span>-<span class="number">6</span>), libpve-common-<span class="keyword">perl</span> (&gt;= <span class="number">6.2</span>-<span class="number">2</span>), libpve-guest-common-<span class="keyword">perl</span> (&gt;= <span class="number">3.1</span>-<span class="number">5</span>), libpve-http-server-<span class="keyword">perl</span> (&gt;= <span class="number">3.2</span>-<span class="number">1</span>), libpve-storage-<span class="keyword">perl</span> (&gt;= <span class="number">6.3</span>-<span class="number">6</span>), librados2-<span class="keyword">perl</span>, libtemplate-<span class="keyword">perl</span>, libterm-readline-gnu-<span class="keyword">perl</span>, liburi-<span class="keyword">perl</span>, libuuid-<span class="keyword">perl</span>, libwww-<span class="keyword">perl</span> (&gt;= <span class="number">6.04</span>-<span class="number">1</span>), logrotate, lsb-base, lzop, zstd, novnc-pve, pciutils, <span class="keyword">perl</span> (&gt;= <span class="number">5.10</span>.<span class="number">0</span>-<span class="number">19</span>), postfix | mail-transport-agent, proxmox-mini-journalreader, proxmox-widget-toolkit (&gt;= <span class="number">2.5</span>-<span class="number">2</span>), pve-cluster (&gt;= <span class="number">6.0</span>-<span class="number">4</span>), pve-container (&gt;= <span class="number">2.0</span>-<span class="number">21</span>), pve-docs, pve-firewall, pve-<span class="keyword">ha</span>-manager, pve-i18n (&gt;= <span class="number">1.0</span>-<span class="number">3</span>), pve-xtermjs (&gt;= <span class="number">0.1</span>-<span class="number">1</span>), qemu-server (&gt;= <span class="number">6.2</span>-<span class="number">17</span>), rsync, spiceterm, systemd, vncterm, wget</span><br><span class="line"> Suggest<span class="variable">s:</span> libpve-network-<span class="keyword">perl</span> (&gt;= <span class="number">0.5</span>-<span class="number">1</span>)</span><br><span class="line"> Conflict<span class="variable">s:</span> vlan, vzdump</span><br><span class="line"> Break<span class="variable">s:</span> libpve-network-<span class="keyword">perl</span> (&lt;&lt; <span class="number">0.5</span>-<span class="number">1</span>)</span><br><span class="line"> Replace<span class="variable">s:</span> vlan, vzdump</span><br><span class="line"> Provide<span class="variable">s:</span> vlan, vzdump</span><br><span class="line"> Section: admin</span><br><span class="line"> Priority: optional</span><br><span class="line"> Description: Proxmox Virtual Environment Management Tools</span><br><span class="line">  This package contains the Proxmox Virtual Environment management tools.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>将打好的deb包放回到原目录后，在进行ISO的打包，这样在安装系统后的镜像即可是定制化的页面。</p>
+<p><img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3b5b253b5505485a9bfb75681a811ef9~tplv-k3u1fbpfcp-zoom-1.image" alt=""></p>
+<blockquote>
+<p>本文使用 <a target="_blank" rel="noopener" href="https://juejin.cn/post/6940875049587097631">文章同步助手</a> 同步</p>
+</blockquote>
+
+
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
+          
+          <li class="previous">
+            <a href="/en/2021-12-30-MINIO搭建单机以及集群/" data-toggle="tooltip" data-placement="top" title="MINIO搭建单机以及集群">&larr; Previous Post</a>
+          </li>
+          
+          
+          <li class="next">
+            <a href="/en/2021-12-30-Proxmox_VE镜像分析与定制/" data-toggle="tooltip" data-placement="top" title="Proxmox VE镜像分析与定制">Next Post &rarr;</a>
+          </li>
+          
+        </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=Proxmox VE镜像分析与定制&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/2021-12-30-Proxmox_VE镜像分析与定制/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <!-- <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.js"></script> -->
+    <script src="/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Thu Dec 30 2021 17:01:45 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
+      </div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
+
+
+
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+        <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
+
+        <!-- Friends Blog -->
+        
+        <hr>
+        <h5>链友</h5>
+        <ul class="list-inline">
+
+          
+          <li>
+            <a href="https://v-vincen.life/" target="_blank">V_Vincen</a>
+          </li>
+          
+          <li>
+            <a href="http://beantech.org" target="_blank">Bean Tech</a>
+          </li>
+          
+          <li>
+            <a href="http://huangxuan.me" target="_blank">Hux Blog</a>
+          </li>
+          
+          <li>
+            <a href="https://hexo.io/" target="_blank">Hexo</a>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
+
+
+		<!-- Footer (contains ThemeColor、viewer) -->
+		<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center">
+          
+
+          
+            <li>
+              <a target="_blank" href="https://github.com/V-Vincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://twitter.com/V_Vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+            <li>
+              <a target="_blank" href="https://www.instagram.com/v_vincen_">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+          
+
+          
+
+          
+
+          
+            <li>
+              <a target="_blank" href="http://weibo.com/WVincen">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          
+
+        </ul>
+        <p class="copyright text-muted">
+          Copyright &copy;
+          Your Name
+          2022
+          <br>
+          Theme by
+          <a target="_blank" rel="noopener" href="http://beantech.org">BeanTech</a>
+          <span style="display: inline-block; margin: 0 5px;">
+            <i class="fa fa-heart"></i>
+          </span>
+          re-Ported by
+          <a target="_blank" rel="noopener" href="https://v-vincen.life/">Live My Life</a>
+          |
+          <iframe style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0" width="91px" height="20px" src="https://ghbtns.com/github-btn.html?user=V-Vincen&repo=V-Vincen.github.io&type=star&count=true"></iframe>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a id="rocket" href="#top" class=""></a>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+  <!-- Custom Theme JavaScript -->
+  <script type="text/javascript" src="/js/hux-blog.min.js"></script>
+  <!-- catalog -->
+  <script async="true" type="text/javascript" src="/js/catalog.js"></script>
+  <!-- totop(rocket) -->
+  <script async="true" type="text/javascript" src="/js/totop.js"></script>
+
+  
+    <!-- Busuanzi JavaScript -->
+    <script async="async" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <!-- Scroll start -->
+    <script async="async" type="text/javascript" src="/js/scroll.js"></script>
+    <!-- Scroll end -->
+  
+
+  
+    <!-- LangSelect start -->
+    <script type="text/javascript" src="/js/langselect.js"></script>
+    <!-- LangSelect end -->
+  
+
+  
+    <!-- Mouseclick -->
+    <script type="text/javascript" src="/js/mouseclick.js" content='The first step is as good as half over...,Laugh and grow fat...,Man proposes God disposes...,When all else is lost the future still remains...,Wasting time is robbing oneself...,Sharp tools make good work...,Cease to struggle and you cease to live...,A friend in need is a friend indeed...,Faith can move mountains...' color='#9933CC,#339933,#66CCCC,#FF99CC,#CCCCFF,#6666CC,#663399,#66CC99,#FF0033'></script>
+  
+
+  
+    <!-- ribbon -->
+    <script type="text/javascript" src="/js/ribbonDynamic.js"></script>
+  
+
+  
+
+
+
+
+
+
+  <!-- viewer start -->
+  <!-- viewer start (Picture preview) -->
+  
+    <script async="async" type="text/javascript" src="/js/viewer/viewer.min.js"></script>
+    <script async="async" type="text/javascript" src="/js/viewer/pic-viewer.js"></script>
+  
+
+  <!-- viewer end -->
+
+
+<script>
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function (e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  // fastClick.js
+  async ("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function () {
+    var $nav = document.querySelector("nav");
+    if ($nav)
+      FastClick.attach($nav);
+    }
+  )
+</script>
+
+<!-- Because of the native support for backtick-style fenced code blocks right within the Markdown is landed in Github Pages, From V1.6, There is no need for Highlight.js, so Huxblog drops it officially. -
+https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0 - https://help.github.com/articles/creating-and-highlighting-code-blocks/ -->
+<!-- <script> async ("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function () { hljs.initHighlightingOnLoad(); }) </script> <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet"> -->
+
+<!-- jquery.tagcloud.js -->
+<!-- <script> // only load tagcloud.js in tag.html if ($('#tag_cloud').length !== 0) { async ("http://yoursite-url/js/jquery.tagcloud.js", function () { $.fn.tagcloud.defaults = { // size: { start: 1, end: 1, unit: 'em' }, color: {
+start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </script> -->
+
+
+		<!-- Search -->
+		
+		<div class="popup search-popup local-search-popup">
+  <span class="popup-btn-close">
+    ESC
+  </span>
+  <div class="container">
+    <div class="row">
+      <!-- <div class="col-md-9 col-md-offset-1"> -->
+      <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-1 local-search-content">
+
+        <div class="local-search-header clearfix">
+
+          <div class="local-search-input-wrapper">
+            <span class="search-icon">
+              <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
+            </span>
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+          </div>
+        </div>
+        <div id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  
+    <script src="/js/ziploader.js"></script>
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.json";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    // monitor main search box;
+    var onPopupClose = function (e) {
+      $('.popup').fadeOut(300);
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $('.popup').fadeIn(300);
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+    // get search zip version
+    $.get('/searchVersion.json?t=' + (+new Date()), function (res) {
+      if (localStorage.getItem('searchVersion') !== res) {
+        localStorage.setItem('searchVersion', res);
+        initSearchJson();
+      }
+    });
+
+    function initSearchJson() {
+      initLoad(['/search.flv'], {
+        loadOptions: {
+          success: function (obj) {
+            localStorage.setItem('searchJson', obj['search.json'])
+          },
+          error: function (e) {
+            return console.log(e)
+          }
+        },
+        returnOptions: {
+          'json': TYPE_TEXT
+        },
+        mimeOptions: {
+          'json': 'application/json'
+        }
+      })
+    }
+    // search function;
+    var searchFunc = function (search_id, content_id) {
+      'use strict';
+      isfetched = true;
+      var datas = JSON.parse(localStorage.getItem('searchJson'));
+      // console.log(search_id)
+      var input = document.getElementById(search_id);
+      var resultContent = document.getElementById(content_id);
+      var inputEventFunction = function () {
+        var searchText = input.value.trim().toLowerCase();
+        var keywords = searchText.split(/[\s\-]+/);
+        if (keywords.length > 1) {
+          keywords.push(searchText);
+        }
+        var resultItems = [];
+        if (searchText.length > 0) {
+          // perform local searching
+          datas.forEach(function (data) {
+            var isMatch = false;
+            var hitCount = 0;
+            var searchTextCount = 0;
+            var title = data.title
+              ? data.title.trim()
+              : '';
+            var titleInLowerCase = title.toLowerCase();
+            var content = data.content
+              ? data.content.trim().replace(/<[^>]+>/g, "")
+              : '';
+            var contentInLowerCase = content.toLowerCase();
+            var articleUrl = decodeURIComponent(data.url);
+
+            var date = data.date;
+            var dateTime = date.replace(/T/, " ").replace(/.000Z/, "");
+            var imgUrl = data.header_img;
+            
+
+
+            var indexOfTitle = [];
+            var indexOfContent = [];
+            // only match articles with not empty titles
+            keywords.forEach(function (keyword) {
+              function getIndexByWord(word, text, caseSensitive) {
+                var wordLen = word.length;
+                if (wordLen === 0) {
+                  return [];
+                }
+                var startPosition = 0,
+                  position = [],
+                  index = [];
+                if (!caseSensitive) {
+                  text = text.toLowerCase();
+                  word = word.toLowerCase();
+                }
+                while ((position = text.indexOf(word, startPosition)) > -1) {
+                  index.push({position: position, word: word});
+                  startPosition = position + wordLen;
+                }
+                return index;
+              }
+              indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+              indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+            });
+            if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+              isMatch = true;
+              hitCount = indexOfTitle.length + indexOfContent.length;
+            }
+            // show search results
+            if (isMatch) {
+              // sort index by position of keyword
+              [indexOfTitle, indexOfContent].forEach(function (index) {
+                index.sort(function (itemLeft, itemRight) {
+                  if (itemRight.position !== itemLeft.position) {
+                    return itemRight.position - itemLeft.position;
+                  } else {
+                    return itemLeft.word.length - itemRight.word.length;
+                  }
+                });
+              });
+              // merge hits into slices
+              function mergeIntoSlice(text, start, end, index) {
+                var item = index[index.length - 1];
+                var position = item.position;
+                var word = item.word;
+                var hits = [];
+                var searchTextCountInSlice = 0;
+                while (position + word.length <= end && index.length != 0) {
+                  if (word === searchText) {
+                    searchTextCountInSlice++;
+                  }
+                  hits.push({position: position, length: word.length});
+                  var wordEnd = position + word.length;
+                  // move to next position of hit
+                  index.pop();
+                  while (index.length != 0) {
+                    item = index[index.length - 1];
+                    position = item.position;
+                    word = item.word;
+                    if (wordEnd > position) {
+                      index.pop();
+                    } else {
+                      break;
+                    }
+                  }
+                }
+                searchTextCount += searchTextCountInSlice;
+                return {hits: hits, start: start, end: end, searchTextCount: searchTextCountInSlice};
+              }
+              var slicesOfTitle = [];
+              if (indexOfTitle.length != 0) {
+                slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+              }
+              var slicesOfContent = [];
+              while (indexOfContent.length != 0) {
+                var item = indexOfContent[indexOfContent.length - 1];
+                var position = item.position;
+                var word = item.word;
+                // cut out 100 characters
+                var start = position - 20;
+                var end = position + 80;
+                if (start < 0) {
+                  start = 0;
+                }
+                if (end < position + word.length) {
+                  end = position + word.length;
+                }
+                if (end > content.length) {
+                  end = content.length;
+                }
+                slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+              }
+              // sort slices in content by search text's count and hits' count
+              slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                  return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                  return sliceRight.hits.length - sliceLeft.hits.length;
+                } else {
+                  return sliceLeft.start - sliceRight.start;
+                }
+              });
+              // select top N slices in content
+              var upperBound = parseInt('1');
+              if (upperBound >= 0) {
+                slicesOfContent = slicesOfContent.slice(0, upperBound);
+              }
+              // highlight title and content
+              function highlightKeyword(text, slice) {
+                var result = '';
+                var prevEnd = slice.start;
+                slice.hits.forEach(function (hit) {
+                  result += text.substring(prevEnd, hit.position);
+                  var end = hit.position + hit.length;
+                  result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                  prevEnd = end;
+                });
+                result += text.substring(prevEnd, slice.end);
+                return result;
+              }
+              var resultItem = '';
+
+              // if (slicesOfTitle.length != 0) {   resultItem += "<li><a target='_blank' href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>"; } else {   resultItem += "<li><a target='_blank' href='" +
+              // articleUrl + "' class='search-result-title'>" + title + "</a>"; } slicesOfContent.forEach(function (slice) {   resultItem += "<a target='_blank' href='" + articleUrl + "'><p class=\"search-result\">" + highlightKeyword(content, slice) +
+              // "...</p></a>"; }); resultItem += "</li>";
+
+              if (slicesOfTitle.length != 0) {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              } else {
+                resultItem += "<a target='_blank' href='" + articleUrl + "' class='search-result'><div class='search-result-left'><div class='search-result-title'>" + title + "</div><time class='search-result-date'>" + dateTime + "</time>";
+              }
+              slicesOfContent.forEach(function (slice) {
+                resultItem += "<p class=\"search-result-content\">" + highlightKeyword(content, slice) + "...</p>";
+              });
+              resultItem += "</div><div class='search-result-right'><img class='media-image' src='" + imgUrl + "' width='64px' height='48px'></img></div></a>";
+
+              resultItems.push({item: resultItem, searchTextCount: searchTextCount, hitCount: hitCount, id: resultItems.length});
+            }
+          })
+        };
+
+        if (keywords.length === 1 && keywords[0] === "") {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else if (resultItems.length === 0) {
+          resultContent.innerHTML = '<div id="no-result"></div>'
+        } else {
+          resultItems.sort(function (resultLeft, resultRight) {
+            if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+              return resultRight.searchTextCount - resultLeft.searchTextCount;
+            } else if (resultLeft.hitCount !== resultRight.hitCount) {
+              return resultRight.hitCount - resultLeft.hitCount;
+            } else {
+              return resultRight.id - resultLeft.id;
+            }
+          });
+          var searchResultList = '<div class=\"search-result-list\">';
+          resultItems.forEach(function (result) {
+            searchResultList += result.item;
+          })
+          searchResultList += "</div>";
+          resultContent.innerHTML = searchResultList;
+        }
+      }
+      if ('auto' === 'auto') {
+        input.addEventListener('input', inputEventFunction);
+      } else {
+        $('.search-icon').click(inputEventFunction);
+        input.addEventListener('keypress', function (event) {
+          if (event.keyCode === 13) {
+            inputEventFunction();
+          }
+        });
+      }
+      // remove loading animation
+      $('body').css('overflow', '');
+      proceedsearch();
+    }
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function (e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc('local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function (e) {
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 && $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+
+    document.addEventListener('mouseup', (e) => {
+      var _con = document.querySelector(".local-search-content");
+      if (_con) {
+        if (!_con.contains(e.target)) {
+          onPopupClose();
+        }
+      }
+    });
+  </script>
+
+
+		
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
